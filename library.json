@@ -1,0 +1,10 @@
+{
+  "name": "usdAecoCctv",
+  "version": "0.5.5",
+  "licence": "MIT",
+  "tier": "kind",
+  "requires": {
+    "usdAeco": ">=0.9,<1.0"
+  },
+  "kind": "usecase"
+}

@@ -1,0 +1,304 @@
+{
+  "AecoCctvCameraAPI": {
+    "aeco:cctv:mount": {
+      "default": "undefined",
+      "type": "token"
+    },
+    "aeco:cctv:mountHeight": {
+      "default": "0.0",
+      "type": "double"
+    },
+    "aeco:cctv:scenario": {
+      "default": "",
+      "type": "token"
+    }
+  },
+  "AecoCctvCameraTypeAPI": {
+    "aeco:cctvType:irRange": {
+      "default": "0.0",
+      "type": "double"
+    },
+    "aeco:cctvType:outdoor": {
+      "default": "False",
+      "type": "bool"
+    },
+    "aeco:cctvType:sensorCount": {
+      "default": "0",
+      "type": "int"
+    }
+  },
+  "AecoCctvCoverageAPI": {
+    "aeco:cctvCoverage:blockers": {
+      "default": null,
+      "type": "relationship"
+    },
+    "aeco:cctvCoverage:density": {
+      "default": "0.0",
+      "type": "double"
+    },
+    "aeco:cctvCoverage:dutyFraction": {
+      "default": "0.0",
+      "type": "double"
+    },
+    "aeco:cctvCoverage:enclosedSamples": {
+      "default": "0",
+      "type": "int"
+    },
+    "aeco:cctvCoverage:fixedCoverage": {
+      "default": "False",
+      "type": "bool"
+    },
+    "aeco:cctvCoverage:fraction": {
+      "default": "0.0",
+      "type": "double"
+    },
+    "aeco:cctvCoverage:level": {
+      "default": "none",
+      "type": "token"
+    },
+    "aeco:cctvCoverage:nearestViewDistance": {
+      "default": "0.0",
+      "type": "double"
+    },
+    "aeco:cctvCoverage:requiredDensity": {
+      "default": "0.0",
+      "type": "double"
+    },
+    "aeco:cctvCoverage:target": {
+      "default": null,
+      "type": "relationship"
+    },
+    "aeco:cctvCoverage:viewNotes": {
+      "default": "[]",
+      "type": "string[]"
+    },
+    "aeco:cctvCoverage:views": {
+      "default": null,
+      "type": "relationship"
+    }
+  },
+  "AecoCctvPresetAPI": {
+    "dwell": {
+      "default": "5.0",
+      "type": "double"
+    },
+    "focalLength": {
+      "default": "0.0",
+      "type": "double"
+    },
+    "home": {
+      "default": "False",
+      "type": "bool"
+    },
+    "pan": {
+      "default": "0.0",
+      "type": "double"
+    },
+    "tilt": {
+      "default": "0.0",
+      "type": "double"
+    }
+  },
+  "AecoCctvSensorAPI": {
+    "aeco:cctvSensor:effectiveWidth": {
+      "default": "0.0",
+      "type": "double"
+    },
+    "aeco:cctvSensor:focalLength": {
+      "default": "0.0",
+      "type": "double"
+    },
+    "aeco:cctvSensor:focalRange": {
+      "default": "(2.8, 2.8)",
+      "type": "double2"
+    },
+    "aeco:cctvSensor:hfov": {
+      "default": "0.0",
+      "type": "double"
+    },
+    "aeco:cctvSensor:hfovRange": {
+      "default": "(0, 0)",
+      "type": "double2"
+    },
+    "aeco:cctvSensor:motorised": {
+      "default": "False",
+      "type": "bool"
+    },
+    "aeco:cctvSensor:offset": {
+      "default": "(0, 0, 0)",
+      "type": "double3"
+    },
+    "aeco:cctvSensor:pan": {
+      "default": "0.0",
+      "type": "double"
+    },
+    "aeco:cctvSensor:panRange": {
+      "default": "(0, 0)",
+      "type": "double2"
+    },
+    "aeco:cctvSensor:pixels": {
+      "default": "(1920, 1080)",
+      "type": "int2"
+    },
+    "aeco:cctvSensor:projection": {
+      "default": "rectilinear",
+      "type": "token"
+    },
+    "aeco:cctvSensor:range": {
+      "default": "0.0",
+      "type": "double"
+    },
+    "aeco:cctvSensor:roll": {
+      "default": "0.0",
+      "type": "double"
+    },
+    "aeco:cctvSensor:sensorSize": {
+      "default": "(0, 0)",
+      "type": "double2"
+    },
+    "aeco:cctvSensor:spectrum": {
+      "default": "visible",
+      "type": "token"
+    },
+    "aeco:cctvSensor:targetDensity": {
+      "default": "0.0",
+      "type": "double"
+    },
+    "aeco:cctvSensor:targetRange": {
+      "default": "0.0",
+      "type": "double"
+    },
+    "aeco:cctvSensor:tilt": {
+      "default": "0.0",
+      "type": "double"
+    },
+    "aeco:cctvSensor:tiltRange": {
+      "default": "(0, 0)",
+      "type": "double2"
+    },
+    "aeco:cctvSensor:tour": {
+      "default": "[]",
+      "type": "token[]"
+    },
+    "aeco:cctvSensor:vfov": {
+      "default": "0.0",
+      "type": "double"
+    },
+    "aeco:cctvSensor:vfovRange": {
+      "default": "(0, 0)",
+      "type": "double2"
+    }
+  },
+  "AecoCctvSightlineAPI": {
+    "aeco:cctvSightline:ignore": {
+      "default": "False",
+      "type": "bool"
+    },
+    "aeco:cctvSightline:transmittance": {
+      "default": "0.0",
+      "type": "double"
+    }
+  },
+  "AecoCctvStudyAPI": {
+    "aeco:cctvStudy:densityModel": {
+      "default": "plane",
+      "type": "token"
+    },
+    "aeco:cctvStudy:excludeEnclosedSamples": {
+      "default": "True",
+      "type": "bool"
+    },
+    "aeco:cctvStudy:exclusionsCovered": {
+      "default": null,
+      "type": "relationship"
+    },
+    "aeco:cctvStudy:glazingTransparent": {
+      "default": "True",
+      "type": "bool"
+    },
+    "aeco:cctvStudy:includeUnphased": {
+      "default": "True",
+      "type": "bool"
+    },
+    "aeco:cctvStudy:inputHash": {
+      "default": "",
+      "type": "string"
+    },
+    "aeco:cctvStudy:levelSystem": {
+      "default": "dori2015",
+      "type": "token"
+    },
+    "aeco:cctvStudy:maxTargetDistance": {
+      "default": "0.0",
+      "type": "double"
+    },
+    "aeco:cctvStudy:mountHeightRange": {
+      "default": "(0, 0)",
+      "type": "double2"
+    },
+    "aeco:cctvStudy:night": {
+      "default": "False",
+      "type": "bool"
+    },
+    "aeco:cctvStudy:phases": {
+      "default": "[proposed, existing]",
+      "type": "token[]"
+    },
+    "aeco:cctvStudy:ptzPolicy": {
+      "default": "presetsNotSole",
+      "type": "token"
+    },
+    "aeco:cctvStudy:raySamples": {
+      "default": "(96, 54)",
+      "type": "int2"
+    },
+    "aeco:cctvStudy:requiredDensity": {
+      "default": "125.0",
+      "type": "double"
+    },
+    "aeco:cctvStudy:stamp": {
+      "default": "",
+      "type": "string"
+    },
+    "aeco:cctvStudy:unclassifiedInView": {
+      "default": null,
+      "type": "relationship"
+    },
+    "aeco:cctvStudy:unphasedInView": {
+      "default": null,
+      "type": "relationship"
+    },
+    "aeco:cctvStudy:writeShells": {
+      "default": "True",
+      "type": "bool"
+    }
+  },
+  "AecoCctvSystemAPI": {
+    "aeco:cctvSystem:recorderCapacity": {
+      "default": "0",
+      "type": "int"
+    },
+    "aeco:cctvSystem:retentionDays": {
+      "default": "0",
+      "type": "int"
+    }
+  },
+  "AecoCctvTargetAPI": {
+    "aeco:cctvTarget:gridSpacing": {
+      "default": "0.0",
+      "type": "double"
+    },
+    "aeco:cctvTarget:passFraction": {
+      "default": "0.0",
+      "type": "double"
+    },
+    "aeco:cctvTarget:points": {
+      "default": "[]",
+      "type": "double3[]"
+    },
+    "aeco:cctvTarget:requiredDensity": {
+      "default": "0.0",
+      "type": "double"
+    }
+  }
+}

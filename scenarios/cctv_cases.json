@@ -1,0 +1,876 @@
+{
+  "example": "examples/lobby.usda",
+  "root": "/CctvLobby/Site/Building/L0/Lobby",
+  "studyPath": "/CctvLobby/Analyses/DoorCoverage",
+  "cases": [
+    {
+      "id": "V-derive",
+      "title": "derive the lobby: 4 sensors get camera attributes, a transform, a sector and shells; the PTZ tour spans 0-384 tc",
+      "derive": true,
+      "expect": {
+        "derive": {
+          "sensors": 4
+        },
+        "prims": [
+          {
+            "prim": "Cam_1/Sensor_0",
+            "authored": [
+              "focalLength",
+              "horizontalAperture",
+              "verticalAperture",
+              "clippingRange",
+              "xformOp:transform",
+              "aeco:cctvSensor:hfov",
+              "aeco:cctvSensor:vfov"
+            ],
+            "children": [
+              "Sector"
+            ]
+          },
+          {
+            "prim": "Cam_4/Sensor_0",
+            "authored": [
+              "xformOp:transform"
+            ],
+            "children": [
+              "Sector",
+              "Envelope"
+            ],
+            "timeRange": [
+              "xformOp:transform",
+              [
+                0.0,
+                384.0
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "V-missing",
+      "title": "a study that has never been run reports cctvStudyMissingResults (info)",
+      "run": false,
+      "expect": {
+        "findings": [
+          [
+            "cctvStudyMissingResults",
+            "info",
+            "DoorCoverage"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "V-baseline",
+      "title": "door study with the example's defaults: every door identify, fixed coverage, no findings",
+      "expect": {
+        "findings": [],
+        "results": {
+          "Door_1": {
+            "level": "identify",
+            "fixedCoverage": true,
+            "dutyFraction": 1.0,
+            "fraction": 1.0,
+            "blockers": []
+          },
+          "Door_2": {
+            "level": "identify",
+            "fixedCoverage": true,
+            "dutyFraction": 1.0,
+            "fraction": 1.0,
+            "blockers": []
+          },
+          "Door_3": {
+            "level": "identify",
+            "fixedCoverage": true,
+            "dutyFraction": 1.0,
+            "fraction": 1.0
+          }
+        },
+        "shells": {
+          "Cam_1/Sensor_0": [
+            "Coverage"
+          ],
+          "Cam_4/Sensor_0": [
+            "Coverage_Home",
+            "Coverage_Door_1",
+            "Coverage_Door_3"
+          ]
+        }
+      }
+    },
+    {
+      "id": "V-temp-ignored",
+      "title": "a temporary hoarding across Cam_2's sightline to Door_2 changes nothing (phase filter)",
+      "setup": [
+        {
+          "op": "element",
+          "name": "Hoarding_T1",
+          "code": "IfcWall",
+          "size": [
+            2.0,
+            0.1,
+            2.4
+          ],
+          "centre": [
+            3.0,
+            1.2,
+            1.2
+          ],
+          "phase": "temporary"
+        }
+      ],
+      "expect": {
+        "findings": [],
+        "sameResultsAs": "V-baseline"
+      }
+    },
+    {
+      "id": "V-temp-counted",
+      "title": "phases += temporary: the hoarding counts and Door_2 is uncovered, the message names the hoarding",
+      "setup": [
+        {
+          "op": "element",
+          "name": "Hoarding_T1",
+          "code": "IfcWall",
+          "size": [
+            2.0,
+            0.1,
+            2.4
+          ],
+          "centre": [
+            3.0,
+            1.2,
+            1.2
+          ],
+          "phase": "temporary"
+        }
+      ],
+      "study": {
+        "aeco:cctvStudy:phases": [
+          "proposed",
+          "existing",
+          "temporary"
+        ]
+      },
+      "expect": {
+        "findings": [
+          [
+            "cctvTargetUncovered",
+            "error",
+            "Door_2"
+          ]
+        ],
+        "messageContains": {
+          "cctvTargetUncovered@Door_2": "Hoarding_T1"
+        },
+        "results": {
+          "Door_2": {
+            "level": "none",
+            "fixedCoverage": false,
+            "dutyFraction": 0.0,
+            "blockers": [
+              "Hoarding_T1"
+            ]
+          },
+          "Door_1": {
+            "level": "identify",
+            "fixedCoverage": true
+          }
+        }
+      }
+    },
+    {
+      "id": "V-unclassified",
+      "title": "a bare mesh in Cam_3's view: counted as an obstacle, cctvUnclassifiedInView, doors still covered, shell clipped",
+      "setup": [
+        {
+          "op": "mesh",
+          "name": "RandomCrate",
+          "size": [
+            0.8,
+            0.8,
+            0.8
+          ],
+          "centre": [
+            10.8,
+            2.8,
+            0.4
+          ]
+        }
+      ],
+      "expect": {
+        "findings": [
+          [
+            "cctvUnclassifiedInView",
+            "warn",
+            "RandomCrate"
+          ]
+        ],
+        "flags": {
+          "unclassified": [
+            "RandomCrate"
+          ],
+          "unphased": []
+        },
+        "results": {
+          "Door_1": {
+            "fixedCoverage": true
+          },
+          "Door_2": {
+            "fixedCoverage": true
+          },
+          "Door_3": {
+            "fixedCoverage": true
+          }
+        },
+        "shellClippedVersus": {
+          "case": "V-baseline",
+          "sensors": [
+            "Cam_3/Sensor_0"
+          ]
+        }
+      }
+    },
+    {
+      "id": "V-unphased",
+      "title": "an element with no authored phase in a view: obstacle plus cctvUnphasedInView",
+      "setup": [
+        {
+          "op": "element",
+          "name": "Crate_U",
+          "code": "IfcFurniture",
+          "size": [
+            0.8,
+            0.8,
+            0.8
+          ],
+          "centre": [
+            10.8,
+            2.8,
+            0.4
+          ],
+          "phase": null
+        }
+      ],
+      "expect": {
+        "findings": [
+          [
+            "cctvUnphasedInView",
+            "warn",
+            "Crate_U"
+          ]
+        ],
+        "flags": {
+          "unphased": [
+            "Crate_U"
+          ],
+          "unclassified": []
+        },
+        "results": {
+          "Door_1": {
+            "fixedCoverage": true
+          },
+          "Door_2": {
+            "fixedCoverage": true
+          },
+          "Door_3": {
+            "fixedCoverage": true
+          }
+        },
+        "shellClippedVersus": {
+          "case": "V-baseline",
+          "sensors": [
+            "Cam_3/Sensor_0"
+          ]
+        }
+      }
+    },
+    {
+      "id": "V-tray",
+      "title": "the cable tray drops 0.65 m into Cam_1's sightline: Door_1 is PTZ-only (warn; error under security), duty 0.375; incremental re-run",
+      "prerun": true,
+      "setup": [
+        {
+          "op": "translate",
+          "prim": "CableTray_1",
+          "value": [
+            0,
+            0,
+            -0.65
+          ]
+        }
+      ],
+      "expect": {
+        "findings": [
+          [
+            "cctvPtzSoleCoverage",
+            "warn",
+            "Door_1"
+          ],
+          [
+            "cctvTargetTooFar",
+            "warn",
+            "Door_1"
+          ]
+        ],
+        "messageContains": {
+          "cctvPtzSoleCoverage@Door_1": "CableTray_1"
+        },
+        "profiles": {
+          "security": [
+            [
+              "cctvPtzSoleCoverage",
+              "error",
+              "Door_1"
+            ],
+            [
+              "cctvTargetTooFar",
+              "error",
+              "Door_1"
+            ]
+          ]
+        },
+        "results": {
+          "Door_1": {
+            "level": "identify",
+            "fixedCoverage": false,
+            "dutyFraction": 0.375,
+            "blockers": [
+              "CableTray_1"
+            ]
+          },
+          "Door_2": {
+            "fixedCoverage": true
+          },
+          "Door_3": {
+            "fixedCoverage": true
+          }
+        },
+        "viewsReusedAtLeast": 1,
+        "viewsComputed": 5
+      }
+    },
+    {
+      "id": "V-stale",
+      "title": "an edit after the run without re-running: cctvStudyStale",
+      "after": [
+        {
+          "op": "translate",
+          "prim": "CableTray_1",
+          "value": [
+            0,
+            0,
+            -0.2
+          ]
+        }
+      ],
+      "expect": {
+        "findings": [
+          [
+            "cctvStudyStale",
+            "warn",
+            "DoorCoverage"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "V-exclusion",
+      "title": "a data-hall space in exclusions with a camera looking in: cctvExclusionCovered",
+      "setup": [
+        {
+          "op": "space",
+          "name": "DataHall",
+          "parent": ".."
+        },
+        {
+          "op": "apply",
+          "prim": "../DataHall",
+          "api": "AecoCctvTargetAPI"
+        },
+        {
+          "op": "set",
+          "prim": "../DataHall",
+          "attr": "aeco:cctvTarget:points",
+          "value": [
+            [
+              9.0,
+              1.5,
+              1.5
+            ]
+          ]
+        },
+        {
+          "op": "collection",
+          "prim": "/CctvLobby/Analyses/DoorCoverage",
+          "name": "exclusions",
+          "targets": [
+            "../DataHall"
+          ]
+        }
+      ],
+      "expect": {
+        "findings": [
+          [
+            "cctvExclusionCovered",
+            "error",
+            "DataHall"
+          ]
+        ],
+        "flags": {
+          "exclusionsCovered": [
+            "DataHall"
+          ]
+        },
+        "results": {
+          "Door_1": {
+            "fixedCoverage": true
+          },
+          "Door_2": {
+            "fixedCoverage": true
+          },
+          "Door_3": {
+            "fixedCoverage": true
+          }
+        }
+      }
+    },
+    {
+      "id": "V-too-far",
+      "title": "maxTargetDistance 3 m with Cam_3 moved 1 m back from Door_3: cctvTargetTooFar",
+      "setup": [
+        {
+          "op": "translate",
+          "prim": "Cam_3",
+          "value": [
+            -1.0,
+            0,
+            0
+          ]
+        }
+      ],
+      "study": {
+        "aeco:cctvStudy:maxTargetDistance": 3.0
+      },
+      "expect": {
+        "findings": [
+          [
+            "cctvTargetTooFar",
+            "warn",
+            "Door_3"
+          ]
+        ],
+        "results": {
+          "Door_3": {
+            "level": "identify",
+            "fixedCoverage": true,
+            "nearestViewDistance": 3.79
+          }
+        }
+      }
+    },
+    {
+      "id": "V-night",
+      "title": "night mode with IR reach shorter than every door distance (2.5 m domes, 5 m PTZ): every door drops to none",
+      "setup": [
+        {
+          "op": "set",
+          "prim": "/_TypeCatalog/Dome_P3277",
+          "attr": "aeco:cctvType:irRange",
+          "value": 2.5
+        },
+        {
+          "op": "set",
+          "prim": "/_TypeCatalog/Ptz_Q6088",
+          "attr": "aeco:cctvType:irRange",
+          "value": 5.0
+        }
+      ],
+      "study": {
+        "aeco:cctvStudy:night": true
+      },
+      "expect": {
+        "findings": [
+          [
+            "cctvTargetUncovered",
+            "error",
+            "Door_1"
+          ],
+          [
+            "cctvTargetUncovered",
+            "error",
+            "Door_2"
+          ],
+          [
+            "cctvTargetUncovered",
+            "error",
+            "Door_3"
+          ]
+        ],
+        "results": {
+          "Door_1": {
+            "level": "none"
+          },
+          "Door_2": {
+            "level": "none"
+          },
+          "Door_3": {
+            "level": "none"
+          }
+        }
+      }
+    },
+    {
+      "id": "V-policy",
+      "title": "ptzPolicy = presets on the tray case: no PTZ finding, Door_1 identify from the preset",
+      "setup": [
+        {
+          "op": "translate",
+          "prim": "CableTray_1",
+          "value": [
+            0,
+            0,
+            -0.65
+          ]
+        }
+      ],
+      "study": {
+        "aeco:cctvStudy:ptzPolicy": "presets"
+      },
+      "expect": {
+        "findings": [
+          [
+            "cctvTargetTooFar",
+            "warn",
+            "Door_1"
+          ]
+        ],
+        "results": {
+          "Door_1": {
+            "level": "identify",
+            "fixedCoverage": false,
+            "dutyFraction": 0.375
+          }
+        }
+      }
+    },
+    {
+      "id": "V-radar",
+      "title": "a radar head (pixels 0,0) and a study requiring density 0: the gate it sees is covered at the ladder's floor level",
+      "setup": [
+        {
+          "op": "space",
+          "name": "Yard",
+          "parent": ".."
+        },
+        {
+          "op": "element",
+          "name": "Radar_1",
+          "code": "IfcAudioVisualAppliance.CAMERA",
+          "phase": "proposed",
+          "position": [
+            24.0,
+            4.0,
+            3.0
+          ],
+          "size": [
+            0.2,
+            0.2,
+            0.1
+          ],
+          "centre": [
+            0,
+            0,
+            -0.05
+          ],
+          "parent": "../Yard"
+        },
+        {
+          "op": "apply",
+          "prim": "../Yard/Radar_1",
+          "api": "AecoCctvCameraAPI"
+        },
+        {
+          "op": "set",
+          "prim": "../Yard/Radar_1",
+          "attr": "aeco:cctv:mount",
+          "value": "pole"
+        },
+        {
+          "op": "sensor",
+          "prim": "../Yard/Radar_1",
+          "attrs": {
+            "spectrum": "radar",
+            "pixels": [
+              0,
+              0
+            ],
+            "hfovRange": [
+              120,
+              120
+            ],
+            "vfovRange": [
+              40,
+              40
+            ],
+            "range": 20.0,
+            "pan": 0.0,
+            "tilt": 20.0
+          }
+        },
+        {
+          "op": "element",
+          "name": "Gate_1",
+          "code": "IfcDoor",
+          "phase": "existing",
+          "position": [
+            26.0,
+            4.0,
+            0.0
+          ],
+          "size": [
+            0.05,
+            1.0,
+            2.1
+          ],
+          "centre": [
+            0,
+            0,
+            1.05
+          ],
+          "parent": "../Yard"
+        },
+        {
+          "op": "collection",
+          "prim": "/CctvLobby/Analyses/DoorCoverage",
+          "name": "targets",
+          "targets": [
+            "Door_1",
+            "Door_2",
+            "Door_3",
+            "../Yard/Gate_1"
+          ]
+        }
+      ],
+      "study": {
+        "aeco:cctvStudy:requiredDensity": 0.0
+      },
+      "expect": {
+        "findings": [],
+        "results": {
+          "Gate_1": {
+            "level": "detect",
+            "density": 0.0,
+            "fixedCoverage": true,
+            "views": [
+              "Radar_1"
+            ]
+          },
+          "Door_1": {
+            "level": "identify",
+            "fixedCoverage": true
+          }
+        }
+      }
+    },
+    {
+      "id": "V-envelope",
+      "title": "ptzPolicy = envelope: the reach is sampled at 15 degree steps, a Coverage_Envelope shell is written and the reach counts",
+      "study": {
+        "aeco:cctvStudy:ptzPolicy": "envelope"
+      },
+      "expect": {
+        "findings": [],
+        "shells": {
+          "Cam_4/Sensor_0": [
+            "Coverage_Envelope"
+          ]
+        },
+        "results": {
+          "Door_1": {
+            "level": "identify",
+            "fixedCoverage": true,
+            "views": [
+              "Cam_1",
+              "Cam_4"
+            ]
+          },
+          "Door_3": {
+            "fixedCoverage": true,
+            "views": [
+              "Cam_3"
+            ],
+            "blockers": [
+              "Column"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "V-local-edit",
+      "title": "a local 0.8 m tray segment invalidates two views; four cached views survive",
+      "before": [
+        {
+          "op": "box",
+          "prim": "CableTray_1/Body",
+          "size": [
+            0.8,
+            0.3,
+            0.1
+          ],
+          "centre": [
+            3,
+            6.5,
+            3.25
+          ]
+        }
+      ],
+      "prerun": true,
+      "setup": [
+        {
+          "op": "translate",
+          "prim": "CableTray_1",
+          "value": [
+            0,
+            0,
+            -0.65
+          ]
+        }
+      ],
+      "expect": {
+        "findings": [],
+        "viewsComputed": 2,
+        "viewsReusedAtLeast": 4
+      }
+    },
+    {
+      "id": "V-phase-provider",
+      "title": "Demolished sole fixed provider cannot cover Door_1",
+      "study": {
+        "aeco:cctvStudy:ptzPolicy": "ignore"
+      },
+      "setup": [
+        {
+          "op": "set",
+          "prim": "Cam_1",
+          "attr": "aeco:phase",
+          "value": "demolished"
+        }
+      ],
+      "expect": {
+        "findings": [
+          [
+            "cctvTargetUncovered",
+            "error",
+            "Door_1"
+          ]
+        ],
+        "results": {
+          "Door_1": {
+            "fixedCoverage": false,
+            "views": []
+          }
+        }
+      }
+    },
+    {
+      "id": "V-phase-target",
+      "title": "Demolished target is outside the active target set",
+      "setup": [
+        {
+          "op": "set",
+          "prim": "Door_1",
+          "attr": "aeco:phase",
+          "value": "demolished"
+        }
+      ],
+      "expect": {
+        "findings": [],
+        "absentResults": [
+          "Door_1"
+        ]
+      }
+    },
+    {
+      "id": "V-results-incomplete",
+      "title": "Missing duplicate inactive or invalid results fail security grading",
+      "probe": true,
+      "expect": {}
+    },
+    {
+      "id": "V-two-studies",
+      "title": "Study results and shells are independent of composition order",
+      "probe": true,
+      "expect": {}
+    },
+    {
+      "id": "V-output-alias",
+      "title": "Aliases and publication failures preserve inputs and prior outputs",
+      "probe": true,
+      "expect": {}
+    },
+    {
+      "id": "V-hole",
+      "title": "Every hole face is excluded on the selected kernel",
+      "probe": true,
+      "expect": {}
+    },
+    {
+      "id": "V-concave",
+      "title": "A ray through a U-shaped notch misses",
+      "probe": true,
+      "expect": {}
+    },
+    {
+      "id": "V-malformed-mesh",
+      "title": "Invalid arrays self intersections and degeneracy are named refusals",
+      "probe": true,
+      "expect": {}
+    },
+    {
+      "id": "V-stale-matrix",
+      "title": "All effective inputs and algorithm changes are stale; no-op is stable",
+      "probe": true,
+      "expect": {}
+    },
+    {
+      "id": "V-camera-no-optics",
+      "title": "Missing source optics fail at import",
+      "probe": true,
+      "expect": {}
+    },
+    {
+      "id": "V-av-not-camera",
+      "title": "Non-CAMERA audiovisual appliances are ignored",
+      "probe": true,
+      "expect": {}
+    },
+    {
+      "id": "V-fixed-varifocal",
+      "title": "Explicit PTZ false remains fixed coverage",
+      "probe": true,
+      "expect": {}
+    },
+    {
+      "id": "V-exchange-units",
+      "title": "Both contract tiers in four unit combinations retain drivers and presets",
+      "probe": true,
+      "expect": {}
+    },
+    {
+      "id": "V-extent-target",
+      "title": "Converter-shaped guide extent supplies samples and never occludes",
+      "probe": true,
+      "expect": {}
+    },
+    {
+      "id": "V-enclosed-samples",
+      "title": "Opaque-body samples are counted and excluded; legacy behavior remains selectable",
+      "probe": true,
+      "expect": {}
+    }
+  ]
+}

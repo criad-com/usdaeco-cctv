@@ -1,0 +1,72 @@
+{
+  "archived_source_composition_errors": 0,
+  "archived_source_prims": 12269,
+  "changed_result_lines": {
+    "examples/datacentre/result/layers/out/source.usda": 1
+  },
+  "layouts": [
+    {
+      "checks": 159,
+      "failed": 0,
+      "layout": "original",
+      "not_run": 0,
+      "pytest_passed": 332,
+      "pytest_skipped": 5,
+      "result_stale": "PASS",
+      "structure_failed": 0,
+      "structure_passed": 29
+    },
+    {
+      "checks": 159,
+      "failed": 0,
+      "layout": "relocated",
+      "not_run": 0,
+      "pytest_passed": 332,
+      "pytest_skipped": 5,
+      "result_stale": "PASS",
+      "structure_failed": 0,
+      "structure_passed": 29
+    }
+  ],
+  "nix": {
+    "attempts": 1,
+    "reason": "Nix rejected a symlinked ancestor of temporary local input overrides.",
+    "status": "NOT PROVEN"
+  },
+  "pins": {
+    "core": {
+      "library": "usdAeco",
+      "ref": "v0.9.2",
+      "repo": "usdaeco-core"
+    },
+    "datacentre": {
+      "library": null,
+      "ref": "v0.4.5",
+      "repo": "usdaeco-datacentre"
+    },
+    "ifc": {
+      "library": null,
+      "ref": "v0.2.0",
+      "repo": "usdaeco-ifc"
+    },
+    "toolchain": {
+      "library": null,
+      "ref": "v0.3.6",
+      "repo": "usdaeco-toolchain"
+    }
+  },
+  "published_prims": 12680,
+  "result_bytes": 7935090,
+  "result_files": 18,
+  "s29_asset_paths": 11,
+  "s29_without_alias": "PASS",
+  "source_alias_retargeted": true,
+  "unchanged_artifact_sha256": {
+    "examples/datacentre/renders/lookthrough.png": "79a278738e4dbcb541f83b689664b8f3e6072313f32ac2c7b0f904c744395719",
+    "examples/datacentre/renders/overview.png": "50656c3df8073d29af88ca3833b509563d5797818c71d3c46b2e7993ba148010",
+    "examples/datacentre/result/example.usdc": "c53a4cfa5698c8708f24421efb89d1176f82d104489afd768293a97ef6bc68fc",
+    "examples/datacentre/result/vanilla.png": "ee913cdac3fab65d449f1ea09a8920554c139496df8bd0b69db0525e01115aa8",
+    "usdAecoCctv/userDoc/usdAecoCctvExample.png": "2d1722bce8f906ac0dd80086248c43b1a4f748b5570e546f41b6690fdeb62b4d"
+  },
+  "version": "0.5.4"
+}

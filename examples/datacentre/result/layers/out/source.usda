@@ -1,0 +1,24 @@
+#usda 1.0
+(
+    defaultPrim = "demo_datacentre_01"
+    endTimeCode = 0
+    fallbackPrimTypes = {
+        token[] AecoFacility = ["Xform"]
+        token[] AecoFacilityPart = ["Xform"]
+        token[] AecoLevel = ["Xform"]
+        token[] AecoPort = ["Xform"]
+        token[] AecoSite = ["Xform"]
+        token[] AecoSpace = ["Xform"]
+        token[] AecoSystem = ["Scope"]
+        token[] AecoZone = ["Scope"]
+    }
+    metersPerUnit = 1
+    startTimeCode = 0
+    subLayers = [
+        @../inputs/cameras.usda@,
+        @../../../inputs/source/dist/base/dc.usda@
+    ]
+    timeCodesPerSecond = 24
+    upAxis = "Z"
+)
+

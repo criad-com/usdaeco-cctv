@@ -1,0 +1,3 @@
+plugins/**/generatedSchema.usda whitespace=-blank-at-eof
+examples/*.usda whitespace=-blank-at-eof
+examples/datacentre/result/layers/**/*.usda whitespace=-blank-at-eof

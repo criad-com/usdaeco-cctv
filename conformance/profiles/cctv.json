@@ -1,0 +1,33 @@
+{
+  "name": "cctv",
+  "description": "Default severities for the shipped cctv validators.",
+  "include_builtin": true,
+  "severity_overrides": {
+    "cctvKindMismatch": "warn",
+    "cctvSensorMissing": "error",
+    "cctvSensorOrphan": "warn",
+    "cctvOutOfEnvelope": "error",
+    "cctvNativeCameraAuthored": "warn",
+    "cctvDerivedMismatch": "warn",
+    "cctvMountFrame": "warn",
+    "cctvSystemCapacity": "warn",
+    "cctvStudyMissingResults": "info",
+    "cctvStudyStale": "warn",
+    "cctvTargetUncovered": "error",
+    "cctvPtzSoleCoverage": "warn",
+    "cctvTargetTooFar": "warn",
+    "cctvExclusionCovered": "error",
+    "cctvUnphasedInView": "warn",
+    "cctvUnclassifiedInView": "warn",
+    "cctvUnphasedProvider": "warn",
+    "cctvStudyIncomplete": "warn",
+    "cctvUnsupportedTopology": "error",
+    "cctvMissingOptics": "error",
+    "cctvInvalidSampling": "error",
+    "cctvUnsupportedProjection": "error",
+    "cctvTargetMostlyEnclosed": "warn"
+  },
+  "keywords": [
+    "UsdAecoCctvValidators"
+  ]
+}

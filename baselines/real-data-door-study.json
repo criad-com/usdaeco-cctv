@@ -1,0 +1,117 @@
+{
+  "cameras": 457,
+  "conversion": {
+    "architecture": {
+      "blankHeadingsOmitted": 8,
+      "elements": 28906,
+      "ifc4FacilityAdapted": 1,
+      "meshes": 28845,
+      "portLinks": 0,
+      "ports": 60,
+      "seconds": 97.845,
+      "spatial": 491,
+      "systems": 29,
+      "types": 1898,
+      "unclassified": 3599,
+      "unparented": 22662,
+      "zones": 0
+    },
+    "security": {
+      "blankHeadingsOmitted": 100,
+      "elements": 950,
+      "ifc4FacilityAdapted": 1,
+      "meshes": 950,
+      "portLinks": 0,
+      "ports": 457,
+      "seconds": 24.319,
+      "spatial": 11,
+      "systems": 0,
+      "types": 181,
+      "unclassified": 950,
+      "unparented": 0,
+      "zones": 0
+    }
+  },
+  "deriveSeconds": 1.512,
+  "derivedSensors": 469,
+  "derivedSkipped": 0,
+  "hostParityWithinTolerance": 1,
+  "inputsUnchanged": 1,
+  "parity": {
+    "cobieAngles": 0,
+    "halfAngleFailures": 0,
+    "halfAngleRadians": {
+      "count": 469,
+      "max": 3.720393064542541e-16,
+      "min": 0.0,
+      "missing": 0
+    },
+    "hostRadiusFailures": 0,
+    "hostRadiusMetres": {
+      "count": 2345,
+      "max": 6.394884621840902e-14,
+      "min": 0.0,
+      "missing": 0
+    },
+    "ifcFallbackAngles": 469,
+    "standardRadiusFailures": 26,
+    "standardRadiusMetres": {
+      "count": 2345,
+      "max": 0.4067454257197127,
+      "min": 0.0,
+      "missing": 0
+    }
+  },
+  "presets": 8,
+  "promotionSeconds": 13.323,
+  "propsBlocked": 10792,
+  "scenariosSupplemented": 0,
+  "sensors": 469,
+  "sharedLevels": 9,
+  "study": {
+    "cameras": 176,
+    "kernelEmbree": 1,
+    "levels": [
+      {
+        "cameras": 8,
+        "covered": 2,
+        "targets": 30,
+        "uncovered": 28
+      },
+      {
+        "cameras": 8,
+        "covered": 5,
+        "targets": 28,
+        "uncovered": 23
+      },
+      {
+        "cameras": 96,
+        "covered": 32,
+        "targets": 177,
+        "uncovered": 145
+      },
+      {
+        "cameras": 53,
+        "covered": 26,
+        "targets": 120,
+        "uncovered": 94
+      },
+      {
+        "cameras": 11,
+        "covered": 2,
+        "targets": 9,
+        "uncovered": 7
+      }
+    ],
+    "rays": 912384,
+    "seconds": 110.663,
+    "skipped": 0,
+    "targets": 364,
+    "triangles": 3274934,
+    "views": 176
+  },
+  "studyWithin60Seconds": 0,
+  "subInstancesFolded": 469,
+  "types": 108,
+  "unmatched": 0
+}

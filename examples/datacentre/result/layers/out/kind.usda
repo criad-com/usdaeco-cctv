@@ -1,0 +1,1514 @@
+#usda 1.0
+(
+    customLayerData = {
+        string "aeco:library" = "usdAecoCctv"
+        string "aeco:version" = "0.5.3"
+    }
+    defaultPrim = "demo_datacentre_01"
+    fallbackPrimTypes = {
+        token[] AecoFacility = ["Xform"]
+        token[] AecoFacilityPart = ["Xform"]
+        token[] AecoLevel = ["Xform"]
+        token[] AecoPort = ["Xform"]
+        token[] AecoSite = ["Xform"]
+        token[] AecoSpace = ["Xform"]
+        token[] AecoSystem = ["Scope"]
+        token[] AecoZone = ["Scope"]
+    }
+    metersPerUnit = 1
+    subLayers = [
+        @source.usda@
+    ]
+    upAxis = "Z"
+)
+
+over "demo_datacentre_01"
+{
+    over "demo_datacentre_01_Site"
+    {
+        over "demo_datacentre_01"
+        {
+            over "L00_Ground"
+            {
+                over "Entrance_Lobby"
+                {
+                    over "sec_cam_lobby" (
+                        prepend apiSchemas = ["AecoCctvCameraAPI"]
+                    )
+                    {
+                        uniform token aeco:cctv:mount = "corner"
+                        uniform token aeco:cctv:scenario = "lobby"
+                        bool aeco:cctvType:outdoor = 1
+                        custom string aeco:props:Pset_AecoCctv:Contract = None
+                        custom string aeco:props:Pset_AecoCctv:Drivers = None
+                        custom string aeco:props:Pset_AecoCctv:Sensors = None
+                        custom string aeco:props:Pset_AecoCctv:Type = None
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = None
+
+                        over "Sensor_0" (
+                            prepend apiSchemas = ["AecoCctvPresetAPI:Home", "AecoCctvPresetAPI:LobbyCorridor", "AecoCctvPresetAPI:MainDoor"]
+                        )
+                        {
+                            double aeco:cctvPreset:Home:dwell = 4
+                            double aeco:cctvPreset:Home:focalLength = 6.64
+                            bool aeco:cctvPreset:Home:home = 1
+                            double aeco:cctvPreset:Home:pan = -57.9946167919165
+                            double aeco:cctvPreset:Home:tilt = 19.819126090246726
+                            double aeco:cctvPreset:LobbyCorridor:dwell = 4
+                            double aeco:cctvPreset:LobbyCorridor:focalLength = 6.64
+                            bool aeco:cctvPreset:LobbyCorridor:home = 0
+                            double aeco:cctvPreset:LobbyCorridor:pan = 7.125016348901798
+                            double aeco:cctvPreset:LobbyCorridor:tilt = 22.8660331751519
+                            double aeco:cctvPreset:MainDoor:dwell = 4
+                            double aeco:cctvPreset:MainDoor:focalLength = 6.64
+                            bool aeco:cctvPreset:MainDoor:home = 0
+                            double aeco:cctvPreset:MainDoor:pan = -73.61045966596522
+                            double aeco:cctvPreset:MainDoor:tilt = 10.86151286096632
+                            double aeco:cctvSensor:focalLength = 6.64
+                            double aeco:cctvSensor:pan = -57.9946167919165
+                            double aeco:cctvSensor:range = 20
+                            double aeco:cctvSensor:roll = 0
+                            double aeco:cctvSensor:targetDensity = 250
+                            double aeco:cctvSensor:tilt = 19.819126090246726
+                            uniform token[] aeco:cctvSensor:tour = ["Home", "MainDoor", "LobbyCorridor"]
+                        }
+                    }
+
+                    over "sec_cam_lobby_fixed_1" (
+                        prepend apiSchemas = ["AecoCctvCameraAPI"]
+                    )
+                    {
+                        uniform token aeco:cctv:mount = "corner"
+                        uniform token aeco:cctv:scenario = "lobby"
+                        bool aeco:cctvType:outdoor = 0
+                        custom string aeco:props:Pset_AecoCctv:Contract = None
+                        custom string aeco:props:Pset_AecoCctv:Drivers = None
+                        custom string aeco:props:Pset_AecoCctv:Sensors = None
+                        custom string aeco:props:Pset_AecoCctv:Type = None
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = None
+
+                        over "Sensor_0"
+                        {
+                            double aeco:cctvSensor:focalLength = 4
+                            double aeco:cctvSensor:pan = 57.264773727892404
+                            double aeco:cctvSensor:range = 14
+                            double aeco:cctvSensor:roll = 0
+                            double aeco:cctvSensor:targetDensity = 250
+                            double aeco:cctvSensor:tilt = 25
+                            uniform token[] aeco:cctvSensor:tour = []
+                        }
+                    }
+
+                    over "sec_cam_lobby_fixed_2" (
+                        prepend apiSchemas = ["AecoCctvCameraAPI"]
+                    )
+                    {
+                        uniform token aeco:cctv:mount = "corner"
+                        uniform token aeco:cctv:scenario = "lobby"
+                        custom string aeco:props:Pset_AecoCctv:Contract = None
+                        custom string aeco:props:Pset_AecoCctv:Drivers = None
+                        custom string aeco:props:Pset_AecoCctv:Sensors = None
+                        custom string aeco:props:Pset_AecoCctv:Type = None
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = None
+
+                        over "Sensor_0"
+                        {
+                            double aeco:cctvSensor:focalLength = 4
+                            double aeco:cctvSensor:pan = -122.7352262721076
+                            double aeco:cctvSensor:range = 14
+                            double aeco:cctvSensor:roll = 0
+                            double aeco:cctvSensor:targetDensity = 250
+                            double aeco:cctvSensor:tilt = 25
+                            uniform token[] aeco:cctvSensor:tour = []
+                        }
+                    }
+                }
+
+                over "Office_Corridor_L00"
+                {
+                    over "sec_cam_corr_ocorr_0_1" (
+                        prepend apiSchemas = ["AecoCctvCameraAPI"]
+                    )
+                    {
+                        uniform token aeco:cctv:mount = "pendant"
+                        uniform token aeco:cctv:scenario = "corridor"
+                        custom string aeco:props:Pset_AecoCctv:Contract = None
+                        custom string aeco:props:Pset_AecoCctv:Drivers = None
+                        custom string aeco:props:Pset_AecoCctv:Sensors = None
+                        custom string aeco:props:Pset_AecoCctv:Type = None
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = None
+
+                        over "Sensor_0"
+                        {
+                            double aeco:cctvSensor:focalLength = 3
+                            double aeco:cctvSensor:pan = 90
+                            double aeco:cctvSensor:range = 24
+                            double aeco:cctvSensor:roll = 0
+                            double aeco:cctvSensor:targetDensity = 250
+                            double aeco:cctvSensor:tilt = 60
+                            uniform token[] aeco:cctvSensor:tour = []
+                        }
+                    }
+
+                    over "sec_cam_corr_ocorr_0_2" (
+                        prepend apiSchemas = ["AecoCctvCameraAPI"]
+                    )
+                    {
+                        uniform token aeco:cctv:mount = "pendant"
+                        uniform token aeco:cctv:scenario = "corridor"
+                        custom string aeco:props:Pset_AecoCctv:Contract = None
+                        custom string aeco:props:Pset_AecoCctv:Drivers = None
+                        custom string aeco:props:Pset_AecoCctv:Sensors = None
+                        custom string aeco:props:Pset_AecoCctv:Type = None
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = None
+
+                        over "Sensor_0"
+                        {
+                            double aeco:cctvSensor:focalLength = 3
+                            double aeco:cctvSensor:pan = 270
+                            double aeco:cctvSensor:range = 24
+                            double aeco:cctvSensor:roll = 0
+                            double aeco:cctvSensor:targetDensity = 250
+                            double aeco:cctvSensor:tilt = 60
+                            uniform token[] aeco:cctvSensor:tour = []
+                        }
+                    }
+                }
+
+                over "Corridor_Centre"
+                {
+                    over "sec_cam_door_hall_b_w" (
+                        prepend apiSchemas = ["AecoCctvCameraAPI"]
+                    )
+                    {
+                        uniform token aeco:cctv:mount = "pendant"
+                        uniform token aeco:cctv:scenario = "door"
+                        custom string aeco:props:Pset_AecoCctv:Contract = None
+                        custom string aeco:props:Pset_AecoCctv:Drivers = None
+                        custom string aeco:props:Pset_AecoCctv:Sensors = None
+                        custom string aeco:props:Pset_AecoCctv:Type = None
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = None
+
+                        over "Sensor_0"
+                        {
+                            double aeco:cctvSensor:focalLength = 3
+                            double aeco:cctvSensor:pan = 34.695153531233984
+                            double aeco:cctvSensor:range = 12
+                            double aeco:cctvSensor:roll = 0
+                            double aeco:cctvSensor:targetDensity = 250
+                            double aeco:cctvSensor:tilt = 60
+                            uniform token[] aeco:cctvSensor:tour = []
+                        }
+                    }
+
+                    over "sec_cam_corr_corr_c_2" (
+                        prepend apiSchemas = ["AecoCctvCameraAPI"]
+                    )
+                    {
+                        uniform token aeco:cctv:mount = "pendant"
+                        uniform token aeco:cctv:scenario = "corridor"
+                        custom string aeco:props:Pset_AecoCctv:Contract = None
+                        custom string aeco:props:Pset_AecoCctv:Drivers = None
+                        custom string aeco:props:Pset_AecoCctv:Sensors = None
+                        custom string aeco:props:Pset_AecoCctv:Type = None
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = None
+
+                        over "Sensor_0"
+                        {
+                            double aeco:cctvSensor:focalLength = 4
+                            double aeco:cctvSensor:pan = 270
+                            double aeco:cctvSensor:range = 24
+                            double aeco:cctvSensor:roll = 0
+                            double aeco:cctvSensor:targetDensity = 250
+                            double aeco:cctvSensor:tilt = 15
+                            uniform token[] aeco:cctvSensor:tour = []
+                        }
+                    }
+
+                    over "sec_cam_door_hall_a_e" (
+                        prepend apiSchemas = ["AecoCctvCameraAPI"]
+                    )
+                    {
+                        uniform token aeco:cctv:mount = "pendant"
+                        uniform token aeco:cctv:scenario = "door"
+                        custom string aeco:props:Pset_AecoCctv:Contract = None
+                        custom string aeco:props:Pset_AecoCctv:Drivers = None
+                        custom string aeco:props:Pset_AecoCctv:Sensors = None
+                        custom string aeco:props:Pset_AecoCctv:Type = None
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = None
+
+                        over "Sensor_0"
+                        {
+                            double aeco:cctvSensor:focalLength = 3
+                            double aeco:cctvSensor:pan = -145.30484646876602
+                            double aeco:cctvSensor:range = 12
+                            double aeco:cctvSensor:roll = 0
+                            double aeco:cctvSensor:targetDensity = 250
+                            double aeco:cctvSensor:tilt = 60
+                            uniform token[] aeco:cctvSensor:tour = []
+                        }
+                    }
+
+                    over "sec_cam_corr_corr_c_1" (
+                        prepend apiSchemas = ["AecoCctvCameraAPI"]
+                    )
+                    {
+                        uniform token aeco:cctv:mount = "pendant"
+                        uniform token aeco:cctv:scenario = "corridor"
+                        custom string aeco:props:Pset_AecoCctv:Contract = None
+                        custom string aeco:props:Pset_AecoCctv:Drivers = None
+                        custom string aeco:props:Pset_AecoCctv:Sensors = None
+                        custom string aeco:props:Pset_AecoCctv:Type = None
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = None
+
+                        over "Sensor_0"
+                        {
+                            double aeco:cctvSensor:focalLength = 4
+                            double aeco:cctvSensor:pan = 90
+                            double aeco:cctvSensor:range = 24
+                            double aeco:cctvSensor:roll = 0
+                            double aeco:cctvSensor:targetDensity = 250
+                            double aeco:cctvSensor:tilt = 15
+                            uniform token[] aeco:cctvSensor:tour = []
+                        }
+                    }
+                }
+
+                over "Corridor_East"
+                {
+                    over "sec_cam_corr_corr_e_2" (
+                        prepend apiSchemas = ["AecoCctvCameraAPI"]
+                    )
+                    {
+                        uniform token aeco:cctv:mount = "pendant"
+                        uniform token aeco:cctv:scenario = "corridor"
+                        custom string aeco:props:Pset_AecoCctv:Contract = None
+                        custom string aeco:props:Pset_AecoCctv:Drivers = None
+                        custom string aeco:props:Pset_AecoCctv:Sensors = None
+                        custom string aeco:props:Pset_AecoCctv:Type = None
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = None
+
+                        over "Sensor_0"
+                        {
+                            double aeco:cctvSensor:focalLength = 4
+                            double aeco:cctvSensor:pan = 270
+                            double aeco:cctvSensor:range = 24
+                            double aeco:cctvSensor:roll = 0
+                            double aeco:cctvSensor:targetDensity = 250
+                            double aeco:cctvSensor:tilt = 15
+                            uniform token[] aeco:cctvSensor:tour = []
+                        }
+                    }
+
+                    over "sec_cam_corr_corr_e_1" (
+                        prepend apiSchemas = ["AecoCctvCameraAPI"]
+                    )
+                    {
+                        uniform token aeco:cctv:mount = "pendant"
+                        uniform token aeco:cctv:scenario = "corridor"
+                        custom string aeco:props:Pset_AecoCctv:Contract = None
+                        custom string aeco:props:Pset_AecoCctv:Drivers = None
+                        custom string aeco:props:Pset_AecoCctv:Sensors = None
+                        custom string aeco:props:Pset_AecoCctv:Type = None
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = None
+
+                        over "Sensor_0"
+                        {
+                            double aeco:cctvSensor:focalLength = 4
+                            double aeco:cctvSensor:pan = 90
+                            double aeco:cctvSensor:range = 24
+                            double aeco:cctvSensor:roll = 0
+                            double aeco:cctvSensor:targetDensity = 250
+                            double aeco:cctvSensor:tilt = 15
+                            uniform token[] aeco:cctvSensor:tour = []
+                        }
+                    }
+
+                    over "sec_cam_door_hall_b_e" (
+                        prepend apiSchemas = ["AecoCctvCameraAPI"]
+                    )
+                    {
+                        uniform token aeco:cctv:mount = "pendant"
+                        uniform token aeco:cctv:scenario = "door"
+                        custom string aeco:props:Pset_AecoCctv:Contract = None
+                        custom string aeco:props:Pset_AecoCctv:Drivers = None
+                        custom string aeco:props:Pset_AecoCctv:Sensors = None
+                        custom string aeco:props:Pset_AecoCctv:Type = None
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = None
+
+                        over "Sensor_0"
+                        {
+                            double aeco:cctvSensor:focalLength = 3
+                            double aeco:cctvSensor:pan = -145.3048464687663
+                            double aeco:cctvSensor:range = 12
+                            double aeco:cctvSensor:roll = 0
+                            double aeco:cctvSensor:targetDensity = 250
+                            double aeco:cctvSensor:tilt = 60
+                            uniform token[] aeco:cctvSensor:tour = []
+                        }
+                    }
+                }
+
+                over "Corridor_Spine"
+                {
+                    over "sec_cam_corr_corr_spine_6" (
+                        prepend apiSchemas = ["AecoCctvCameraAPI"]
+                    )
+                    {
+                        uniform token aeco:cctv:mount = "pendant"
+                        uniform token aeco:cctv:scenario = "corridor"
+                        custom string aeco:props:Pset_AecoCctv:Contract = None
+                        custom string aeco:props:Pset_AecoCctv:Drivers = None
+                        custom string aeco:props:Pset_AecoCctv:Sensors = None
+                        custom string aeco:props:Pset_AecoCctv:Type = None
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = None
+
+                        over "Sensor_0"
+                        {
+                            double aeco:cctvSensor:focalLength = 4
+                            double aeco:cctvSensor:pan = 180
+                            double aeco:cctvSensor:range = 24
+                            double aeco:cctvSensor:roll = 0
+                            double aeco:cctvSensor:targetDensity = 250
+                            double aeco:cctvSensor:tilt = 15
+                            uniform token[] aeco:cctvSensor:tour = []
+                        }
+                    }
+
+                    over "sec_cam_corr_corr_spine_4" (
+                        prepend apiSchemas = ["AecoCctvCameraAPI"]
+                    )
+                    {
+                        uniform token aeco:cctv:mount = "pendant"
+                        uniform token aeco:cctv:scenario = "corridor"
+                        custom string aeco:props:Pset_AecoCctv:Contract = None
+                        custom string aeco:props:Pset_AecoCctv:Drivers = None
+                        custom string aeco:props:Pset_AecoCctv:Sensors = None
+                        custom string aeco:props:Pset_AecoCctv:Type = None
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = None
+
+                        over "Sensor_0"
+                        {
+                            double aeco:cctvSensor:focalLength = 4
+                            double aeco:cctvSensor:pan = 180
+                            double aeco:cctvSensor:range = 24
+                            double aeco:cctvSensor:roll = 0
+                            double aeco:cctvSensor:targetDensity = 250
+                            double aeco:cctvSensor:tilt = 15
+                            uniform token[] aeco:cctvSensor:tour = []
+                        }
+                    }
+
+                    over "sec_cam_door_mmr_2" (
+                        prepend apiSchemas = ["AecoCctvCameraAPI"]
+                    )
+                    {
+                        uniform token aeco:cctv:mount = "pendant"
+                        uniform token aeco:cctv:scenario = "door"
+                        custom string aeco:props:Pset_AecoCctv:Contract = None
+                        custom string aeco:props:Pset_AecoCctv:Drivers = None
+                        custom string aeco:props:Pset_AecoCctv:Sensors = None
+                        custom string aeco:props:Pset_AecoCctv:Type = None
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = None
+
+                        over "Sensor_0"
+                        {
+                            double aeco:cctvSensor:focalLength = 3
+                            double aeco:cctvSensor:pan = -55.304846468765874
+                            double aeco:cctvSensor:range = 12
+                            double aeco:cctvSensor:roll = 0
+                            double aeco:cctvSensor:targetDensity = 250
+                            double aeco:cctvSensor:tilt = 60
+                            uniform token[] aeco:cctvSensor:tour = []
+                        }
+                    }
+
+                    over "sec_cam_door_elec_a" (
+                        prepend apiSchemas = ["AecoCctvCameraAPI"]
+                    )
+                    {
+                        uniform token aeco:cctv:mount = "pendant"
+                        uniform token aeco:cctv:scenario = "door"
+                        custom string aeco:props:Pset_AecoCctv:Contract = None
+                        custom string aeco:props:Pset_AecoCctv:Drivers = None
+                        custom string aeco:props:Pset_AecoCctv:Sensors = None
+                        custom string aeco:props:Pset_AecoCctv:Type = None
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = None
+
+                        over "Sensor_0"
+                        {
+                            double aeco:cctvSensor:focalLength = 3
+                            double aeco:cctvSensor:pan = -55.304846468766094
+                            double aeco:cctvSensor:range = 12
+                            double aeco:cctvSensor:roll = 0
+                            double aeco:cctvSensor:targetDensity = 250
+                            double aeco:cctvSensor:tilt = 60
+                            uniform token[] aeco:cctvSensor:tour = []
+                        }
+                    }
+
+                    over "sec_cam_door_elec_b" (
+                        prepend apiSchemas = ["AecoCctvCameraAPI"]
+                    )
+                    {
+                        uniform token aeco:cctv:mount = "pendant"
+                        uniform token aeco:cctv:scenario = "door"
+                        custom string aeco:props:Pset_AecoCctv:Contract = None
+                        custom string aeco:props:Pset_AecoCctv:Drivers = None
+                        custom string aeco:props:Pset_AecoCctv:Sensors = None
+                        custom string aeco:props:Pset_AecoCctv:Type = None
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = None
+
+                        over "Sensor_0"
+                        {
+                            double aeco:cctvSensor:focalLength = 3
+                            double aeco:cctvSensor:pan = -55.304846468765874
+                            double aeco:cctvSensor:range = 12
+                            double aeco:cctvSensor:roll = 0
+                            double aeco:cctvSensor:targetDensity = 250
+                            double aeco:cctvSensor:tilt = 60
+                            uniform token[] aeco:cctvSensor:tour = []
+                        }
+                    }
+
+                    over "sec_cam_corr_corr_spine_2" (
+                        prepend apiSchemas = ["AecoCctvCameraAPI"]
+                    )
+                    {
+                        uniform token aeco:cctv:mount = "pendant"
+                        uniform token aeco:cctv:scenario = "corridor"
+                        custom string aeco:props:Pset_AecoCctv:Contract = None
+                        custom string aeco:props:Pset_AecoCctv:Drivers = None
+                        custom string aeco:props:Pset_AecoCctv:Sensors = None
+                        custom string aeco:props:Pset_AecoCctv:Type = None
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = None
+
+                        over "Sensor_0"
+                        {
+                            double aeco:cctvSensor:focalLength = 4
+                            double aeco:cctvSensor:pan = 180
+                            double aeco:cctvSensor:range = 24
+                            double aeco:cctvSensor:roll = 0
+                            double aeco:cctvSensor:targetDensity = 250
+                            double aeco:cctvSensor:tilt = 15
+                            uniform token[] aeco:cctvSensor:tour = []
+                        }
+                    }
+
+                    over "sec_cam_corr_corr_spine_3" (
+                        prepend apiSchemas = ["AecoCctvCameraAPI"]
+                    )
+                    {
+                        uniform token aeco:cctv:mount = "pendant"
+                        uniform token aeco:cctv:scenario = "corridor"
+                        custom string aeco:props:Pset_AecoCctv:Contract = None
+                        custom string aeco:props:Pset_AecoCctv:Drivers = None
+                        custom string aeco:props:Pset_AecoCctv:Sensors = None
+                        custom string aeco:props:Pset_AecoCctv:Type = None
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = None
+
+                        over "Sensor_0"
+                        {
+                            double aeco:cctvSensor:focalLength = 4
+                            double aeco:cctvSensor:pan = 0
+                            double aeco:cctvSensor:range = 24
+                            double aeco:cctvSensor:roll = 0
+                            double aeco:cctvSensor:targetDensity = 250
+                            double aeco:cctvSensor:tilt = 15
+                            uniform token[] aeco:cctvSensor:tour = []
+                        }
+                    }
+
+                    over "sec_cam_corr_corr_spine_5" (
+                        prepend apiSchemas = ["AecoCctvCameraAPI"]
+                    )
+                    {
+                        uniform token aeco:cctv:mount = "pendant"
+                        uniform token aeco:cctv:scenario = "corridor"
+                        custom string aeco:props:Pset_AecoCctv:Contract = None
+                        custom string aeco:props:Pset_AecoCctv:Drivers = None
+                        custom string aeco:props:Pset_AecoCctv:Sensors = None
+                        custom string aeco:props:Pset_AecoCctv:Type = None
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = None
+
+                        over "Sensor_0"
+                        {
+                            double aeco:cctvSensor:focalLength = 4
+                            double aeco:cctvSensor:pan = 0
+                            double aeco:cctvSensor:range = 24
+                            double aeco:cctvSensor:roll = 0
+                            double aeco:cctvSensor:targetDensity = 250
+                            double aeco:cctvSensor:tilt = 15
+                            uniform token[] aeco:cctvSensor:tour = []
+                        }
+                    }
+
+                    over "sec_cam_door_hall_a_s" (
+                        prepend apiSchemas = ["AecoCctvCameraAPI"]
+                    )
+                    {
+                        uniform token aeco:cctv:mount = "pendant"
+                        uniform token aeco:cctv:scenario = "door"
+                        custom string aeco:props:Pset_AecoCctv:Contract = None
+                        custom string aeco:props:Pset_AecoCctv:Drivers = None
+                        custom string aeco:props:Pset_AecoCctv:Sensors = None
+                        custom string aeco:props:Pset_AecoCctv:Type = None
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = None
+
+                        over "Sensor_0"
+                        {
+                            double aeco:cctvSensor:focalLength = 3
+                            double aeco:cctvSensor:pan = 124.69515353123397
+                            double aeco:cctvSensor:range = 12
+                            double aeco:cctvSensor:roll = 0
+                            double aeco:cctvSensor:targetDensity = 250
+                            double aeco:cctvSensor:tilt = 60
+                            uniform token[] aeco:cctvSensor:tour = []
+                        }
+                    }
+
+                    over "sec_cam_door_hall_b_s" (
+                        prepend apiSchemas = ["AecoCctvCameraAPI"]
+                    )
+                    {
+                        uniform token aeco:cctv:mount = "pendant"
+                        uniform token aeco:cctv:scenario = "door"
+                        custom string aeco:props:Pset_AecoCctv:Contract = None
+                        custom string aeco:props:Pset_AecoCctv:Drivers = None
+                        custom string aeco:props:Pset_AecoCctv:Sensors = None
+                        custom string aeco:props:Pset_AecoCctv:Type = None
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = None
+
+                        over "Sensor_0"
+                        {
+                            double aeco:cctvSensor:focalLength = 3
+                            double aeco:cctvSensor:pan = 124.69515353123421
+                            double aeco:cctvSensor:range = 12
+                            double aeco:cctvSensor:roll = 0
+                            double aeco:cctvSensor:targetDensity = 250
+                            double aeco:cctvSensor:tilt = 60
+                            uniform token[] aeco:cctvSensor:tour = []
+                        }
+                    }
+
+                    over "sec_cam_corr_corr_spine_1" (
+                        prepend apiSchemas = ["AecoCctvCameraAPI"]
+                    )
+                    {
+                        uniform token aeco:cctv:mount = "pendant"
+                        uniform token aeco:cctv:scenario = "corridor"
+                        custom string aeco:props:Pset_AecoCctv:Contract = None
+                        custom string aeco:props:Pset_AecoCctv:Drivers = None
+                        custom string aeco:props:Pset_AecoCctv:Sensors = None
+                        custom string aeco:props:Pset_AecoCctv:Type = None
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = None
+
+                        over "Sensor_0"
+                        {
+                            double aeco:cctvSensor:focalLength = 4
+                            double aeco:cctvSensor:pan = 0
+                            double aeco:cctvSensor:range = 24
+                            double aeco:cctvSensor:roll = 0
+                            double aeco:cctvSensor:targetDensity = 250
+                            double aeco:cctvSensor:tilt = 15
+                            uniform token[] aeco:cctvSensor:tour = []
+                        }
+                    }
+                }
+
+                over "Corridor_South"
+                {
+                    over "sec_cam_corr_corr_s_1" (
+                        prepend apiSchemas = ["AecoCctvCameraAPI"]
+                    )
+                    {
+                        uniform token aeco:cctv:mount = "pendant"
+                        uniform token aeco:cctv:scenario = "corridor"
+                        custom string aeco:props:Pset_AecoCctv:Contract = None
+                        custom string aeco:props:Pset_AecoCctv:Drivers = None
+                        custom string aeco:props:Pset_AecoCctv:Sensors = None
+                        custom string aeco:props:Pset_AecoCctv:Type = None
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = None
+
+                        over "Sensor_0"
+                        {
+                            double aeco:cctvSensor:focalLength = 4
+                            double aeco:cctvSensor:pan = 90
+                            double aeco:cctvSensor:range = 24
+                            double aeco:cctvSensor:roll = 0
+                            double aeco:cctvSensor:targetDensity = 250
+                            double aeco:cctvSensor:tilt = 15
+                            uniform token[] aeco:cctvSensor:tour = []
+                        }
+                    }
+
+                    over "sec_cam_door_office_link" (
+                        prepend apiSchemas = ["AecoCctvCameraAPI"]
+                    )
+                    {
+                        uniform token aeco:cctv:mount = "pendant"
+                        uniform token aeco:cctv:scenario = "door"
+                        custom string aeco:props:Pset_AecoCctv:Contract = None
+                        custom string aeco:props:Pset_AecoCctv:Drivers = None
+                        custom string aeco:props:Pset_AecoCctv:Sensors = None
+                        custom string aeco:props:Pset_AecoCctv:Type = None
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = None
+
+                        over "Sensor_0"
+                        {
+                            double aeco:cctvSensor:focalLength = 3
+                            double aeco:cctvSensor:pan = -55.30484646876608
+                            double aeco:cctvSensor:range = 12
+                            double aeco:cctvSensor:roll = 0
+                            double aeco:cctvSensor:targetDensity = 250
+                            double aeco:cctvSensor:tilt = 60
+                            uniform token[] aeco:cctvSensor:tour = []
+                        }
+                    }
+
+                    over "sec_cam_corr_corr_s_2" (
+                        prepend apiSchemas = ["AecoCctvCameraAPI"]
+                    )
+                    {
+                        uniform token aeco:cctv:mount = "pendant"
+                        uniform token aeco:cctv:scenario = "corridor"
+                        custom string aeco:props:Pset_AecoCctv:Contract = None
+                        custom string aeco:props:Pset_AecoCctv:Drivers = None
+                        custom string aeco:props:Pset_AecoCctv:Sensors = None
+                        custom string aeco:props:Pset_AecoCctv:Type = None
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = None
+
+                        over "Sensor_0"
+                        {
+                            double aeco:cctvSensor:focalLength = 4
+                            double aeco:cctvSensor:pan = 270
+                            double aeco:cctvSensor:range = 24
+                            double aeco:cctvSensor:roll = 0
+                            double aeco:cctvSensor:targetDensity = 250
+                            double aeco:cctvSensor:tilt = 15
+                            uniform token[] aeco:cctvSensor:tour = []
+                        }
+                    }
+
+                    over "sec_cam_door_mmr_1" (
+                        prepend apiSchemas = ["AecoCctvCameraAPI"]
+                    )
+                    {
+                        uniform token aeco:cctv:mount = "pendant"
+                        uniform token aeco:cctv:scenario = "door"
+                        custom string aeco:props:Pset_AecoCctv:Contract = None
+                        custom string aeco:props:Pset_AecoCctv:Drivers = None
+                        custom string aeco:props:Pset_AecoCctv:Sensors = None
+                        custom string aeco:props:Pset_AecoCctv:Type = None
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = None
+
+                        over "Sensor_0"
+                        {
+                            double aeco:cctvSensor:focalLength = 3
+                            double aeco:cctvSensor:pan = 34.695153531233984
+                            double aeco:cctvSensor:range = 12
+                            double aeco:cctvSensor:roll = 0
+                            double aeco:cctvSensor:targetDensity = 250
+                            double aeco:cctvSensor:tilt = 60
+                            uniform token[] aeco:cctvSensor:tour = []
+                        }
+                    }
+                }
+
+                over "Corridor_West"
+                {
+                    over "sec_cam_door_hall_a_w" (
+                        prepend apiSchemas = ["AecoCctvCameraAPI"]
+                    )
+                    {
+                        uniform token aeco:cctv:mount = "pendant"
+                        uniform token aeco:cctv:scenario = "door"
+                        custom string aeco:props:Pset_AecoCctv:Contract = None
+                        custom string aeco:props:Pset_AecoCctv:Drivers = None
+                        custom string aeco:props:Pset_AecoCctv:Sensors = None
+                        custom string aeco:props:Pset_AecoCctv:Type = None
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = None
+
+                        over "Sensor_0"
+                        {
+                            double aeco:cctvSensor:focalLength = 3
+                            double aeco:cctvSensor:pan = 34.695153531233935
+                            double aeco:cctvSensor:range = 12
+                            double aeco:cctvSensor:roll = 0
+                            double aeco:cctvSensor:targetDensity = 250
+                            double aeco:cctvSensor:tilt = 60
+                            uniform token[] aeco:cctvSensor:tour = []
+                        }
+                    }
+
+                    over "sec_cam_corr_corr_w_1" (
+                        prepend apiSchemas = ["AecoCctvCameraAPI"]
+                    )
+                    {
+                        uniform token aeco:cctv:mount = "pendant"
+                        uniform token aeco:cctv:scenario = "corridor"
+                        custom string aeco:props:Pset_AecoCctv:Contract = None
+                        custom string aeco:props:Pset_AecoCctv:Drivers = None
+                        custom string aeco:props:Pset_AecoCctv:Sensors = None
+                        custom string aeco:props:Pset_AecoCctv:Type = None
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = None
+
+                        over "Sensor_0"
+                        {
+                            double aeco:cctvSensor:focalLength = 4
+                            double aeco:cctvSensor:pan = 90
+                            double aeco:cctvSensor:range = 24
+                            double aeco:cctvSensor:roll = 0
+                            double aeco:cctvSensor:targetDensity = 250
+                            double aeco:cctvSensor:tilt = 15
+                            uniform token[] aeco:cctvSensor:tour = []
+                        }
+                    }
+
+                    over "sec_cam_corr_corr_w_2" (
+                        prepend apiSchemas = ["AecoCctvCameraAPI"]
+                    )
+                    {
+                        uniform token aeco:cctv:mount = "pendant"
+                        uniform token aeco:cctv:scenario = "corridor"
+                        custom string aeco:props:Pset_AecoCctv:Contract = None
+                        custom string aeco:props:Pset_AecoCctv:Drivers = None
+                        custom string aeco:props:Pset_AecoCctv:Sensors = None
+                        custom string aeco:props:Pset_AecoCctv:Type = None
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = None
+
+                        over "Sensor_0"
+                        {
+                            double aeco:cctvSensor:focalLength = 4
+                            double aeco:cctvSensor:pan = 270
+                            double aeco:cctvSensor:range = 24
+                            double aeco:cctvSensor:roll = 0
+                            double aeco:cctvSensor:targetDensity = 250
+                            double aeco:cctvSensor:tilt = 15
+                            uniform token[] aeco:cctvSensor:tour = []
+                        }
+                    }
+                }
+            }
+
+            over "L01_Office"
+            {
+                over "Office_Corridor_L01"
+                {
+                    over "sec_cam_corr_ocorr_1_2" (
+                        prepend apiSchemas = ["AecoCctvCameraAPI"]
+                    )
+                    {
+                        uniform token aeco:cctv:mount = "pendant"
+                        uniform token aeco:cctv:scenario = "corridor"
+                        custom string aeco:props:Pset_AecoCctv:Contract = None
+                        custom string aeco:props:Pset_AecoCctv:Drivers = None
+                        custom string aeco:props:Pset_AecoCctv:Sensors = None
+                        custom string aeco:props:Pset_AecoCctv:Type = None
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = None
+
+                        over "Sensor_0"
+                        {
+                            double aeco:cctvSensor:focalLength = 4
+                            double aeco:cctvSensor:pan = 180
+                            double aeco:cctvSensor:range = 24
+                            double aeco:cctvSensor:roll = 0
+                            double aeco:cctvSensor:targetDensity = 250
+                            double aeco:cctvSensor:tilt = 15
+                            uniform token[] aeco:cctvSensor:tour = []
+                        }
+                    }
+
+                    over "sec_cam_corr_ocorr_1_1" (
+                        prepend apiSchemas = ["AecoCctvCameraAPI"]
+                    )
+                    {
+                        uniform token aeco:cctv:mount = "pendant"
+                        uniform token aeco:cctv:scenario = "corridor"
+                        custom string aeco:props:Pset_AecoCctv:Contract = None
+                        custom string aeco:props:Pset_AecoCctv:Drivers = None
+                        custom string aeco:props:Pset_AecoCctv:Sensors = None
+                        custom string aeco:props:Pset_AecoCctv:Type = None
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = None
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = None
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = None
+
+                        over "Sensor_0"
+                        {
+                            double aeco:cctvSensor:focalLength = 4
+                            double aeco:cctvSensor:pan = 0
+                            double aeco:cctvSensor:range = 24
+                            double aeco:cctvSensor:roll = 0
+                            double aeco:cctvSensor:targetDensity = 250
+                            double aeco:cctvSensor:tilt = 15
+                            uniform token[] aeco:cctvSensor:tour = []
+                        }
+                    }
+                }
+            }
+        }
+
+        over "Heat_Rejection_Yard"
+        {
+            over "sec_cam_yard_hr_fixed_2" (
+                prepend apiSchemas = ["AecoCctvCameraAPI"]
+            )
+            {
+                uniform token aeco:cctv:mount = "pole"
+                uniform token aeco:cctv:scenario = "plant"
+                bool aeco:cctvType:outdoor = 1
+                custom string aeco:props:Pset_AecoCctv:Contract = None
+                custom string aeco:props:Pset_AecoCctv:Drivers = None
+                custom string aeco:props:Pset_AecoCctv:Sensors = None
+                custom string aeco:props:Pset_AecoCctv:Type = None
+                custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = None
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = None
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = None
+                custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = None
+                custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = None
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = None
+
+                over "Sensor_0"
+                {
+                    double aeco:cctvSensor:focalLength = 3.7
+                    double aeco:cctvSensor:pan = -151.92751306414706
+                    double aeco:cctvSensor:range = 40
+                    double aeco:cctvSensor:roll = 0
+                    double aeco:cctvSensor:targetDensity = 250
+                    double aeco:cctvSensor:tilt = 35
+                    uniform token[] aeco:cctvSensor:tour = []
+                }
+            }
+
+            over "sec_cam_ext_plant_ext" (
+                prepend apiSchemas = ["AecoCctvCameraAPI"]
+            )
+            {
+                uniform token aeco:cctv:mount = "wall"
+                uniform token aeco:cctv:scenario = "door"
+                custom string aeco:props:Pset_AecoCctv:Contract = None
+                custom string aeco:props:Pset_AecoCctv:Drivers = None
+                custom string aeco:props:Pset_AecoCctv:Sensors = None
+                custom string aeco:props:Pset_AecoCctv:Type = None
+                custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = None
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = None
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = None
+                custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = None
+                custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = None
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = None
+
+                over "Sensor_0"
+                {
+                    double aeco:cctvSensor:focalLength = 3.7
+                    double aeco:cctvSensor:pan = 90
+                    double aeco:cctvSensor:range = 40
+                    double aeco:cctvSensor:roll = 0
+                    double aeco:cctvSensor:targetDensity = 250
+                    double aeco:cctvSensor:tilt = 55
+                    uniform token[] aeco:cctvSensor:tour = []
+                }
+            }
+
+            over "sec_cam_ext_dock" (
+                prepend apiSchemas = ["AecoCctvCameraAPI"]
+            )
+            {
+                uniform token aeco:cctv:mount = "pole"
+                uniform token aeco:cctv:scenario = "door"
+                custom string aeco:props:Pset_AecoCctv:Contract = None
+                custom string aeco:props:Pset_AecoCctv:Drivers = None
+                custom string aeco:props:Pset_AecoCctv:Sensors = None
+                custom string aeco:props:Pset_AecoCctv:Type = None
+                custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = None
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = None
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = None
+                custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = None
+                custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = None
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = None
+
+                over "Sensor_0"
+                {
+                    double aeco:cctvSensor:focalLength = 7.5
+                    double aeco:cctvSensor:pan = 90
+                    double aeco:cctvSensor:range = 40
+                    double aeco:cctvSensor:roll = 0
+                    double aeco:cctvSensor:targetDensity = 250
+                    double aeco:cctvSensor:tilt = 20.435531437994403
+                    uniform token[] aeco:cctvSensor:tour = []
+                }
+            }
+
+            over "sec_cam_ext_main" (
+                prepend apiSchemas = ["AecoCctvCameraAPI"]
+            )
+            {
+                uniform token aeco:cctv:mount = "wall"
+                uniform token aeco:cctv:scenario = "door"
+                custom string aeco:props:Pset_AecoCctv:Contract = None
+                custom string aeco:props:Pset_AecoCctv:Drivers = None
+                custom string aeco:props:Pset_AecoCctv:Sensors = None
+                custom string aeco:props:Pset_AecoCctv:Type = None
+                custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = None
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = None
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = None
+                custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = None
+                custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = None
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = None
+
+                over "Sensor_0"
+                {
+                    double aeco:cctvSensor:focalLength = 3.7
+                    double aeco:cctvSensor:pan = 90
+                    double aeco:cctvSensor:range = 40
+                    double aeco:cctvSensor:roll = 0
+                    double aeco:cctvSensor:targetDensity = 250
+                    double aeco:cctvSensor:tilt = 55
+                    uniform token[] aeco:cctvSensor:tour = []
+                }
+            }
+
+            over "sec_cam_yard_hr_fixed_1" (
+                prepend apiSchemas = ["AecoCctvCameraAPI"]
+            )
+            {
+                uniform token aeco:cctv:mount = "pole"
+                uniform token aeco:cctv:scenario = "plant"
+                custom string aeco:props:Pset_AecoCctv:Contract = None
+                custom string aeco:props:Pset_AecoCctv:Drivers = None
+                custom string aeco:props:Pset_AecoCctv:Sensors = None
+                custom string aeco:props:Pset_AecoCctv:Type = None
+                custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = None
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = None
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = None
+                custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = None
+                custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = None
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = None
+
+                over "Sensor_0"
+                {
+                    double aeco:cctvSensor:focalLength = 3.7
+                    double aeco:cctvSensor:pan = 28.072486935852957
+                    double aeco:cctvSensor:range = 40
+                    double aeco:cctvSensor:roll = 0
+                    double aeco:cctvSensor:targetDensity = 250
+                    double aeco:cctvSensor:tilt = 35
+                    uniform token[] aeco:cctvSensor:tour = []
+                }
+            }
+        }
+
+        over "Generator_Yard_A"
+        {
+            over "sec_cam_ext_gen_a" (
+                prepend apiSchemas = ["AecoCctvCameraAPI"]
+            )
+            {
+                uniform token aeco:cctv:mount = "wall"
+                uniform token aeco:cctv:scenario = "door"
+                custom string aeco:props:Pset_AecoCctv:Contract = None
+                custom string aeco:props:Pset_AecoCctv:Drivers = None
+                custom string aeco:props:Pset_AecoCctv:Sensors = None
+                custom string aeco:props:Pset_AecoCctv:Type = None
+                custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = None
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = None
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = None
+                custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = None
+                custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = None
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = None
+
+                over "Sensor_0"
+                {
+                    double aeco:cctvSensor:focalLength = 3.7
+                    double aeco:cctvSensor:pan = 0
+                    double aeco:cctvSensor:range = 40
+                    double aeco:cctvSensor:roll = 0
+                    double aeco:cctvSensor:targetDensity = 250
+                    double aeco:cctvSensor:tilt = 55
+                    uniform token[] aeco:cctvSensor:tour = []
+                }
+            }
+
+            over "sec_cam_yard_a" (
+                prepend apiSchemas = ["AecoCctvCameraAPI"]
+            )
+            {
+                uniform token aeco:cctv:mount = "pole"
+                uniform token aeco:cctv:scenario = "plant"
+                custom string aeco:props:Pset_AecoCctv:Contract = None
+                custom string aeco:props:Pset_AecoCctv:Drivers = None
+                custom string aeco:props:Pset_AecoCctv:Sensors = None
+                custom string aeco:props:Pset_AecoCctv:Type = None
+                custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = None
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = None
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = None
+                custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = None
+                custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = None
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = None
+
+                over "Sensor_0" (
+                    prepend apiSchemas = ["AecoCctvPresetAPI:Home", "AecoCctvPresetAPI:Pad_gen_a"]
+                )
+                {
+                    double aeco:cctvPreset:Home:dwell = 4
+                    double aeco:cctvPreset:Home:focalLength = 6.64
+                    bool aeco:cctvPreset:Home:home = 1
+                    double aeco:cctvPreset:Home:pan = 49.76364169072618
+                    double aeco:cctvPreset:Home:tilt = 27.3278313349803
+                    double aeco:cctvPreset:Pad_gen_a:dwell = 4
+                    double aeco:cctvPreset:Pad_gen_a:focalLength = 6.64
+                    bool aeco:cctvPreset:Pad_gen_a:home = 0
+                    double aeco:cctvPreset:Pad_gen_a:pan = 49.76364169072618
+                    double aeco:cctvPreset:Pad_gen_a:tilt = 33.799580561112094
+                    double aeco:cctvSensor:focalLength = 6.64
+                    double aeco:cctvSensor:pan = 49.76364169072618
+                    double aeco:cctvSensor:range = 20
+                    double aeco:cctvSensor:roll = 0
+                    double aeco:cctvSensor:targetDensity = 250
+                    double aeco:cctvSensor:tilt = 27.3278313349803
+                    uniform token[] aeco:cctvSensor:tour = ["Home", "Pad_gen_a"]
+                }
+            }
+
+            over "sec_cam_yard_gen_a_fixed_1" (
+                prepend apiSchemas = ["AecoCctvCameraAPI"]
+            )
+            {
+                uniform token aeco:cctv:mount = "pole"
+                uniform token aeco:cctv:scenario = "plant"
+                custom string aeco:props:Pset_AecoCctv:Contract = None
+                custom string aeco:props:Pset_AecoCctv:Drivers = None
+                custom string aeco:props:Pset_AecoCctv:Sensors = None
+                custom string aeco:props:Pset_AecoCctv:Type = None
+                custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = None
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = None
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = None
+                custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = None
+                custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = None
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = None
+
+                over "Sensor_0"
+                {
+                    double aeco:cctvSensor:focalLength = 3.7
+                    double aeco:cctvSensor:pan = -49.76364169072618
+                    double aeco:cctvSensor:range = 40
+                    double aeco:cctvSensor:roll = 0
+                    double aeco:cctvSensor:targetDensity = 250
+                    double aeco:cctvSensor:tilt = 35
+                    uniform token[] aeco:cctvSensor:tour = []
+                }
+            }
+
+            over "sec_cam_yard_gen_a_fixed_2" (
+                prepend apiSchemas = ["AecoCctvCameraAPI"]
+            )
+            {
+                uniform token aeco:cctv:mount = "pole"
+                uniform token aeco:cctv:scenario = "plant"
+                custom string aeco:props:Pset_AecoCctv:Contract = None
+                custom string aeco:props:Pset_AecoCctv:Drivers = None
+                custom string aeco:props:Pset_AecoCctv:Sensors = None
+                custom string aeco:props:Pset_AecoCctv:Type = None
+                custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = None
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = None
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = None
+                custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = None
+                custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = None
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = None
+
+                over "Sensor_0"
+                {
+                    double aeco:cctvSensor:focalLength = 3.7
+                    double aeco:cctvSensor:pan = 130.2363583092738
+                    double aeco:cctvSensor:range = 40
+                    double aeco:cctvSensor:roll = 0
+                    double aeco:cctvSensor:targetDensity = 250
+                    double aeco:cctvSensor:tilt = 35
+                    uniform token[] aeco:cctvSensor:tour = []
+                }
+            }
+        }
+
+        over "Generator_Yard_B"
+        {
+            over "sec_cam_yard_gen_b_fixed_1" (
+                prepend apiSchemas = ["AecoCctvCameraAPI"]
+            )
+            {
+                uniform token aeco:cctv:mount = "pole"
+                uniform token aeco:cctv:scenario = "plant"
+                custom string aeco:props:Pset_AecoCctv:Contract = None
+                custom string aeco:props:Pset_AecoCctv:Drivers = None
+                custom string aeco:props:Pset_AecoCctv:Sensors = None
+                custom string aeco:props:Pset_AecoCctv:Type = None
+                custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = None
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = None
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = None
+                custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = None
+                custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = None
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = None
+
+                over "Sensor_0"
+                {
+                    double aeco:cctvSensor:focalLength = 3.7
+                    double aeco:cctvSensor:pan = 49.76364169072618
+                    double aeco:cctvSensor:range = 40
+                    double aeco:cctvSensor:roll = 0
+                    double aeco:cctvSensor:targetDensity = 250
+                    double aeco:cctvSensor:tilt = 35
+                    uniform token[] aeco:cctvSensor:tour = []
+                }
+            }
+
+            over "sec_cam_yard_b" (
+                prepend apiSchemas = ["AecoCctvCameraAPI"]
+            )
+            {
+                uniform token aeco:cctv:mount = "pole"
+                uniform token aeco:cctv:scenario = "plant"
+                custom string aeco:props:Pset_AecoCctv:Contract = None
+                custom string aeco:props:Pset_AecoCctv:Drivers = None
+                custom string aeco:props:Pset_AecoCctv:Sensors = None
+                custom string aeco:props:Pset_AecoCctv:Type = None
+                custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = None
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = None
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = None
+                custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = None
+                custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = None
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = None
+
+                over "Sensor_0" (
+                    prepend apiSchemas = ["AecoCctvPresetAPI:Home", "AecoCctvPresetAPI:Pad_gen_b"]
+                )
+                {
+                    double aeco:cctvPreset:Home:dwell = 4
+                    double aeco:cctvPreset:Home:focalLength = 6.64
+                    bool aeco:cctvPreset:Home:home = 1
+                    double aeco:cctvPreset:Home:pan = 49.76364169072618
+                    double aeco:cctvPreset:Home:tilt = 27.3278313349803
+                    double aeco:cctvPreset:Pad_gen_b:dwell = 4
+                    double aeco:cctvPreset:Pad_gen_b:focalLength = 6.64
+                    bool aeco:cctvPreset:Pad_gen_b:home = 0
+                    double aeco:cctvPreset:Pad_gen_b:pan = 49.76364169072618
+                    double aeco:cctvPreset:Pad_gen_b:tilt = 33.799580561112094
+                    double aeco:cctvSensor:focalLength = 6.64
+                    double aeco:cctvSensor:pan = 49.76364169072618
+                    double aeco:cctvSensor:range = 20
+                    double aeco:cctvSensor:roll = 0
+                    double aeco:cctvSensor:targetDensity = 250
+                    double aeco:cctvSensor:tilt = 27.3278313349803
+                    uniform token[] aeco:cctvSensor:tour = ["Home", "Pad_gen_b"]
+                }
+            }
+
+            over "sec_cam_ext_gen_b" (
+                prepend apiSchemas = ["AecoCctvCameraAPI"]
+            )
+            {
+                uniform token aeco:cctv:mount = "wall"
+                uniform token aeco:cctv:scenario = "door"
+                custom string aeco:props:Pset_AecoCctv:Contract = None
+                custom string aeco:props:Pset_AecoCctv:Drivers = None
+                custom string aeco:props:Pset_AecoCctv:Sensors = None
+                custom string aeco:props:Pset_AecoCctv:Type = None
+                custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = None
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = None
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = None
+                custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = None
+                custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = None
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = None
+
+                over "Sensor_0"
+                {
+                    double aeco:cctvSensor:focalLength = 3.7
+                    double aeco:cctvSensor:pan = 180
+                    double aeco:cctvSensor:range = 40
+                    double aeco:cctvSensor:roll = 0
+                    double aeco:cctvSensor:targetDensity = 250
+                    double aeco:cctvSensor:tilt = 55
+                    uniform token[] aeco:cctvSensor:tour = []
+                }
+            }
+
+            over "sec_cam_yard_gen_b_fixed_2" (
+                prepend apiSchemas = ["AecoCctvCameraAPI"]
+            )
+            {
+                uniform token aeco:cctv:mount = "pole"
+                uniform token aeco:cctv:scenario = "plant"
+                custom string aeco:props:Pset_AecoCctv:Contract = None
+                custom string aeco:props:Pset_AecoCctv:Drivers = None
+                custom string aeco:props:Pset_AecoCctv:Sensors = None
+                custom string aeco:props:Pset_AecoCctv:Type = None
+                custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = None
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = None
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = None
+                custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = None
+                custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = None
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = None
+
+                over "Sensor_0"
+                {
+                    double aeco:cctvSensor:focalLength = 3.7
+                    double aeco:cctvSensor:pan = -130.2363583092738
+                    double aeco:cctvSensor:range = 40
+                    double aeco:cctvSensor:roll = 0
+                    double aeco:cctvSensor:targetDensity = 250
+                    double aeco:cctvSensor:tilt = 35
+                    uniform token[] aeco:cctvSensor:tour = []
+                }
+            }
+        }
+    }
+
+    over "_TypeCatalog"
+    {
+        over "ptz_4k" (
+            prepend apiSchemas = ["AecoCctvCameraTypeAPI", "AecoCctvCameraAPI"]
+        )
+        {
+            double aeco:cctvType:irRange = 0
+            bool aeco:cctvType:outdoor = 1
+            custom string aeco:props:Pset_AecoCctv:Contract = None
+            custom string aeco:props:Pset_AecoCctv:Sensors = None
+            custom string aeco:props:Pset_AecoCctv:Type = None
+            string aeco:type:manufacturer = "Generic"
+            string aeco:type:model = "ptz_4k"
+
+            def Camera "Sensor_0" (
+                prepend apiSchemas = ["AecoCctvSensorAPI"]
+            )
+            {
+                double2 aeco:cctvSensor:focalRange = (6.64, 225.5)
+                double2 aeco:cctvSensor:hfovRange = (60.8, 2)
+                bool aeco:cctvSensor:motorised = 1
+                double3 aeco:cctvSensor:offset = (0, 0, 0)
+                double2 aeco:cctvSensor:panRange = (-180, 180)
+                int2 aeco:cctvSensor:pixels = (3840, 2160)
+                uniform token aeco:cctvSensor:projection = "rectilinear"
+                double2 aeco:cctvSensor:sensorSize = (0, 0)
+                uniform token aeco:cctvSensor:spectrum = "visible"
+                double2 aeco:cctvSensor:tiltRange = (0, 90)
+                double2 aeco:cctvSensor:vfovRange = (36.5, 1.1)
+            }
+        }
+
+        over "dome_5mp" (
+            prepend apiSchemas = ["AecoCctvCameraTypeAPI", "AecoCctvCameraAPI"]
+        )
+        {
+            double aeco:cctvType:irRange = 30
+            bool aeco:cctvType:outdoor = 0
+            custom string aeco:props:Pset_AecoCctv:Contract = None
+            custom string aeco:props:Pset_AecoCctv:Sensors = None
+            custom string aeco:props:Pset_AecoCctv:Type = None
+            string aeco:type:manufacturer = "Generic"
+            string aeco:type:model = "dome_5mp"
+
+            def Camera "Sensor_0" (
+                prepend apiSchemas = ["AecoCctvSensorAPI"]
+            )
+            {
+                double2 aeco:cctvSensor:focalRange = (3, 8.5)
+                double2 aeco:cctvSensor:hfovRange = (104, 34)
+                bool aeco:cctvSensor:motorised = 0
+                double3 aeco:cctvSensor:offset = (0, 0, -0.08)
+                double2 aeco:cctvSensor:panRange = (0, 0)
+                int2 aeco:cctvSensor:pixels = (2592, 1944)
+                uniform token aeco:cctvSensor:projection = "rectilinear"
+                double2 aeco:cctvSensor:sensorSize = (0, 0)
+                uniform token aeco:cctvSensor:spectrum = "visible"
+                double2 aeco:cctvSensor:tiltRange = (0, 0)
+                double2 aeco:cctvSensor:vfovRange = (76, 26)
+            }
+        }
+
+        over "bullet_4mp_outdoor" (
+            prepend apiSchemas = ["AecoCctvCameraTypeAPI", "AecoCctvCameraAPI"]
+        )
+        {
+            double aeco:cctvType:irRange = 40
+            bool aeco:cctvType:outdoor = 1
+            custom string aeco:props:Pset_AecoCctv:Contract = None
+            custom string aeco:props:Pset_AecoCctv:Sensors = None
+            custom string aeco:props:Pset_AecoCctv:Type = None
+            string aeco:type:manufacturer = "Generic"
+            string aeco:type:model = "bullet_4mp_outdoor"
+
+            def Camera "Sensor_0" (
+                prepend apiSchemas = ["AecoCctvSensorAPI"]
+            )
+            {
+                double2 aeco:cctvSensor:focalRange = (3.7, 7.5)
+                double2 aeco:cctvSensor:hfovRange = (100, 52)
+                bool aeco:cctvSensor:motorised = 0
+                double3 aeco:cctvSensor:offset = (0, 0, 0)
+                double2 aeco:cctvSensor:panRange = (0, 0)
+                int2 aeco:cctvSensor:pixels = (2688, 1512)
+                uniform token aeco:cctvSensor:projection = "rectilinear"
+                double2 aeco:cctvSensor:sensorSize = (0, 0)
+                uniform token aeco:cctvSensor:spectrum = "visible"
+                double2 aeco:cctvSensor:tiltRange = (0, 0)
+                double2 aeco:cctvSensor:vfovRange = (55, 30)
+            }
+        }
+    }
+}
+

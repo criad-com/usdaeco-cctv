@@ -1,0 +1,923 @@
+{
+  "acceptance": {
+    "familyChecks": 123,
+    "familyFailed": 0,
+    "nixAttempts": 1,
+    "nixPassed": false,
+    "nixReason": "unresolved nested toolchain/aeco-toolchain registry input",
+    "pytestPassed": 283,
+    "pytestSkipped": 3
+  },
+  "budgetPassed": true,
+  "budgetSeconds": 3.0,
+  "conversion": {
+    "elements": 1514,
+    "extents": 30,
+    "seconds": 9.563,
+    "spatial": 35,
+    "unparented": 0
+  },
+  "coreRootSha256": "afb23227b060a43579941a968c5e47b39bceba25a33ecf2dc832d0d690fa7a50",
+  "counts": {
+    "cameras": 45,
+    "presets": 7,
+    "propsBlocked": 910,
+    "sensors": 45,
+    "subInstancesFolded": 49,
+    "types": 3,
+    "unmatched": 0
+  },
+  "environment": {
+    "coreVersion": "0.8.4",
+    "machine": "arm64",
+    "packages": {
+      "ifcopenshell": "0.8.5",
+      "numpy": "2.5.3",
+      "usd-core": "26.8"
+    },
+    "python": "3.13.12",
+    "release": "24.3.0",
+    "system": "Darwin"
+  },
+  "equalTrials": 12,
+  "inputLayersUnchanged": 3,
+  "kindLayerSha256": "49bd74a3bc99aee644e692b5d525953ec1bc68f5a3a5efe87fe30598682b9227",
+  "libraryVersion": "0.4.7",
+  "methodology": "fresh process per call; no warmup; alternating order; numpy linear percentiles",
+  "optimizedCodeRevision": "0094603",
+  "preReleaseByteComparison": {
+    "coreSublayer": "core.usda",
+    "equal": true,
+    "kindLayerSha256": "033b8d98a36731478d99db901a91b7a157c1a33e703e258b2bc8c2e858bc7833",
+    "version": "0.4.6"
+  },
+  "referenceMachine": {
+    "logicalCpus": 12,
+    "memoryGiB": 32,
+    "processor": "Apple M2 Max"
+  },
+  "referenceRevision": "b35622a9c18f69a2f22d3d54e7075f21caf4e4da",
+  "referenceStampPolicy": "same current library version; no output normalization",
+  "runs": {
+    "optimized": [
+      {
+        "bytes": 147695,
+        "counts": {
+          "cameras": 45,
+          "presets": 7,
+          "propsBlocked": 910,
+          "sensors": 45,
+          "subInstancesFolded": 49,
+          "types": 3,
+          "unmatched": 0
+        },
+        "sha256": "49bd74a3bc99aee644e692b5d525953ec1bc68f5a3a5efe87fe30598682b9227",
+        "timingsSeconds": {
+          "cameraAuthoring": 0.18958162516355515,
+          "helperMatching": 0.052205124869942665,
+          "ifcOpen": 1.013831582851708,
+          "ifcRows": 0.06613895669579506,
+          "primTraversal": 0.01927975006401539,
+          "psetRead": 0.6226857523433864,
+          "quarantineRead": 0.4631122089922428,
+          "setup": 0.014863666612654924,
+          "sourceRead": 0.005262666381895542,
+          "stageOpen": 0.1568227498792112,
+          "total": 2.775414749979973,
+          "typeMatching": 0.1414563748985529,
+          "writing": 0.030171874910593033
+        },
+        "wallSeconds": 2.783945749979466
+      },
+      {
+        "bytes": 147695,
+        "counts": {
+          "cameras": 45,
+          "presets": 7,
+          "propsBlocked": 910,
+          "sensors": 45,
+          "subInstancesFolded": 49,
+          "types": 3,
+          "unmatched": 0
+        },
+        "sha256": "49bd74a3bc99aee644e692b5d525953ec1bc68f5a3a5efe87fe30598682b9227",
+        "timingsSeconds": {
+          "cameraAuthoring": 0.18941895756870508,
+          "helperMatching": 0.052168958354741335,
+          "ifcOpen": 0.9952242500148714,
+          "ifcRows": 0.06484532728791237,
+          "primTraversal": 0.019068166613578796,
+          "psetRead": 0.615088464692235,
+          "quarantineRead": 0.4722593333572149,
+          "setup": 0.01498054200783372,
+          "sourceRead": 0.004534957930445671,
+          "stageOpen": 0.15739950025454164,
+          "total": 2.760700167156756,
+          "typeMatching": 0.14104666700586677,
+          "writing": 0.03466341691091657
+        },
+        "wallSeconds": 2.770003959070891
+      },
+      {
+        "bytes": 147695,
+        "counts": {
+          "cameras": 45,
+          "presets": 7,
+          "propsBlocked": 910,
+          "sensors": 45,
+          "subInstancesFolded": 49,
+          "types": 3,
+          "unmatched": 0
+        },
+        "sha256": "49bd74a3bc99aee644e692b5d525953ec1bc68f5a3a5efe87fe30598682b9227",
+        "timingsSeconds": {
+          "cameraAuthoring": 0.19252841593697667,
+          "helperMatching": 0.05704037472605705,
+          "ifcOpen": 0.9985879580490291,
+          "ifcRows": 0.06658500107005239,
+          "primTraversal": 0.019249000120908022,
+          "psetRead": 0.6331371660344303,
+          "quarantineRead": 0.4624858326278627,
+          "setup": 0.015118124894797802,
+          "sourceRead": 0.004898291081190109,
+          "stageOpen": 0.1590301669202745,
+          "total": 2.7824900411069393,
+          "typeMatching": 0.14406020939350128,
+          "writing": 0.0297674173489213
+        },
+        "wallSeconds": 2.8158037080429494
+      },
+      {
+        "bytes": 147695,
+        "counts": {
+          "cameras": 45,
+          "presets": 7,
+          "propsBlocked": 910,
+          "sensors": 45,
+          "subInstancesFolded": 49,
+          "types": 3,
+          "unmatched": 0
+        },
+        "sha256": "49bd74a3bc99aee644e692b5d525953ec1bc68f5a3a5efe87fe30598682b9227",
+        "timingsSeconds": {
+          "cameraAuthoring": 0.18794025015085936,
+          "helperMatching": 0.056578333023935556,
+          "ifcOpen": 1.0107764578424394,
+          "ifcRows": 0.06835480686277151,
+          "primTraversal": 0.018958750180900097,
+          "psetRead": 0.6435886104591191,
+          "quarantineRead": 0.4633830841630697,
+          "setup": 0.014243042096495628,
+          "sourceRead": 0.00428249966353178,
+          "stageOpen": 0.1560114580206573,
+          "total": 2.81678358418867,
+          "typeMatching": 0.16713137459009886,
+          "writing": 0.025533124804496765
+        },
+        "wallSeconds": 2.825723750051111
+      },
+      {
+        "bytes": 147695,
+        "counts": {
+          "cameras": 45,
+          "presets": 7,
+          "propsBlocked": 910,
+          "sensors": 45,
+          "subInstancesFolded": 49,
+          "types": 3,
+          "unmatched": 0
+        },
+        "sha256": "49bd74a3bc99aee644e692b5d525953ec1bc68f5a3a5efe87fe30598682b9227",
+        "timingsSeconds": {
+          "cameraAuthoring": 0.19001108314841986,
+          "helperMatching": 0.052768582943826914,
+          "ifcOpen": 1.0083897081203759,
+          "ifcRows": 0.0669196187518537,
+          "primTraversal": 0.01900254189968109,
+          "psetRead": 0.6277341730892658,
+          "quarantineRead": 0.46696049999445677,
+          "setup": 0.01494595780968666,
+          "sourceRead": 0.004794333130121231,
+          "stageOpen": 0.1574347922578454,
+          "total": 2.7790705407969654,
+          "typeMatching": 0.14232624974101782,
+          "writing": 0.027781167067587376
+        },
+        "wallSeconds": 2.7883395422250032
+      },
+      {
+        "bytes": 147695,
+        "counts": {
+          "cameras": 45,
+          "presets": 7,
+          "propsBlocked": 910,
+          "sensors": 45,
+          "subInstancesFolded": 49,
+          "types": 3,
+          "unmatched": 0
+        },
+        "sha256": "49bd74a3bc99aee644e692b5d525953ec1bc68f5a3a5efe87fe30598682b9227",
+        "timingsSeconds": {
+          "cameraAuthoring": 0.19310020795091987,
+          "helperMatching": 0.052682749927043915,
+          "ifcOpen": 1.0033699166961014,
+          "ifcRows": 0.06671329354867339,
+          "primTraversal": 0.019480000250041485,
+          "psetRead": 0.6280947895720601,
+          "quarantineRead": 0.4673443748615682,
+          "setup": 0.014783042017370462,
+          "sourceRead": 0.00433441624045372,
+          "stageOpen": 0.1565889590419829,
+          "total": 2.778790832962841,
+          "typeMatching": 0.14223999995738268,
+          "writing": 0.030056833289563656
+        },
+        "wallSeconds": 2.787652624770999
+      },
+      {
+        "bytes": 147695,
+        "counts": {
+          "cameras": 45,
+          "presets": 7,
+          "propsBlocked": 910,
+          "sensors": 45,
+          "subInstancesFolded": 49,
+          "types": 3,
+          "unmatched": 0
+        },
+        "sha256": "49bd74a3bc99aee644e692b5d525953ec1bc68f5a3a5efe87fe30598682b9227",
+        "timingsSeconds": {
+          "cameraAuthoring": 0.1830813749693334,
+          "helperMatching": 0.050164416898041964,
+          "ifcOpen": 0.9487193748354912,
+          "ifcRows": 0.0618646121583879,
+          "primTraversal": 0.018226375337690115,
+          "psetRead": 0.5943257207982242,
+          "quarantineRead": 0.4539851248264313,
+          "setup": 0.014045833144336939,
+          "sourceRead": 0.00474191689863801,
+          "stageOpen": 0.14987191697582603,
+          "total": 2.644024374894798,
+          "typeMatching": 0.13650366617366672,
+          "writing": 0.028491958044469357
+        },
+        "wallSeconds": 2.6530759166926146
+      },
+      {
+        "bytes": 147695,
+        "counts": {
+          "cameras": 45,
+          "presets": 7,
+          "propsBlocked": 910,
+          "sensors": 45,
+          "subInstancesFolded": 49,
+          "types": 3,
+          "unmatched": 0
+        },
+        "sha256": "49bd74a3bc99aee644e692b5d525953ec1bc68f5a3a5efe87fe30598682b9227",
+        "timingsSeconds": {
+          "cameraAuthoring": 0.18199120927602053,
+          "helperMatching": 0.05046591581776738,
+          "ifcOpen": 0.9503164160996675,
+          "ifcRows": 0.06238214299082756,
+          "primTraversal": 0.0181488748639822,
+          "psetRead": 0.5922458991408348,
+          "quarantineRead": 0.45688162511214614,
+          "setup": 0.014245666097849607,
+          "sourceRead": 0.005043583922088146,
+          "stageOpen": 0.1516907080076635,
+          "total": 2.6483025001361966,
+          "typeMatching": 0.13519262475892901,
+          "writing": 0.029695999808609486
+        },
+        "wallSeconds": 2.657442250289023
+      },
+      {
+        "bytes": 147695,
+        "counts": {
+          "cameras": 45,
+          "presets": 7,
+          "propsBlocked": 910,
+          "sensors": 45,
+          "subInstancesFolded": 49,
+          "types": 3,
+          "unmatched": 0
+        },
+        "sha256": "49bd74a3bc99aee644e692b5d525953ec1bc68f5a3a5efe87fe30598682b9227",
+        "timingsSeconds": {
+          "cameraAuthoring": 0.18327408330515027,
+          "helperMatching": 0.04978283308446407,
+          "ifcOpen": 0.9685041247867048,
+          "ifcRows": 0.062085689045488834,
+          "primTraversal": 0.018351709004491568,
+          "psetRead": 0.5936454362235963,
+          "quarantineRead": 0.45797137496992946,
+          "setup": 0.013822416309267282,
+          "sourceRead": 0.0046884589828550816,
+          "stageOpen": 0.14978341571986675,
+          "total": 2.6665266253985465,
+          "typeMatching": 0.13594174990430474,
+          "writing": 0.02867387467995286
+        },
+        "wallSeconds": 2.67514375038445
+      },
+      {
+        "bytes": 147695,
+        "counts": {
+          "cameras": 45,
+          "presets": 7,
+          "propsBlocked": 910,
+          "sensors": 45,
+          "subInstancesFolded": 49,
+          "types": 3,
+          "unmatched": 0
+        },
+        "sha256": "49bd74a3bc99aee644e692b5d525953ec1bc68f5a3a5efe87fe30598682b9227",
+        "timingsSeconds": {
+          "cameraAuthoring": 0.1815327499061823,
+          "helperMatching": 0.04999225027859211,
+          "ifcOpen": 0.9598828749731183,
+          "ifcRows": 0.06255154963582754,
+          "primTraversal": 0.018391333054751158,
+          "psetRead": 0.5941998255439103,
+          "quarantineRead": 0.4572973749600351,
+          "setup": 0.013969333842396736,
+          "sourceRead": 0.0045918747782707214,
+          "stageOpen": 0.15305283293128014,
+          "total": 2.6621033339761198,
+          "typeMatching": 0.1362502919510007,
+          "writing": 0.03038895782083273
+        },
+        "wallSeconds": 2.670981291681528
+      },
+      {
+        "bytes": 147695,
+        "counts": {
+          "cameras": 45,
+          "presets": 7,
+          "propsBlocked": 910,
+          "sensors": 45,
+          "subInstancesFolded": 49,
+          "types": 3,
+          "unmatched": 0
+        },
+        "sha256": "49bd74a3bc99aee644e692b5d525953ec1bc68f5a3a5efe87fe30598682b9227",
+        "timingsSeconds": {
+          "cameraAuthoring": 0.18304687505587935,
+          "helperMatching": 0.05060879234224558,
+          "ifcOpen": 0.9597992077469826,
+          "ifcRows": 0.062382085248827934,
+          "primTraversal": 0.018370583187788725,
+          "psetRead": 0.5932467477396131,
+          "quarantineRead": 0.45624408265575767,
+          "setup": 0.013569833245128393,
+          "sourceRead": 0.00478091835975647,
+          "stageOpen": 0.15188712486997247,
+          "total": 2.657104874961078,
+          "typeMatching": 0.1348417499102652,
+          "writing": 0.028325167018920183
+        },
+        "wallSeconds": 2.6660426249727607
+      },
+      {
+        "bytes": 147695,
+        "counts": {
+          "cameras": 45,
+          "presets": 7,
+          "propsBlocked": 910,
+          "sensors": 45,
+          "subInstancesFolded": 49,
+          "types": 3,
+          "unmatched": 0
+        },
+        "sha256": "49bd74a3bc99aee644e692b5d525953ec1bc68f5a3a5efe87fe30598682b9227",
+        "timingsSeconds": {
+          "cameraAuthoring": 0.18284654105082154,
+          "helperMatching": 0.05068874964490533,
+          "ifcOpen": 0.9571910840459168,
+          "ifcRows": 0.062240539118647575,
+          "primTraversal": 0.018331124912947416,
+          "psetRead": 0.5909556685946882,
+          "quarantineRead": 0.4611827083863318,
+          "setup": 0.013397542294114828,
+          "sourceRead": 0.004664999898523092,
+          "stageOpen": 0.15380970807746053,
+          "total": 2.6601405842229724,
+          "typeMatching": 0.13503920892253518,
+          "writing": 0.029791000299155712
+        },
+        "wallSeconds": 2.6688147499226034
+      }
+    ],
+    "reference": [
+      {
+        "bytes": 147695,
+        "counts": {
+          "cameras": 45,
+          "presets": 7,
+          "propsBlocked": 910,
+          "sensors": 45,
+          "subInstancesFolded": 49,
+          "types": 3,
+          "unmatched": 0
+        },
+        "sha256": "49bd74a3bc99aee644e692b5d525953ec1bc68f5a3a5efe87fe30598682b9227",
+        "timingsSeconds": {
+          "cameraAuthoring": 1.113158707972616,
+          "helperMatching": 0.5742454170249403,
+          "ifcOpen": 1.0037334160879254,
+          "ifcRows": 0.06761668995022774,
+          "primTraversal": 0.017993707675486803,
+          "psetRead": 1.6089132269844413,
+          "quarantineRead": 0.3835184583440423,
+          "setup": 0.016240791883319616,
+          "sourceRead": 0.07885166676715016,
+          "stageOpen": 0.1535232923924923,
+          "total": 5.522924124728888,
+          "typeMatching": 0.47707554185763,
+          "writing": 0.028050417080521584
+        },
+        "wallSeconds": 5.531212167348713
+      },
+      {
+        "bytes": 147695,
+        "counts": {
+          "cameras": 45,
+          "presets": 7,
+          "propsBlocked": 910,
+          "sensors": 45,
+          "subInstancesFolded": 49,
+          "types": 3,
+          "unmatched": 0
+        },
+        "sha256": "49bd74a3bc99aee644e692b5d525953ec1bc68f5a3a5efe87fe30598682b9227",
+        "timingsSeconds": {
+          "cameraAuthoring": 1.1129114171490073,
+          "helperMatching": 0.5703945001587272,
+          "ifcOpen": 0.9916455829516053,
+          "ifcRows": 0.06829203618690372,
+          "primTraversal": 0.01878754235804081,
+          "psetRead": 1.6159216309897602,
+          "quarantineRead": 0.3837849167175591,
+          "setup": 0.015266542322933674,
+          "sourceRead": 0.0757614579051733,
+          "stageOpen": 0.15375970769673586,
+          "total": 5.519680625293404,
+          "typeMatching": 0.481695415917784,
+          "writing": 0.031457291916012764
+        },
+        "wallSeconds": 5.528336666058749
+      },
+      {
+        "bytes": 147695,
+        "counts": {
+          "cameras": 45,
+          "presets": 7,
+          "propsBlocked": 910,
+          "sensors": 45,
+          "subInstancesFolded": 49,
+          "types": 3,
+          "unmatched": 0
+        },
+        "sha256": "49bd74a3bc99aee644e692b5d525953ec1bc68f5a3a5efe87fe30598682b9227",
+        "timingsSeconds": {
+          "cameraAuthoring": 1.0988098750822246,
+          "helperMatching": 0.5662288749590516,
+          "ifcOpen": 0.9912828332744539,
+          "ifcRows": 0.06903896201401949,
+          "primTraversal": 0.018631250131875277,
+          "psetRead": 1.6161554967984557,
+          "quarantineRead": 0.38672349974513054,
+          "setup": 0.01599333295598626,
+          "sourceRead": 0.07534433295950294,
+          "stageOpen": 0.1519829579629004,
+          "total": 5.499306958168745,
+          "typeMatching": 0.47846700018271804,
+          "writing": 0.03064658399671316
+        },
+        "wallSeconds": 5.507521999999881
+      },
+      {
+        "bytes": 147695,
+        "counts": {
+          "cameras": 45,
+          "presets": 7,
+          "propsBlocked": 910,
+          "sensors": 45,
+          "subInstancesFolded": 49,
+          "types": 3,
+          "unmatched": 0
+        },
+        "sha256": "49bd74a3bc99aee644e692b5d525953ec1bc68f5a3a5efe87fe30598682b9227",
+        "timingsSeconds": {
+          "cameraAuthoring": 1.1003651251085103,
+          "helperMatching": 0.5703434590250254,
+          "ifcOpen": 0.9931857087649405,
+          "ifcRows": 0.0815653232857585,
+          "primTraversal": 0.018899083137512207,
+          "psetRead": 1.7132754679769278,
+          "quarantineRead": 0.3847561669535935,
+          "setup": 0.015365083236247301,
+          "sourceRead": 0.07991287484765053,
+          "stageOpen": 0.15377616696059704,
+          "total": 5.62174908304587,
+          "typeMatching": 0.4787972909398377,
+          "writing": 0.031504124868661165
+        },
+        "wallSeconds": 5.63028991734609
+      },
+      {
+        "bytes": 147695,
+        "counts": {
+          "cameras": 45,
+          "presets": 7,
+          "propsBlocked": 910,
+          "sensors": 45,
+          "subInstancesFolded": 49,
+          "types": 3,
+          "unmatched": 0
+        },
+        "sha256": "49bd74a3bc99aee644e692b5d525953ec1bc68f5a3a5efe87fe30598682b9227",
+        "timingsSeconds": {
+          "cameraAuthoring": 1.115204957779497,
+          "helperMatching": 0.5727357920259237,
+          "ifcOpen": 0.9903725422918797,
+          "ifcRows": 0.06629895279183984,
+          "primTraversal": 0.01862766593694687,
+          "psetRead": 1.6060241721570492,
+          "quarantineRead": 0.3801827500574291,
+          "setup": 0.014816333074122667,
+          "sourceRead": 0.0739625827409327,
+          "stageOpen": 0.15295341704040766,
+          "total": 5.502326457761228,
+          "typeMatching": 0.4849892919883132,
+          "writing": 0.02615591697394848
+        },
+        "wallSeconds": 5.510869916994125
+      },
+      {
+        "bytes": 147695,
+        "counts": {
+          "cameras": 45,
+          "presets": 7,
+          "propsBlocked": 910,
+          "sensors": 45,
+          "subInstancesFolded": 49,
+          "types": 3,
+          "unmatched": 0
+        },
+        "sha256": "49bd74a3bc99aee644e692b5d525953ec1bc68f5a3a5efe87fe30598682b9227",
+        "timingsSeconds": {
+          "cameraAuthoring": 1.101919540669769,
+          "helperMatching": 0.5693099172785878,
+          "ifcOpen": 1.0086663751862943,
+          "ifcRows": 0.06808417057618499,
+          "primTraversal": 0.0191731252707541,
+          "psetRead": 1.615886954125017,
+          "quarantineRead": 0.39015166694298387,
+          "setup": 0.016259666066616774,
+          "sourceRead": 0.07656187517568469,
+          "stageOpen": 0.16067241691052914,
+          "total": 5.5284352083690464,
+          "typeMatching": 0.4809860000386834,
+          "writing": 0.020761124789714813
+        },
+        "wallSeconds": 5.53643266716972
+      },
+      {
+        "bytes": 147695,
+        "counts": {
+          "cameras": 45,
+          "presets": 7,
+          "propsBlocked": 910,
+          "sensors": 45,
+          "subInstancesFolded": 49,
+          "types": 3,
+          "unmatched": 0
+        },
+        "sha256": "49bd74a3bc99aee644e692b5d525953ec1bc68f5a3a5efe87fe30598682b9227",
+        "timingsSeconds": {
+          "cameraAuthoring": 1.0694714589044452,
+          "helperMatching": 0.5529228751547635,
+          "ifcOpen": 0.9766666246578097,
+          "ifcRows": 0.06345197232440114,
+          "primTraversal": 0.018007582984864712,
+          "psetRead": 1.5247387369163334,
+          "quarantineRead": 0.3662392501719296,
+          "setup": 0.015202583745121956,
+          "sourceRead": 0.07066604122519493,
+          "stageOpen": 0.1460280828177929,
+          "total": 5.2961597088724375,
+          "typeMatching": 0.4619392501190305,
+          "writing": 0.03082304075360298
+        },
+        "wallSeconds": 5.304097624961287
+      },
+      {
+        "bytes": 147695,
+        "counts": {
+          "cameras": 45,
+          "presets": 7,
+          "propsBlocked": 910,
+          "sensors": 45,
+          "subInstancesFolded": 49,
+          "types": 3,
+          "unmatched": 0
+        },
+        "sha256": "49bd74a3bc99aee644e692b5d525953ec1bc68f5a3a5efe87fe30598682b9227",
+        "timingsSeconds": {
+          "cameraAuthoring": 1.0656222086399794,
+          "helperMatching": 0.5466481251642108,
+          "ifcOpen": 0.967033542227,
+          "ifcRows": 0.0647148322314024,
+          "primTraversal": 0.018497374840080738,
+          "psetRead": 1.5476195006631315,
+          "quarantineRead": 0.36465741600841284,
+          "setup": 0.014672958757728338,
+          "sourceRead": 0.07316437503322959,
+          "stageOpen": 0.14774562511593103,
+          "total": 5.299075583927333,
+          "typeMatching": 0.4594395002350211,
+          "writing": 0.029258625116199255
+        },
+        "wallSeconds": 5.307005750015378
+      },
+      {
+        "bytes": 147695,
+        "counts": {
+          "cameras": 45,
+          "presets": 7,
+          "propsBlocked": 910,
+          "sensors": 45,
+          "subInstancesFolded": 49,
+          "types": 3,
+          "unmatched": 0
+        },
+        "sha256": "49bd74a3bc99aee644e692b5d525953ec1bc68f5a3a5efe87fe30598682b9227",
+        "timingsSeconds": {
+          "cameraAuthoring": 1.0585243329405785,
+          "helperMatching": 0.5462622079066932,
+          "ifcOpen": 0.9594560000114143,
+          "ifcRows": 0.0642314893193543,
+          "primTraversal": 0.018241249956190586,
+          "psetRead": 1.5388551778160036,
+          "quarantineRead": 0.36693183286115527,
+          "setup": 0.014461208134889603,
+          "sourceRead": 0.071429374627769,
+          "stageOpen": 0.14992525009438396,
+          "total": 5.270079667214304,
+          "typeMatching": 0.46213283436372876,
+          "writing": 0.019626750145107508
+        },
+        "wallSeconds": 5.278210584074259
+      },
+      {
+        "bytes": 147695,
+        "counts": {
+          "cameras": 45,
+          "presets": 7,
+          "propsBlocked": 910,
+          "sensors": 45,
+          "subInstancesFolded": 49,
+          "types": 3,
+          "unmatched": 0
+        },
+        "sha256": "49bd74a3bc99aee644e692b5d525953ec1bc68f5a3a5efe87fe30598682b9227",
+        "timingsSeconds": {
+          "cameraAuthoring": 1.0714817917905748,
+          "helperMatching": 0.6197771672159433,
+          "ifcOpen": 0.9490914163179696,
+          "ifcRows": 0.06301697855815291,
+          "primTraversal": 0.018533207941800356,
+          "psetRead": 1.5337673551402986,
+          "quarantineRead": 0.36887033376842737,
+          "setup": 0.0142471669241786,
+          "sourceRead": 0.07057304214686155,
+          "stageOpen": 0.1470044581219554,
+          "total": 5.358084584120661,
+          "typeMatching": 0.4649162911809981,
+          "writing": 0.03680220805108547
+        },
+        "wallSeconds": 5.367490749806166
+      },
+      {
+        "bytes": 147695,
+        "counts": {
+          "cameras": 45,
+          "presets": 7,
+          "propsBlocked": 910,
+          "sensors": 45,
+          "subInstancesFolded": 49,
+          "types": 3,
+          "unmatched": 0
+        },
+        "sha256": "49bd74a3bc99aee644e692b5d525953ec1bc68f5a3a5efe87fe30598682b9227",
+        "timingsSeconds": {
+          "cameraAuthoring": 1.05451066698879,
+          "helperMatching": 0.54460324998945,
+          "ifcOpen": 0.9969204165972769,
+          "ifcRows": 0.06329357391223311,
+          "primTraversal": 0.01819533295929432,
+          "psetRead": 1.535839217249304,
+          "quarantineRead": 0.36350012524053454,
+          "setup": 0.01624429179355502,
+          "sourceRead": 0.07487783301621675,
+          "stageOpen": 0.14882804220542312,
+          "total": 5.302622082643211,
+          "typeMatching": 0.4563674167729914,
+          "writing": 0.029439791105687618
+        },
+        "wallSeconds": 5.310797417070717
+      },
+      {
+        "bytes": 147695,
+        "counts": {
+          "cameras": 45,
+          "presets": 7,
+          "propsBlocked": 910,
+          "sensors": 45,
+          "subInstancesFolded": 49,
+          "types": 3,
+          "unmatched": 0
+        },
+        "sha256": "49bd74a3bc99aee644e692b5d525953ec1bc68f5a3a5efe87fe30598682b9227",
+        "timingsSeconds": {
+          "cameraAuthoring": 1.0554671250283718,
+          "helperMatching": 0.5441081253811717,
+          "ifcOpen": 0.9601097907871008,
+          "ifcRows": 0.06358646508306265,
+          "primTraversal": 0.0199644579552114,
+          "psetRead": 1.5379853271879256,
+          "quarantineRead": 0.38422562507912517,
+          "setup": 0.015768582932651043,
+          "sourceRead": 0.07077600108459592,
+          "stageOpen": 0.2466784999705851,
+          "total": 5.387354833073914,
+          "typeMatching": 0.45839804178103805,
+          "writing": 0.030284957960247993
+        },
+        "wallSeconds": 5.39538324996829
+      }
+    ]
+  },
+  "scope": "complete import API wall time including teardown; excludes Python startup and core conversion",
+  "sourceSha256": "af4fa94e073001bd0ebe17d5ea290d3019e44345e02ed66ae24e48000be6373a",
+  "sourceUnchanged": true,
+  "summary": {
+    "optimized": {
+      "timingsSeconds": {
+        "cameraAuthoring": {
+          "maximum": 0.19310020795091987,
+          "p50": 0.1856071667280048,
+          "p95": 0.19278572234325111
+        },
+        "helperMatching": {
+          "maximum": 0.05704037472605705,
+          "p50": 0.05142885399982333,
+          "p95": 0.05678625178989023
+        },
+        "ifcOpen": {
+          "maximum": 1.013831582851708,
+          "p50": 0.9818641874007881,
+          "p95": 1.0121512640966102
+        },
+        "ifcRows": {
+          "maximum": 0.06835480686277151,
+          "p50": 0.06369843846186996,
+          "p95": 0.06756545340176671
+        },
+        "primTraversal": {
+          "maximum": 0.019480000250041485,
+          "p50": 0.018675041617825627,
+          "p95": 0.01936986264772713
+        },
+        "psetRead": {
+          "maximum": 0.6435886104591191,
+          "p50": 0.6047070927452296,
+          "p95": 0.6378403160255403
+        },
+        "quarantineRead": {
+          "maximum": 0.4722593333572149,
+          "p50": 0.46183427050709724,
+          "p95": 0.46955610618460925
+        },
+        "setup": {
+          "maximum": 0.015118124894797802,
+          "p50": 0.014244354097172618,
+          "p95": 0.015042454306967556
+        },
+        "sourceRead": {
+          "maximum": 0.005262666381895542,
+          "p50": 0.004715187940746546,
+          "p95": 0.005142171029001474
+        },
+        "stageOpen": {
+          "maximum": 0.1590301669202745,
+          "p50": 0.15491058304905891,
+          "p95": 0.1581527108559385
+        },
+        "total": {
+          "maximum": 2.81678358418867,
+          "p50": 2.713613396277651,
+          "p95": 2.7979221354937183
+        },
+        "typeMatching": {
+          "maximum": 0.16713137459009886,
+          "p50": 0.13877516658976674,
+          "p95": 0.15444223373197016
+        },
+        "writing": {
+          "maximum": 0.03466341691091657,
+          "p50": 0.029731708578765392,
+          "p95": 0.03231246441137045
+        }
+      },
+      "wallSeconds": {
+        "maximum": 2.825723750051111,
+        "p50": 2.7225738547276706,
+        "p95": 2.8202677269466223
+      }
+    },
+    "reference": {
+      "timingsSeconds": {
+        "cameraAuthoring": {
+          "maximum": 1.115204957779497,
+          "p50": 1.0851458334363997,
+          "p95": 1.1140795203857123
+        },
+        "helperMatching": {
+          "maximum": 0.6197771672159433,
+          "p50": 0.5677693961188197,
+          "p95": 0.5947347046108916
+        },
+        "ifcOpen": {
+          "maximum": 1.0086663751862943,
+          "p50": 0.9908276877831668,
+          "p95": 1.0059532476821915
+        },
+        "ifcRows": {
+          "maximum": 0.0815653232857585,
+          "p50": 0.06550689251162112,
+          "p95": 0.07467582458630204
+        },
+        "primTraversal": {
+          "maximum": 0.0199644579552114,
+          "p50": 0.018580436939373612,
+          "p95": 0.019529224978759883
+        },
+        "psetRead": {
+          "maximum": 1.7132754679769278,
+          "p50": 1.5768218364100903,
+          "p95": 1.6598594838287681
+        },
+        "quarantineRead": {
+          "maximum": 0.39015166694298387,
+          "p50": 0.3818506042007357,
+          "p95": 0.38826617498416455
+        },
+        "setup": {
+          "maximum": 0.016259666066616774,
+          "p50": 0.015315812779590487,
+          "p95": 0.01625121021643281
+        },
+        "sourceRead": {
+          "maximum": 0.07991287484765053,
+          "p50": 0.07442020787857473,
+          "p95": 0.07932921040337533
+        },
+        "stageOpen": {
+          "maximum": 0.2466784999705851,
+          "p50": 0.15246818750165403,
+          "p95": 0.19937515428755426
+        },
+        "total": {
+          "maximum": 5.62174908304587,
+          "p50": 5.4433308956213295,
+          "p95": 5.570426451973617
+        },
+        "typeMatching": {
+          "maximum": 0.4849892919883132,
+          "p50": 0.47099591651931405,
+          "p95": 0.4831776601495221
+        },
+        "writing": {
+          "maximum": 0.03680220805108547,
+          "p50": 0.029862374532967806,
+          "p95": 0.0338882623007521
+        }
+      },
+      "wallSeconds": {
+        "maximum": 5.63028991734609,
+        "p50": 5.451452624984086,
+        "p95": 5.5786684297490865
+      }
+    }
+  },
+  "trialsPerMode": 12,
+  "vanillaComposition": {
+    "cameras": 45,
+    "compositionErrors": 0,
+    "familyPlugins": 0,
+    "unchangedTransforms": 45
+  }
+}

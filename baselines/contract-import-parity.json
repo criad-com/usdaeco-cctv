@@ -1,0 +1,114 @@
+{
+  "cases": {
+    "demo-export": {
+      "byteIdentical": true,
+      "bytes": 147677,
+      "counters": {
+        "cameras": 45,
+        "presets": 7,
+        "propsBlocked": 910,
+        "sensors": 45,
+        "subInstancesFolded": 49,
+        "types": 3,
+        "unmatched": 0
+      },
+      "sha256": "eeed4b0829c78b85379cddde4956759445f8616e3defc5b6b19f9b7edb9696b8"
+    },
+    "fixture-cobie": {
+      "byteIdentical": true,
+      "bytes": 20073,
+      "counters": {
+        "cameras": 3,
+        "presets": 2,
+        "propsBlocked": 137,
+        "sensors": 6,
+        "subInstancesFolded": 2,
+        "types": 3,
+        "unmatched": 0
+      },
+      "sha256": "91960f095f2fa41d0564087e4031651a0ece3b0d12d3375c3d864efa6f83b309"
+    },
+    "fixture-ifc": {
+      "byteIdentical": true,
+      "bytes": 20073,
+      "counters": {
+        "cameras": 3,
+        "presets": 2,
+        "propsBlocked": 137,
+        "sensors": 6,
+        "subInstancesFolded": 2,
+        "types": 3,
+        "unmatched": 0
+      },
+      "sha256": "91960f095f2fa41d0564087e4031651a0ece3b0d12d3375c3d864efa6f83b309"
+    },
+    "fixture-revit": {
+      "byteIdentical": true,
+      "bytes": 6180,
+      "counters": {
+        "cameras": 2,
+        "presets": 0,
+        "propsBlocked": 35,
+        "sensors": 2,
+        "subInstancesFolded": 2,
+        "types": 1,
+        "unmatched": 0
+      },
+      "sha256": "12a309afc307567da48b79d60c94504d302f0a589797b76dad0cb3bf59fd2789"
+    },
+    "gate-fixture": {
+      "byteIdentical": true,
+      "bytes": 20073,
+      "counters": {
+        "cameras": 3,
+        "presets": 2,
+        "propsBlocked": 137,
+        "sensors": 6,
+        "subInstancesFolded": 2,
+        "types": 3,
+        "unmatched": 0
+      },
+      "sha256": "91960f095f2fa41d0564087e4031651a0ece3b0d12d3375c3d864efa6f83b309"
+    },
+    "generator": {
+      "byteIdentical": true,
+      "bytes": 87635,
+      "counters": {
+        "cameras": 45,
+        "presets": 7,
+        "propsBlocked": 459,
+        "sensors": 45,
+        "subInstancesFolded": 0,
+        "types": 3,
+        "unmatched": 0
+      },
+      "sha256": "4f466c5f37daec29a69591cc447ff1692db7ad1e70811994536c007fc7a3d7a2"
+    },
+    "lobby": {
+      "byteIdentical": true,
+      "bytes": 514520,
+      "counters": {
+        "cameras": 4,
+        "densityModel": "plane",
+        "envelopes": 1,
+        "levelSystem": "dori2015",
+        "sectors": 4,
+        "sensors": 4,
+        "shells": 7,
+        "skipped": [],
+        "tours": 1,
+        "types": 2
+      },
+      "sha256": "f052a9e76317a68dc0eb524f5209ee730ca33d9841a9548d153155cd92d3ea7f"
+    }
+  },
+  "demoExportSha256": "af4fa94e073001bd0ebe17d5ea290d3019e44345e02ed66ae24e48000be6373a",
+  "generator": {
+    "revision": "c3517940cd0f491112ee980d76024f6e7dcf66f1",
+    "version": "0.3.3"
+  },
+  "libraryVersion": "0.4.8",
+  "lobbyCounterPolicy": "Compare semantic counters; output is a caller-selected destination filename.",
+  "referenceRevision": "bef00469a14b942369dc7c558c2c4512330523aa",
+  "stampPolicy": "Both implementations use the current release stamp and identical relative core arcs; no output normalization."
+}

@@ -1,0 +1,30 @@
+{
+  "name": "security",
+  "description": "Hardened grading for security reviews: stale results, PTZ-only coverage and distant targets are errors.",
+  "include_builtin": true,
+  "severity_overrides": {
+    "cctvKindMismatch": "warn",
+    "cctvSensorMissing": "error",
+    "cctvSensorOrphan": "warn",
+    "cctvOutOfEnvelope": "error",
+    "cctvNativeCameraAuthored": "warn",
+    "cctvDerivedMismatch": "warn",
+    "cctvMountFrame": "warn",
+    "cctvSystemCapacity": "warn",
+    "cctvStudyMissingResults": "error",
+    "cctvStudyStale": "error",
+    "cctvTargetUncovered": "error",
+    "cctvPtzSoleCoverage": "error",
+    "cctvTargetTooFar": "error",
+    "cctvExclusionCovered": "error",
+    "cctvUnphasedInView": "warn",
+    "cctvUnclassifiedInView": "warn",
+    "cctvUnphasedProvider": "warn",
+    "cctvStudyIncomplete": "error",
+    "cctvUnsupportedTopology": "error",
+    "cctvMissingOptics": "error",
+    "cctvInvalidSampling": "error",
+    "cctvUnsupportedProjection": "error",
+    "cctvTargetMostlyEnclosed": "warn"
+  }
+}

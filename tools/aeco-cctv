@@ -1,0 +1,7 @@
+#!/usr/bin/env python3
+"""Source-checkout CLI; run with the configured OpenUSD Python interpreter."""
+import sys
+
+from usdaeco_cctv.cli import main
+
+sys.exit(main())

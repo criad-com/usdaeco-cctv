@@ -1,0 +1,572 @@
+{
+  "baseline": {
+    "cameras": 45,
+    "presets": 7,
+    "propsBlocked": 1162,
+    "sensors": 45,
+    "subInstancesFolded": 1,
+    "types": 24,
+    "unmatched": 48
+  },
+  "conversion": {
+    "blankHeadingsOmitted": 472,
+    "elements": 1514,
+    "extents": 30,
+    "ifc4FacilityAdapted": 0,
+    "meshes": 1544,
+    "phases": 1514,
+    "portLinks": 0,
+    "ports": 2048,
+    "seconds": 9.97,
+    "spatial": 35,
+    "systems": 248,
+    "types": 290,
+    "unclassified": 318,
+    "unparented": 0,
+    "zones": 0
+  },
+  "coreVersion": "0.8.4",
+  "derived": {
+    "cameras": 45,
+    "densityModel": "plane",
+    "envelopes": 0,
+    "levelSystem": "dori2015",
+    "sectors": 45,
+    "sensors": 45,
+    "shells": 115,
+    "skipped": [],
+    "tours": 0,
+    "types": 3
+  },
+  "facility": "demo-datacentre-01",
+  "foldMapping": {
+    "779c8cd7-babd-4b54-8ff0-f8f914e27d81": {
+      "distanceMetres": 0.8614522621712712,
+      "matched": true,
+      "method": "nearest-optics",
+      "owner": "00a0fb25-9034-5fef-8654-da86aa317856"
+    },
+    "779c8cd7-babd-4b54-8ff0-f8f914e27d85": {
+      "distanceMetres": 0.861452262171272,
+      "matched": true,
+      "method": "nearest-optics",
+      "owner": "23cf46a8-bc82-5782-b3d2-89c31f41bf14"
+    },
+    "779c8cd7-babd-4b54-8ff0-f8f914e27d87": {
+      "distanceMetres": 0.8614522621712719,
+      "matched": true,
+      "method": "nearest-optics",
+      "owner": "23cf46a8-bc82-5782-b3d2-89c31f41bf14"
+    },
+    "779c8cd7-babd-4b54-8ff0-f8f914e27d8f": {
+      "distanceMetres": 0.8614522621712711,
+      "matched": true,
+      "method": "nearest-optics",
+      "owner": "9b519a5b-4a53-5430-81a4-4063d64ed8bf"
+    },
+    "779c8cd7-babd-4b54-8ff0-f8f914e27d94": {
+      "distanceMetres": 0.8614522621712714,
+      "matched": true,
+      "method": "nearest-optics",
+      "owner": "9b519a5b-4a53-5430-81a4-4063d64ed8bf"
+    },
+    "779c8cd7-babd-4b54-8ff0-f8f914e27df8": {
+      "distanceMetres": 0.8614522621712711,
+      "matched": true,
+      "method": "nearest-optics",
+      "owner": "00a0fb25-9034-5fef-8654-da86aa317856"
+    },
+    "779c8cd7-babd-4b54-8ff0-f8f914e27df9": {
+      "distanceMetres": 0.8614522621712711,
+      "matched": true,
+      "method": "nearest-optics",
+      "owner": "00a0fb25-9034-5fef-8654-da86aa317856"
+    },
+    "779c8cd7-babd-4b54-8ff0-f8f914e2e315": {
+      "distanceMetres": 0.7700000000000005,
+      "matched": true,
+      "method": "nearest-optics",
+      "owner": "85ef0c56-c408-588b-8c84-7efbe9dd3b53"
+    },
+    "779c8cd7-babd-4b54-8ff0-f8f914e2e319": {
+      "distanceMetres": 0.770000000000129,
+      "matched": true,
+      "method": "nearest-optics",
+      "owner": "81a4b44f-b5f8-592c-ae43-07b198fb1c1f"
+    },
+    "779c8cd7-babd-4b54-8ff0-f8f914e2e31c": {
+      "distanceMetres": 0.770000000000129,
+      "matched": true,
+      "method": "nearest-optics",
+      "owner": "15a84451-1e32-5917-8c2a-ca39bb800db4"
+    },
+    "779c8cd7-babd-4b54-8ff0-f8f914e2e323": {
+      "distanceMetres": 0.770000000000258,
+      "matched": true,
+      "method": "nearest-optics",
+      "owner": "15dda753-a796-5cae-8d3d-8d3d1b798b1d"
+    },
+    "779c8cd7-babd-4b54-8ff0-f8f914e2e326": {
+      "distanceMetres": 0.77,
+      "matched": true,
+      "method": "nearest-optics",
+      "owner": "c0d22337-3534-5aab-9a48-d116522c9473"
+    },
+    "779c8cd7-babd-4b54-8ff0-f8f914e2e32a": {
+      "distanceMetres": 0.770000000000258,
+      "matched": true,
+      "method": "nearest-optics",
+      "owner": "a1102286-c4c4-5f37-85bf-7f8533e08cc5"
+    },
+    "779c8cd7-babd-4b54-8ff0-f8f914e2e32f": {
+      "distanceMetres": 0.77,
+      "matched": true,
+      "method": "nearest-optics",
+      "owner": "f9543eb0-4bd3-55ce-8b94-105a44e68e14"
+    },
+    "779c8cd7-babd-4b54-8ff0-f8f914e2e331": {
+      "distanceMetres": 0.770000000000129,
+      "matched": true,
+      "method": "nearest-optics",
+      "owner": "fb5f5224-5673-5f64-9feb-3f7c08a46f45"
+    },
+    "779c8cd7-babd-4b54-8ff0-f8f914e2e332": {
+      "distanceMetres": 0.770000000000129,
+      "matched": true,
+      "method": "nearest-optics",
+      "owner": "6dd21295-3c0e-5fe2-8cc5-647b2acdee6c"
+    },
+    "779c8cd7-babd-4b54-8ff0-f8f914e2e339": {
+      "distanceMetres": 0.770000000000129,
+      "matched": true,
+      "method": "nearest-optics",
+      "owner": "bccc0760-fb91-586b-868b-fa614e1f1598"
+    },
+    "779c8cd7-babd-4b54-8ff0-f8f914e2e33d": {
+      "distanceMetres": 0.7700000000000555,
+      "matched": true,
+      "method": "nearest-optics",
+      "owner": "45eb74fd-120c-50f4-8a96-04557e24e6d4"
+    },
+    "779c8cd7-babd-4b54-8ff0-f8f914e2e482": {
+      "distanceMetres": 0.770000000000258,
+      "matched": true,
+      "method": "nearest-optics",
+      "owner": "5956e453-050d-5e48-b00a-08d5e24c4965"
+    },
+    "779c8cd7-babd-4b54-8ff0-f8f914e2e487": {
+      "distanceMetres": 0.77,
+      "matched": true,
+      "method": "nearest-optics",
+      "owner": "1604d036-e3b5-5c9a-9dc8-aa487cd85d08"
+    },
+    "779c8cd7-babd-4b54-8ff0-f8f914e2e48a": {
+      "distanceMetres": 0.7700000000001286,
+      "matched": true,
+      "method": "nearest-optics",
+      "owner": "36e6aabe-a946-534d-a4f0-43274b1f365b"
+    },
+    "779c8cd7-babd-4b54-8ff0-f8f914e2e496": {
+      "distanceMetres": 0.770000000000129,
+      "matched": true,
+      "method": "nearest-optics",
+      "owner": "7cc0bb8b-1ee6-5dbd-bb56-ce1bbc1c346a"
+    },
+    "779c8cd7-babd-4b54-8ff0-f8f914e2e4c0": {
+      "distanceMetres": 0.7700000000000555,
+      "matched": true,
+      "method": "nearest-optics",
+      "owner": "9659bb7a-bd71-5cfc-939e-0c7df304e336"
+    },
+    "779c8cd7-babd-4b54-8ff0-f8f914e2e4c7": {
+      "distanceMetres": 0.7700000000000555,
+      "matched": true,
+      "method": "nearest-optics",
+      "owner": "1c297e59-d234-5b8e-a6a3-609f5585cf74"
+    },
+    "779c8cd7-babd-4b54-8ff0-f8f914e2e4ca": {
+      "distanceMetres": 0.7700000000000229,
+      "matched": true,
+      "method": "nearest-optics",
+      "owner": "9f69ec75-4c5a-5c9d-a6f8-f2c19355e505"
+    },
+    "779c8cd7-babd-4b54-8ff0-f8f914e2e4d3": {
+      "distanceMetres": 0.7700000000000555,
+      "matched": true,
+      "method": "nearest-optics",
+      "owner": "6787dbc9-b68c-542e-9141-7234ea79b9de"
+    },
+    "779c8cd7-babd-4b54-8ff0-f8f914e2e4d7": {
+      "distanceMetres": 0.7700000000002352,
+      "matched": true,
+      "method": "nearest-optics",
+      "owner": "f72a4c59-2931-5574-8be9-4a98e49cccc7"
+    },
+    "779c8cd7-babd-4b54-8ff0-f8f914e2e4d9": {
+      "distanceMetres": 0.7700000000002025,
+      "matched": true,
+      "method": "nearest-optics",
+      "owner": "eecb40ab-3b50-5217-8489-8fed04a3483c"
+    },
+    "779c8cd7-babd-4b54-8ff0-f8f914e2e4da": {
+      "distanceMetres": 0.7700000000000229,
+      "matched": true,
+      "method": "nearest-optics",
+      "owner": "05ff5cd2-7bdf-51b1-9b63-7ea84ca65250"
+    },
+    "779c8cd7-babd-4b54-8ff0-f8f914e2e4e0": {
+      "distanceMetres": 0.7700000000002352,
+      "matched": true,
+      "method": "nearest-optics",
+      "owner": "e879ff19-3558-5c1b-9863-bb8a6b8395cf"
+    },
+    "779c8cd7-babd-4b54-8ff0-f8f914e2e4e5": {
+      "distanceMetres": 0.7700000000000229,
+      "matched": true,
+      "method": "nearest-optics",
+      "owner": "34321c5e-dd53-5220-a18c-e0a186cbc38a"
+    },
+    "779c8cd7-babd-4b54-8ff0-f8f914e2e4f2": {
+      "distanceMetres": 0.7700000000002025,
+      "matched": true,
+      "method": "nearest-optics",
+      "owner": "ebb5fb2b-745a-56a9-b089-d5d95c593514"
+    },
+    "779c8cd7-babd-4b54-8ff0-f8f914e2e4f5": {
+      "distanceMetres": 0.770000000000129,
+      "matched": true,
+      "method": "nearest-optics",
+      "owner": "1df38d7f-3bd3-5d3d-b760-abde2a162779"
+    },
+    "958fd8db-f64f-4f60-bd49-b8493c92a503": {
+      "distanceMetres": 0.770000000000129,
+      "matched": true,
+      "method": "nearest-optics",
+      "owner": "6a964f1a-e11e-5876-a9ac-32bbeadc9882"
+    },
+    "958fd8db-f64f-4f60-bd49-b8493c92a509": {
+      "distanceMetres": 0.770000000000129,
+      "matched": true,
+      "method": "nearest-optics",
+      "owner": "f1de745b-2c2d-5448-930f-14db4f2fcda6"
+    },
+    "958fd8db-f64f-4f60-bd49-b8493c92a51a": {
+      "distanceMetres": 0.77,
+      "matched": true,
+      "method": "nearest-optics",
+      "owner": "d405dbd2-9cfc-56f5-a320-d77fa1618022"
+    },
+    "958fd8db-f64f-4f60-bd49-b8493c92a51e": {
+      "distanceMetres": 0.770000000000258,
+      "matched": true,
+      "method": "nearest-optics",
+      "owner": "157ad518-4b50-5525-8fea-20cb3f0b041c"
+    },
+    "958fd8db-f64f-4f60-bd49-b8493c92a523": {
+      "distanceMetres": 0.770000000000212,
+      "matched": true,
+      "method": "nearest-optics",
+      "owner": "f8f0af52-c8dc-5470-b630-40afb9037f7a"
+    },
+    "958fd8db-f64f-4f60-bd49-b8493c92a529": {
+      "distanceMetres": 0.7700000000000453,
+      "matched": true,
+      "method": "nearest-optics",
+      "owner": "1680c4a8-fefd-5db9-91b0-a826a9453cc7"
+    },
+    "958fd8db-f64f-4f60-bd49-b8493c92a531": {
+      "distanceMetres": 0.7700000000002586,
+      "matched": true,
+      "method": "nearest-optics",
+      "owner": "5c516ad4-57b5-5ffe-9468-cf14e42e9ae0"
+    },
+    "958fd8db-f64f-4f60-bd49-b8493c92a536": {
+      "distanceMetres": 0.7700000000000453,
+      "matched": true,
+      "method": "nearest-optics",
+      "owner": "a6017978-22fe-5283-96a9-c002af3310c0"
+    },
+    "958fd8db-f64f-4f60-bd49-b8493c92a546": {
+      "distanceMetres": 0.7700000000002425,
+      "matched": true,
+      "method": "nearest-optics",
+      "owner": "021ca726-e05c-5ea8-853c-a20d1f571e2c"
+    },
+    "958fd8db-f64f-4f60-bd49-b8493c92a54d": {
+      "distanceMetres": 0.7700000000000593,
+      "matched": true,
+      "method": "nearest-optics",
+      "owner": "0d5ca8c9-b0d2-5ea9-8d94-c6026ad954c3"
+    },
+    "958fd8db-f64f-4f60-bd49-b8493c92a550": {
+      "distanceMetres": 0.770000000000212,
+      "matched": true,
+      "method": "nearest-optics",
+      "owner": "9a73cfd4-cf42-51c7-bb95-e4804591690c"
+    },
+    "958fd8db-f64f-4f60-bd49-b8493c92a55f": {
+      "distanceMetres": 0.7700000000000148,
+      "matched": true,
+      "method": "nearest-optics",
+      "owner": "a7eacd6f-8c00-580b-997b-722f6d00561b"
+    },
+    "958fd8db-f64f-4f60-bd49-b8493c92a57a": {
+      "distanceMetres": 0.7700000000001989,
+      "matched": true,
+      "method": "nearest-optics",
+      "owner": "2a2dd6c7-7c7d-5251-8b04-b30b2da64e9f"
+    },
+    "958fd8db-f64f-4f60-bd49-b8493c92a5e1": {
+      "distanceMetres": 0.770000000000129,
+      "matched": true,
+      "method": "nearest-optics",
+      "owner": "c7644a8f-7903-56f3-9251-401b0e9231d8"
+    },
+    "958fd8db-f64f-4f60-bd49-b8493c92a5ec": {
+      "distanceMetres": 0.770000000000129,
+      "matched": true,
+      "method": "nearest-optics",
+      "owner": "2a746327-674b-56ca-96b0-8dc6c3e60cb2"
+    },
+    "958fd8db-f64f-4f60-bd49-b8493c92a5ef": {
+      "distanceMetres": 0.770000000000129,
+      "matched": true,
+      "method": "nearest-optics",
+      "owner": "290e2c0d-ca55-55d0-b1d2-a1c4e3ab6951"
+    }
+  },
+  "helpers": {
+    "containment": {
+      "L00 Ground": 48,
+      "L01 Office": 1
+    },
+    "count": 49,
+    "ifcClass": "IfcBuildingElementProxy",
+    "matchMethods": {
+      "nearest-optics": 49
+    },
+    "namePattern": "FOV-AXIS_v80:Default:<element-id>",
+    "nested": 0,
+    "psets": [
+      "Constraints",
+      "Data",
+      "Dimensions",
+      "Graphics",
+      "IFC Parameters",
+      "Identity Data",
+      "Materials and Finishes",
+      "Other",
+      "Phasing",
+      "Photometrics",
+      "Pset_BuildingElementProxyCommon",
+      "Pset_EnvironmentalImpactIndicators",
+      "Text"
+    ],
+    "superComponent": 0,
+    "typeName": "FOV-AXIS_v80:Default",
+    "uniqueOwners": 45
+  },
+  "importSeconds": 5.416,
+  "imported": {
+    "cameras": 45,
+    "presets": 7,
+    "propsBlocked": 910,
+    "sensors": 45,
+    "subInstancesFolded": 49,
+    "types": 3,
+    "unmatched": 0
+  },
+  "inputsUnchanged": true,
+  "libraryVersion": "0.4.6",
+  "source": "demo-datacentre-01-revit.ifc",
+  "sourceSchema": "IFC4X3",
+  "sourceSha256": "af4fa94e073001bd0ebe17d5ea290d3019e44345e02ed66ae24e48000be6373a",
+  "typeGroups": [
+    {
+      "cameras": 3,
+      "canonicalTypeId": "0d276773-b3b6-41a5-8974-2727268dd252",
+      "catalog": "/_0001/_TypeCatalog/Surveillance_Camera_AXIS_Q6088_E_metric_DC_ptz_4k",
+      "name": "Surveillance-Camera-AXIS_Q6088-E-metric:DC ptz_4k",
+      "sourceTypeIds": [
+        "0d276773-b3b6-41a5-8974-2727268dd252",
+        "0d276773-b3b6-41a5-8974-2727268dd25b"
+      ],
+      "sourceTypes": 2
+    },
+    {
+      "cameras": 11,
+      "canonicalTypeId": "809cc5b6-7cb8-4eaa-a36c-f31fa797cd0a",
+      "catalog": "/_0001/_TypeCatalog/Surveillance_Camera_AXIS_P3277_LV_metric_DC_bullet_4mp_outdoor",
+      "name": "Surveillance-Camera-AXIS_P3277-LV-metric:DC bullet_4mp_outdoor",
+      "sourceTypeIds": [
+        "809cc5b6-7cb8-4eaa-a36c-f31fa797cd0a",
+        "958fd8db-f64f-4f60-bd49-b8493c92a520",
+        "958fd8db-f64f-4f60-bd49-b8493c92a52f",
+        "958fd8db-f64f-4f60-bd49-b8493c92a53b",
+        "958fd8db-f64f-4f60-bd49-b8493c92a544",
+        "958fd8db-f64f-4f60-bd49-b8493c92a556",
+        "958fd8db-f64f-4f60-bd49-b8493c92a55d",
+        "958fd8db-f64f-4f60-bd49-b8493c92a5db",
+        "958fd8db-f64f-4f60-bd49-b8493c92a5dc",
+        "958fd8db-f64f-4f60-bd49-b8493c92a5de"
+      ],
+      "sourceTypes": 10
+    },
+    {
+      "cameras": 31,
+      "canonicalTypeId": "958fd8db-f64f-4f60-bd49-b8493c92a507",
+      "catalog": "/_0001/_TypeCatalog/Surveillance_Camera_AXIS_P3277_LV_metric_DC_dome_5mp",
+      "name": "Surveillance-Camera-AXIS_P3277-LV-metric:DC dome_5mp",
+      "sourceTypeIds": [
+        "958fd8db-f64f-4f60-bd49-b8493c92a507",
+        "958fd8db-f64f-4f60-bd49-b8493c92a50e",
+        "958fd8db-f64f-4f60-bd49-b8493c92a511",
+        "958fd8db-f64f-4f60-bd49-b8493c92a517",
+        "958fd8db-f64f-4f60-bd49-b8493c92a572",
+        "958fd8db-f64f-4f60-bd49-b8493c92a578",
+        "958fd8db-f64f-4f60-bd49-b8493c92a5c0",
+        "958fd8db-f64f-4f60-bd49-b8493c92a5c9",
+        "958fd8db-f64f-4f60-bd49-b8493c92a5e6",
+        "958fd8db-f64f-4f60-bd49-b8493c92a5f3",
+        "958fd8db-f64f-4f60-bd49-b8493c92a5f5",
+        "958fd8db-f64f-4f60-bd49-b8493c92a5ff"
+      ],
+      "sourceTypes": 12
+    }
+  ],
+  "typeMapping": {
+    "0d276773-b3b6-41a5-8974-2727268dd252": {
+      "catalog": "/_0001/_TypeCatalog/Surveillance_Camera_AXIS_Q6088_E_metric_DC_ptz_4k",
+      "sourceCatalog": "/_0001/_TypeCatalog/Surveillance_Camera_AXIS_Q6088_E_metric_DC_ptz_4k",
+      "typeId": "0d276773-b3b6-41a5-8974-2727268dd252"
+    },
+    "0d276773-b3b6-41a5-8974-2727268dd25b": {
+      "catalog": "/_0001/_TypeCatalog/Surveillance_Camera_AXIS_Q6088_E_metric_DC_ptz_4k",
+      "sourceCatalog": "/_0001/_TypeCatalog/Surveillance_Camera_AXIS_Q6088_E_metric_DC_ptz_4k_0d2767",
+      "typeId": "0d276773-b3b6-41a5-8974-2727268dd252"
+    },
+    "809cc5b6-7cb8-4eaa-a36c-f31fa797cd0a": {
+      "catalog": "/_0001/_TypeCatalog/Surveillance_Camera_AXIS_P3277_LV_metric_DC_bullet_4mp_outdoor",
+      "sourceCatalog": "/_0001/_TypeCatalog/Surveillance_Camera_AXIS_P3277_LV_metric_DC_bullet_4mp_outdoor",
+      "typeId": "809cc5b6-7cb8-4eaa-a36c-f31fa797cd0a"
+    },
+    "958fd8db-f64f-4f60-bd49-b8493c92a507": {
+      "catalog": "/_0001/_TypeCatalog/Surveillance_Camera_AXIS_P3277_LV_metric_DC_dome_5mp",
+      "sourceCatalog": "/_0001/_TypeCatalog/Surveillance_Camera_AXIS_P3277_LV_metric_DC_dome_5mp",
+      "typeId": "958fd8db-f64f-4f60-bd49-b8493c92a507"
+    },
+    "958fd8db-f64f-4f60-bd49-b8493c92a50e": {
+      "catalog": "/_0001/_TypeCatalog/Surveillance_Camera_AXIS_P3277_LV_metric_DC_dome_5mp",
+      "sourceCatalog": "/_0001/_TypeCatalog/Surveillance_Camera_AXIS_P3277_LV_metric_DC_dome_5mp_958fd8",
+      "typeId": "958fd8db-f64f-4f60-bd49-b8493c92a507"
+    },
+    "958fd8db-f64f-4f60-bd49-b8493c92a511": {
+      "catalog": "/_0001/_TypeCatalog/Surveillance_Camera_AXIS_P3277_LV_metric_DC_dome_5mp",
+      "sourceCatalog": "/_0001/_TypeCatalog/Surveillance_Camera_AXIS_P3277_LV_metric_DC_dome_5mp_958fd8_2",
+      "typeId": "958fd8db-f64f-4f60-bd49-b8493c92a507"
+    },
+    "958fd8db-f64f-4f60-bd49-b8493c92a517": {
+      "catalog": "/_0001/_TypeCatalog/Surveillance_Camera_AXIS_P3277_LV_metric_DC_dome_5mp",
+      "sourceCatalog": "/_0001/_TypeCatalog/Surveillance_Camera_AXIS_P3277_LV_metric_DC_dome_5mp_958fd8_3",
+      "typeId": "958fd8db-f64f-4f60-bd49-b8493c92a507"
+    },
+    "958fd8db-f64f-4f60-bd49-b8493c92a520": {
+      "catalog": "/_0001/_TypeCatalog/Surveillance_Camera_AXIS_P3277_LV_metric_DC_bullet_4mp_outdoor",
+      "sourceCatalog": "/_0001/_TypeCatalog/Surveillance_Camera_AXIS_P3277_LV_metric_DC_bullet_4mp_outdoor_958fd8",
+      "typeId": "809cc5b6-7cb8-4eaa-a36c-f31fa797cd0a"
+    },
+    "958fd8db-f64f-4f60-bd49-b8493c92a52f": {
+      "catalog": "/_0001/_TypeCatalog/Surveillance_Camera_AXIS_P3277_LV_metric_DC_bullet_4mp_outdoor",
+      "sourceCatalog": "/_0001/_TypeCatalog/Surveillance_Camera_AXIS_P3277_LV_metric_DC_bullet_4mp_outdoor_958fd8_2",
+      "typeId": "809cc5b6-7cb8-4eaa-a36c-f31fa797cd0a"
+    },
+    "958fd8db-f64f-4f60-bd49-b8493c92a53b": {
+      "catalog": "/_0001/_TypeCatalog/Surveillance_Camera_AXIS_P3277_LV_metric_DC_bullet_4mp_outdoor",
+      "sourceCatalog": "/_0001/_TypeCatalog/Surveillance_Camera_AXIS_P3277_LV_metric_DC_bullet_4mp_outdoor_958fd8_3",
+      "typeId": "809cc5b6-7cb8-4eaa-a36c-f31fa797cd0a"
+    },
+    "958fd8db-f64f-4f60-bd49-b8493c92a544": {
+      "catalog": "/_0001/_TypeCatalog/Surveillance_Camera_AXIS_P3277_LV_metric_DC_bullet_4mp_outdoor",
+      "sourceCatalog": "/_0001/_TypeCatalog/Surveillance_Camera_AXIS_P3277_LV_metric_DC_bullet_4mp_outdoor_958fd8_4",
+      "typeId": "809cc5b6-7cb8-4eaa-a36c-f31fa797cd0a"
+    },
+    "958fd8db-f64f-4f60-bd49-b8493c92a556": {
+      "catalog": "/_0001/_TypeCatalog/Surveillance_Camera_AXIS_P3277_LV_metric_DC_bullet_4mp_outdoor",
+      "sourceCatalog": "/_0001/_TypeCatalog/Surveillance_Camera_AXIS_P3277_LV_metric_DC_bullet_4mp_outdoor_958fd8_5",
+      "typeId": "809cc5b6-7cb8-4eaa-a36c-f31fa797cd0a"
+    },
+    "958fd8db-f64f-4f60-bd49-b8493c92a55d": {
+      "catalog": "/_0001/_TypeCatalog/Surveillance_Camera_AXIS_P3277_LV_metric_DC_bullet_4mp_outdoor",
+      "sourceCatalog": "/_0001/_TypeCatalog/Surveillance_Camera_AXIS_P3277_LV_metric_DC_bullet_4mp_outdoor_958fd8_6",
+      "typeId": "809cc5b6-7cb8-4eaa-a36c-f31fa797cd0a"
+    },
+    "958fd8db-f64f-4f60-bd49-b8493c92a572": {
+      "catalog": "/_0001/_TypeCatalog/Surveillance_Camera_AXIS_P3277_LV_metric_DC_dome_5mp",
+      "sourceCatalog": "/_0001/_TypeCatalog/Surveillance_Camera_AXIS_P3277_LV_metric_DC_dome_5mp_958fd8_4",
+      "typeId": "958fd8db-f64f-4f60-bd49-b8493c92a507"
+    },
+    "958fd8db-f64f-4f60-bd49-b8493c92a578": {
+      "catalog": "/_0001/_TypeCatalog/Surveillance_Camera_AXIS_P3277_LV_metric_DC_dome_5mp",
+      "sourceCatalog": "/_0001/_TypeCatalog/Surveillance_Camera_AXIS_P3277_LV_metric_DC_dome_5mp_958fd8_5",
+      "typeId": "958fd8db-f64f-4f60-bd49-b8493c92a507"
+    },
+    "958fd8db-f64f-4f60-bd49-b8493c92a5c0": {
+      "catalog": "/_0001/_TypeCatalog/Surveillance_Camera_AXIS_P3277_LV_metric_DC_dome_5mp",
+      "sourceCatalog": "/_0001/_TypeCatalog/Surveillance_Camera_AXIS_P3277_LV_metric_DC_dome_5mp_958fd8_6",
+      "typeId": "958fd8db-f64f-4f60-bd49-b8493c92a507"
+    },
+    "958fd8db-f64f-4f60-bd49-b8493c92a5c9": {
+      "catalog": "/_0001/_TypeCatalog/Surveillance_Camera_AXIS_P3277_LV_metric_DC_dome_5mp",
+      "sourceCatalog": "/_0001/_TypeCatalog/Surveillance_Camera_AXIS_P3277_LV_metric_DC_dome_5mp_958fd8_7",
+      "typeId": "958fd8db-f64f-4f60-bd49-b8493c92a507"
+    },
+    "958fd8db-f64f-4f60-bd49-b8493c92a5db": {
+      "catalog": "/_0001/_TypeCatalog/Surveillance_Camera_AXIS_P3277_LV_metric_DC_bullet_4mp_outdoor",
+      "sourceCatalog": "/_0001/_TypeCatalog/Surveillance_Camera_AXIS_P3277_LV_metric_DC_bullet_4mp_outdoor_958fd8_7",
+      "typeId": "809cc5b6-7cb8-4eaa-a36c-f31fa797cd0a"
+    },
+    "958fd8db-f64f-4f60-bd49-b8493c92a5dc": {
+      "catalog": "/_0001/_TypeCatalog/Surveillance_Camera_AXIS_P3277_LV_metric_DC_bullet_4mp_outdoor",
+      "sourceCatalog": "/_0001/_TypeCatalog/Surveillance_Camera_AXIS_P3277_LV_metric_DC_bullet_4mp_outdoor_958fd8_8",
+      "typeId": "809cc5b6-7cb8-4eaa-a36c-f31fa797cd0a"
+    },
+    "958fd8db-f64f-4f60-bd49-b8493c92a5de": {
+      "catalog": "/_0001/_TypeCatalog/Surveillance_Camera_AXIS_P3277_LV_metric_DC_bullet_4mp_outdoor",
+      "sourceCatalog": "/_0001/_TypeCatalog/Surveillance_Camera_AXIS_P3277_LV_metric_DC_bullet_4mp_outdoor_958fd8_9",
+      "typeId": "809cc5b6-7cb8-4eaa-a36c-f31fa797cd0a"
+    },
+    "958fd8db-f64f-4f60-bd49-b8493c92a5e6": {
+      "catalog": "/_0001/_TypeCatalog/Surveillance_Camera_AXIS_P3277_LV_metric_DC_dome_5mp",
+      "sourceCatalog": "/_0001/_TypeCatalog/Surveillance_Camera_AXIS_P3277_LV_metric_DC_dome_5mp_958fd8_8",
+      "typeId": "958fd8db-f64f-4f60-bd49-b8493c92a507"
+    },
+    "958fd8db-f64f-4f60-bd49-b8493c92a5f3": {
+      "catalog": "/_0001/_TypeCatalog/Surveillance_Camera_AXIS_P3277_LV_metric_DC_dome_5mp",
+      "sourceCatalog": "/_0001/_TypeCatalog/Surveillance_Camera_AXIS_P3277_LV_metric_DC_dome_5mp_958fd8_9",
+      "typeId": "958fd8db-f64f-4f60-bd49-b8493c92a507"
+    },
+    "958fd8db-f64f-4f60-bd49-b8493c92a5f5": {
+      "catalog": "/_0001/_TypeCatalog/Surveillance_Camera_AXIS_P3277_LV_metric_DC_dome_5mp",
+      "sourceCatalog": "/_0001/_TypeCatalog/Surveillance_Camera_AXIS_P3277_LV_metric_DC_dome_5mp_958fd8_10",
+      "typeId": "958fd8db-f64f-4f60-bd49-b8493c92a507"
+    },
+    "958fd8db-f64f-4f60-bd49-b8493c92a5ff": {
+      "catalog": "/_0001/_TypeCatalog/Surveillance_Camera_AXIS_P3277_LV_metric_DC_dome_5mp",
+      "sourceCatalog": "/_0001/_TypeCatalog/Surveillance_Camera_AXIS_P3277_LV_metric_DC_dome_5mp_958fd8_11",
+      "typeId": "958fd8db-f64f-4f60-bd49-b8493c92a507"
+    }
+  },
+  "vanilla": {
+    "camerasUnchanged": 45,
+    "compositionErrors": 0,
+    "fallbackTypes": [
+      "AecoFacility",
+      "AecoLevel",
+      "AecoPort",
+      "AecoSite",
+      "AecoSpace",
+      "AecoSystem"
+    ],
+    "familyPlugins": 0
+  }
+}

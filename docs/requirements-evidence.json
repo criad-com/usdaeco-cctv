@@ -1,0 +1,130 @@
+{
+  "scenarioRevision": "42a9080fc4385467174e6ef79ea1945fae10c33d",
+  "scope": "Candidate source refs and runtime schema requirements; final release tags and family re-pin remain pending.",
+  "pins": {
+    "core": {
+      "base_tag": "main",
+      "revision": "fd87fff09cce26ba132082e5dad721ec2210a7e2"
+    },
+    "toolchain": {
+      "base_tag": "main",
+      "revision": "01f6caebf5d6bfb9eeba51a1251fa965f062f919"
+    },
+    "buildup": {
+      "base_tag": "main",
+      "revision": "8377d0e1e2bcf94435a4c8518e0f3f3e1b32c606"
+    },
+    "wall": {
+      "base_tag": "main",
+      "revision": "09b2993e11d07b96a2492e75c49448153524c8b2"
+    },
+    "pipe": {
+      "base_tag": "main",
+      "revision": "f48a764dacc99c4467b426f3c1bb691c5c783952"
+    },
+    "cctv": {
+      "base_tag": "wp/IMP7",
+      "revision": "faedb3ac7d33f1aa0d9c3a9292b9b583cfe027ef"
+    },
+    "sync": {
+      "base_tag": "wp/IMP7",
+      "revision": "de4eca7c8cabfe08c356c73d4e362b8d0a374166"
+    },
+    "datacentre": {
+      "base_tag": "main",
+      "revision": "9891ca1d0811d6ed160631c88513611f836a2ed8"
+    },
+    "cctv-exec": {
+      "base_tag": "main",
+      "revision": "6d992da6af563d3534c484638fbfb462a09cf34a"
+    }
+  },
+  "checks": [
+    {
+      "name": "core tag",
+      "passed": true,
+      "detail": "main"
+    },
+    {
+      "name": "toolchain tag",
+      "passed": true,
+      "detail": "main"
+    },
+    {
+      "name": "buildup tag",
+      "passed": true,
+      "detail": "main"
+    },
+    {
+      "name": "wall tag",
+      "passed": true,
+      "detail": "main"
+    },
+    {
+      "name": "pipe tag",
+      "passed": true,
+      "detail": "main"
+    },
+    {
+      "name": "cctv tag",
+      "passed": true,
+      "detail": "wp/IMP7"
+    },
+    {
+      "name": "sync tag",
+      "passed": true,
+      "detail": "wp/IMP7"
+    },
+    {
+      "name": "datacentre tag",
+      "passed": true,
+      "detail": "main"
+    },
+    {
+      "name": "cctv-exec tag",
+      "passed": true,
+      "detail": "main"
+    },
+    {
+      "name": "buildup requires usdAeco",
+      "passed": true,
+      "detail": ">=0.7 against schema 0.8.3"
+    },
+    {
+      "name": "wall requires usdAeco",
+      "passed": true,
+      "detail": ">=0.7 against schema 0.8.3"
+    },
+    {
+      "name": "wall requires usdAecoBuildUp",
+      "passed": true,
+      "detail": ">=0.1 against schema 0.1.0"
+    },
+    {
+      "name": "pipe requires usdAeco",
+      "passed": true,
+      "detail": ">=0.7 against schema 0.8.3"
+    },
+    {
+      "name": "cctv requires usdAeco",
+      "passed": true,
+      "detail": ">=0.8.1,<0.9 against schema 0.8.3"
+    },
+    {
+      "name": "sync requires usdAeco",
+      "passed": true,
+      "detail": ">=0.8.1,<0.9 against schema 0.8.3"
+    }
+  ],
+  "failed": 0,
+  "regressionTests": 5,
+  "cctv": {
+    "version": "0.4.5",
+    "schemaVersion": "0.2.1",
+    "checks": 120,
+    "failed": 0,
+    "pytestPassed": 251,
+    "pytestSkipped": 0,
+    "requirementTests": 9
+  }
+}

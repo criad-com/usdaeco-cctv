@@ -1,0 +1,559 @@
+#usda 1.0
+(
+    defaultPrim = "CctvLobby"
+    fallbackPrimTypes = {
+        token[] AecoFacility = ["Xform"]
+        token[] AecoLevel = ["Xform"]
+        token[] AecoSite = ["Xform"]
+        token[] AecoSpace = ["Xform"]
+        token[] AecoSystem = ["Scope"]
+    }
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "CctvLobby"
+{
+    def AecoSite "Site" (
+        prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+    )
+    {
+        string aeco:class:ifc:code = "IfcSite"
+        string aeco:id = "79ed679b-662e-5904-a890-84c97b656d42"
+
+        def AecoFacility "Building" (
+            prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcBuilding"
+            string aeco:id = "c54e5a73-5aad-59bb-81ac-bd7bac7147b0"
+
+            def AecoLevel "L0" (
+                prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+            )
+            {
+                string aeco:class:ifc:code = "IfcBuildingStorey"
+                double aeco:elevation = 0
+                string aeco:id = "57c4e2bb-19fa-53f3-81de-d2745fffa79b"
+
+                def AecoSpace "Lobby" (
+                    prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+                )
+                {
+                    string aeco:class:ifc:code = "IfcSpace"
+                    string aeco:id = "9f507baf-6828-57bf-a812-1cc91f6f9430"
+
+                    def Xform "WallS_a" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcWall"
+                        string aeco:id = "da6f4014-41f4-579b-a4cf-b37a1c187ec8"
+                        uniform token aeco:phase = "existing"
+
+                        def Mesh "Body" (
+                            prepend apiSchemas = ["AecoDerivedGeometryAPI"]
+                        )
+                        {
+                            uniform token aeco:derived:approx = "tessellated"
+                            uniform token aeco:derived:role = "body"
+                            string aeco:derived:source = "da6f4014-41f4-579b-a4cf-b37a1c187ec8"
+                            string aeco:derived:stamp = "cctv example 0.1.0"
+                            float3[] extent = [(0, -0.2, 0), (2.5, 0, 3.5)]
+                            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+                            int[] faceVertexIndices = [0, 3, 2, 1, 4, 5, 6, 7, 0, 1, 5, 4, 1, 2, 6, 5, 2, 3, 7, 6, 3, 0, 4, 7]
+                            point3f[] points = [(0, -0.2, 0), (2.5, -0.2, 0), (2.5, 0, 0), (0, 0, 0), (0, -0.2, 3.5), (2.5, -0.2, 3.5), (2.5, 0, 3.5), (0, 0, 3.5)]
+                            uniform token subdivisionScheme = "none"
+                        }
+                    }
+
+                    def Xform "WallS_b" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcWall"
+                        string aeco:id = "f39cd288-9dd2-544d-beee-1a5ddccd8942"
+                        uniform token aeco:phase = "existing"
+
+                        def Mesh "Body" (
+                            prepend apiSchemas = ["AecoDerivedGeometryAPI"]
+                        )
+                        {
+                            uniform token aeco:derived:approx = "tessellated"
+                            uniform token aeco:derived:role = "body"
+                            string aeco:derived:source = "f39cd288-9dd2-544d-beee-1a5ddccd8942"
+                            string aeco:derived:stamp = "cctv example 0.1.0"
+                            float3[] extent = [(3.5, -0.2, 0), (12, 0, 3.5)]
+                            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+                            int[] faceVertexIndices = [0, 3, 2, 1, 4, 5, 6, 7, 0, 1, 5, 4, 1, 2, 6, 5, 2, 3, 7, 6, 3, 0, 4, 7]
+                            point3f[] points = [(3.5, -0.2, 0), (12, -0.2, 0), (12, 0, 0), (3.5, 0, 0), (3.5, -0.2, 3.5), (12, -0.2, 3.5), (12, 0, 3.5), (3.5, 0, 3.5)]
+                            uniform token subdivisionScheme = "none"
+                        }
+                    }
+
+                    def Xform "WallN_a" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcWall"
+                        string aeco:id = "94228ed1-0614-5c8d-9289-2b01e1d1be78"
+                        uniform token aeco:phase = "existing"
+
+                        def Mesh "Body" (
+                            prepend apiSchemas = ["AecoDerivedGeometryAPI"]
+                        )
+                        {
+                            uniform token aeco:derived:approx = "tessellated"
+                            uniform token aeco:derived:role = "body"
+                            string aeco:derived:source = "94228ed1-0614-5c8d-9289-2b01e1d1be78"
+                            string aeco:derived:stamp = "cctv example 0.1.0"
+                            float3[] extent = [(0, 8, 0), (5.5, 8.2, 3.5)]
+                            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+                            int[] faceVertexIndices = [0, 3, 2, 1, 4, 5, 6, 7, 0, 1, 5, 4, 1, 2, 6, 5, 2, 3, 7, 6, 3, 0, 4, 7]
+                            point3f[] points = [(0, 8, 0), (5.5, 8, 0), (5.5, 8.2, 0), (0, 8.2, 0), (0, 8, 3.5), (5.5, 8, 3.5), (5.5, 8.2, 3.5), (0, 8.2, 3.5)]
+                            uniform token subdivisionScheme = "none"
+                        }
+                    }
+
+                    def Xform "WallN_b" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcWall"
+                        string aeco:id = "22012c0b-48f3-5147-98a0-a95b3a4718bd"
+                        uniform token aeco:phase = "existing"
+
+                        def Mesh "Body" (
+                            prepend apiSchemas = ["AecoDerivedGeometryAPI"]
+                        )
+                        {
+                            uniform token aeco:derived:approx = "tessellated"
+                            uniform token aeco:derived:role = "body"
+                            string aeco:derived:source = "22012c0b-48f3-5147-98a0-a95b3a4718bd"
+                            string aeco:derived:stamp = "cctv example 0.1.0"
+                            float3[] extent = [(6.5, 8, 0), (12, 8.2, 3.5)]
+                            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+                            int[] faceVertexIndices = [0, 3, 2, 1, 4, 5, 6, 7, 0, 1, 5, 4, 1, 2, 6, 5, 2, 3, 7, 6, 3, 0, 4, 7]
+                            point3f[] points = [(6.5, 8, 0), (12, 8, 0), (12, 8.2, 0), (6.5, 8.2, 0), (6.5, 8, 3.5), (12, 8, 3.5), (12, 8.2, 3.5), (6.5, 8.2, 3.5)]
+                            uniform token subdivisionScheme = "none"
+                        }
+                    }
+
+                    def Xform "WallW" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcWall"
+                        string aeco:id = "3dbf2b8b-cbdf-5151-8e76-42b417dff770"
+                        uniform token aeco:phase = "existing"
+
+                        def Mesh "Body" (
+                            prepend apiSchemas = ["AecoDerivedGeometryAPI"]
+                        )
+                        {
+                            uniform token aeco:derived:approx = "tessellated"
+                            uniform token aeco:derived:role = "body"
+                            string aeco:derived:source = "3dbf2b8b-cbdf-5151-8e76-42b417dff770"
+                            string aeco:derived:stamp = "cctv example 0.1.0"
+                            float3[] extent = [(-0.2, 0, 0), (0, 8, 3.5)]
+                            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+                            int[] faceVertexIndices = [0, 3, 2, 1, 4, 5, 6, 7, 0, 1, 5, 4, 1, 2, 6, 5, 2, 3, 7, 6, 3, 0, 4, 7]
+                            point3f[] points = [(-0.2, 0, 0), (0, 0, 0), (0, 8, 0), (-0.2, 8, 0), (-0.2, 0, 3.5), (0, 0, 3.5), (0, 8, 3.5), (-0.2, 8, 3.5)]
+                            uniform token subdivisionScheme = "none"
+                        }
+                    }
+
+                    def Xform "WallE_a" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcWall"
+                        string aeco:id = "c45696f2-b91e-5b9c-8ee0-db89304c0c20"
+                        uniform token aeco:phase = "existing"
+
+                        def Mesh "Body" (
+                            prepend apiSchemas = ["AecoDerivedGeometryAPI"]
+                        )
+                        {
+                            uniform token aeco:derived:approx = "tessellated"
+                            uniform token aeco:derived:role = "body"
+                            string aeco:derived:source = "c45696f2-b91e-5b9c-8ee0-db89304c0c20"
+                            string aeco:derived:stamp = "cctv example 0.1.0"
+                            float3[] extent = [(12, 0, 0), (12.2, 3.5, 3.5)]
+                            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+                            int[] faceVertexIndices = [0, 3, 2, 1, 4, 5, 6, 7, 0, 1, 5, 4, 1, 2, 6, 5, 2, 3, 7, 6, 3, 0, 4, 7]
+                            point3f[] points = [(12, 0, 0), (12.2, 0, 0), (12.2, 3.5, 0), (12, 3.5, 0), (12, 0, 3.5), (12.2, 0, 3.5), (12.2, 3.5, 3.5), (12, 3.5, 3.5)]
+                            uniform token subdivisionScheme = "none"
+                        }
+                    }
+
+                    def Xform "WallE_b" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcWall"
+                        string aeco:id = "495973f7-af84-5e0c-b1dc-91599a6423b1"
+                        uniform token aeco:phase = "existing"
+
+                        def Mesh "Body" (
+                            prepend apiSchemas = ["AecoDerivedGeometryAPI"]
+                        )
+                        {
+                            uniform token aeco:derived:approx = "tessellated"
+                            uniform token aeco:derived:role = "body"
+                            string aeco:derived:source = "495973f7-af84-5e0c-b1dc-91599a6423b1"
+                            string aeco:derived:stamp = "cctv example 0.1.0"
+                            float3[] extent = [(12, 4.5, 0), (12.2, 8, 3.5)]
+                            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+                            int[] faceVertexIndices = [0, 3, 2, 1, 4, 5, 6, 7, 0, 1, 5, 4, 1, 2, 6, 5, 2, 3, 7, 6, 3, 0, 4, 7]
+                            point3f[] points = [(12, 4.5, 0), (12.2, 4.5, 0), (12.2, 8, 0), (12, 8, 0), (12, 4.5, 3.5), (12.2, 4.5, 3.5), (12.2, 8, 3.5), (12, 8, 3.5)]
+                            uniform token subdivisionScheme = "none"
+                        }
+                    }
+
+                    def Xform "Door_1" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcDoor"
+                        string aeco:id = "eb7a903f-f772-5322-8cf6-f4eb31c2f4a8"
+                        uniform token aeco:phase = "existing"
+
+                        def Mesh "Body" (
+                            prepend apiSchemas = ["AecoDerivedGeometryAPI"]
+                        )
+                        {
+                            uniform token aeco:derived:approx = "tessellated"
+                            uniform token aeco:derived:role = "body"
+                            string aeco:derived:source = "eb7a903f-f772-5322-8cf6-f4eb31c2f4a8"
+                            string aeco:derived:stamp = "cctv example 0.1.0"
+                            float3[] extent = [(5.5, 7.95, 0), (6.5, 8, 2.1)]
+                            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+                            int[] faceVertexIndices = [0, 3, 2, 1, 4, 5, 6, 7, 0, 1, 5, 4, 1, 2, 6, 5, 2, 3, 7, 6, 3, 0, 4, 7]
+                            point3f[] points = [(5.5, 7.95, 0), (6.5, 7.95, 0), (6.5, 8, 0), (5.5, 8, 0), (5.5, 7.95, 2.1), (6.5, 7.95, 2.1), (6.5, 8, 2.1), (5.5, 8, 2.1)]
+                            uniform token subdivisionScheme = "none"
+                        }
+                    }
+
+                    def Xform "Door_2" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcDoor"
+                        string aeco:id = "09241869-ee1f-5f11-b929-762a4bbd1ba6"
+                        uniform token aeco:phase = "existing"
+
+                        def Mesh "Body" (
+                            prepend apiSchemas = ["AecoDerivedGeometryAPI"]
+                        )
+                        {
+                            uniform token aeco:derived:approx = "tessellated"
+                            uniform token aeco:derived:role = "body"
+                            string aeco:derived:source = "09241869-ee1f-5f11-b929-762a4bbd1ba6"
+                            string aeco:derived:stamp = "cctv example 0.1.0"
+                            float3[] extent = [(2.5, 0, 0), (3.5, 0.05, 2.1)]
+                            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+                            int[] faceVertexIndices = [0, 3, 2, 1, 4, 5, 6, 7, 0, 1, 5, 4, 1, 2, 6, 5, 2, 3, 7, 6, 3, 0, 4, 7]
+                            point3f[] points = [(2.5, 0, 0), (3.5, 0, 0), (3.5, 0.05, 0), (2.5, 0.05, 0), (2.5, 0, 2.1), (3.5, 0, 2.1), (3.5, 0.05, 2.1), (2.5, 0.05, 2.1)]
+                            uniform token subdivisionScheme = "none"
+                        }
+                    }
+
+                    def Xform "Door_3" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcDoor"
+                        string aeco:id = "6b1724eb-37cb-5534-9e2c-651b3c25a8d8"
+                        uniform token aeco:phase = "proposed"
+
+                        def Mesh "Body" (
+                            prepend apiSchemas = ["AecoDerivedGeometryAPI"]
+                        )
+                        {
+                            uniform token aeco:derived:approx = "tessellated"
+                            uniform token aeco:derived:role = "body"
+                            string aeco:derived:source = "6b1724eb-37cb-5534-9e2c-651b3c25a8d8"
+                            string aeco:derived:stamp = "cctv example 0.1.0"
+                            float3[] extent = [(11.95, 3.5, 0), (12, 4.5, 2.1)]
+                            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+                            int[] faceVertexIndices = [0, 3, 2, 1, 4, 5, 6, 7, 0, 1, 5, 4, 1, 2, 6, 5, 2, 3, 7, 6, 3, 0, 4, 7]
+                            point3f[] points = [(11.95, 3.5, 0), (12, 3.5, 0), (12, 4.5, 0), (11.95, 4.5, 0), (11.95, 3.5, 2.1), (12, 3.5, 2.1), (12, 4.5, 2.1), (11.95, 4.5, 2.1)]
+                            uniform token subdivisionScheme = "none"
+                        }
+                    }
+
+                    def Xform "Desk" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcFurniture"
+                        string aeco:id = "e31687f2-5493-5ab8-8a16-5de42dea95b4"
+                        uniform token aeco:phase = "proposed"
+
+                        def Mesh "Body" (
+                            prepend apiSchemas = ["AecoDerivedGeometryAPI"]
+                        )
+                        {
+                            uniform token aeco:derived:approx = "tessellated"
+                            uniform token aeco:derived:role = "body"
+                            string aeco:derived:source = "e31687f2-5493-5ab8-8a16-5de42dea95b4"
+                            string aeco:derived:stamp = "cctv example 0.1.0"
+                            float3[] extent = [(4.5, 1.5, 0), (7.5, 2.5, 1.1)]
+                            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+                            int[] faceVertexIndices = [0, 3, 2, 1, 4, 5, 6, 7, 0, 1, 5, 4, 1, 2, 6, 5, 2, 3, 7, 6, 3, 0, 4, 7]
+                            point3f[] points = [(4.5, 1.5, 0), (7.5, 1.5, 0), (7.5, 2.5, 0), (4.5, 2.5, 0), (4.5, 1.5, 1.1), (7.5, 1.5, 1.1), (7.5, 2.5, 1.1), (4.5, 2.5, 1.1)]
+                            uniform token subdivisionScheme = "none"
+                        }
+                    }
+
+                    def Xform "Column" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcColumn"
+                        string aeco:id = "4c3a46f0-dde0-5b56-8d36-fc87fe10245d"
+                        uniform token aeco:phase = "existing"
+
+                        def Mesh "Body" (
+                            prepend apiSchemas = ["AecoDerivedGeometryAPI"]
+                        )
+                        {
+                            uniform token aeco:derived:approx = "tessellated"
+                            uniform token aeco:derived:role = "body"
+                            string aeco:derived:source = "4c3a46f0-dde0-5b56-8d36-fc87fe10245d"
+                            string aeco:derived:stamp = "cctv example 0.1.0"
+                            float3[] extent = [(7.8, 4.8, 0), (8.2, 5.2, 3.5)]
+                            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+                            int[] faceVertexIndices = [0, 3, 2, 1, 4, 5, 6, 7, 0, 1, 5, 4, 1, 2, 6, 5, 2, 3, 7, 6, 3, 0, 4, 7]
+                            point3f[] points = [(7.8, 4.8, 0), (8.2, 4.8, 0), (8.2, 5.2, 0), (7.8, 5.2, 0), (7.8, 4.8, 3.5), (8.2, 4.8, 3.5), (8.2, 5.2, 3.5), (7.8, 5.2, 3.5)]
+                            uniform token subdivisionScheme = "none"
+                        }
+                    }
+
+                    def Xform "CableTray_1" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcCableCarrierSegment"
+                        string aeco:id = "aea515f6-8101-54e9-8f30-72d1715192e0"
+                        uniform token aeco:phase = "proposed"
+
+                        def Mesh "Body" (
+                            prepend apiSchemas = ["AecoDerivedGeometryAPI"]
+                        )
+                        {
+                            uniform token aeco:derived:approx = "tessellated"
+                            uniform token aeco:derived:role = "body"
+                            string aeco:derived:source = "aea515f6-8101-54e9-8f30-72d1715192e0"
+                            string aeco:derived:stamp = "cctv example 0.1.0"
+                            float3[] extent = [(0.5, 6.35, 3.2), (11.5, 6.65, 3.3)]
+                            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+                            int[] faceVertexIndices = [0, 3, 2, 1, 4, 5, 6, 7, 0, 1, 5, 4, 1, 2, 6, 5, 2, 3, 7, 6, 3, 0, 4, 7]
+                            point3f[] points = [(0.5, 6.35, 3.2), (11.5, 6.35, 3.2), (11.5, 6.65, 3.2), (0.5, 6.65, 3.2), (0.5, 6.35, 3.3), (11.5, 6.35, 3.3), (11.5, 6.65, 3.3), (0.5, 6.65, 3.3)]
+                            uniform token subdivisionScheme = "none"
+                        }
+                    }
+
+                    def Xform "Cam_1" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoCctvCameraAPI"]
+                        prepend inherits = </_TypeCatalog/Dome_P3277>
+                    )
+                    {
+                        uniform token aeco:cctv:mount = "ceiling"
+                        uniform token aeco:cctv:scenario = "door"
+                        string aeco:class:ifc:code = "IfcAudioVisualAppliance.CAMERA"
+                        string aeco:id = "06cd3d1d-3759-5a90-a46c-bd5c8b199e1c"
+                        uniform token aeco:phase = "proposed"
+                        double3 xformOp:translate = (6, 5.5, 3.3)
+                        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+                        over "Sensor_0"
+                        {
+                            double aeco:cctvSensor:focalLength = 3
+                            double3 aeco:cctvSensor:offset = (0, 0, -0.08)
+                            double aeco:cctvSensor:pan = 90
+                            double aeco:cctvSensor:range = 14
+                            double aeco:cctvSensor:roll = 0
+                            double aeco:cctvSensor:tilt = 40
+                        }
+                    }
+
+                    def Xform "Cam_2" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoCctvCameraAPI"]
+                        prepend inherits = </_TypeCatalog/Dome_P3277>
+                    )
+                    {
+                        uniform token aeco:cctv:mount = "ceiling"
+                        uniform token aeco:cctv:scenario = "door"
+                        string aeco:class:ifc:code = "IfcAudioVisualAppliance.CAMERA"
+                        string aeco:id = "b7d974f6-85f7-5316-a41a-243814df5f21"
+                        uniform token aeco:phase = "proposed"
+                        double3 xformOp:translate = (3, 2.5, 3.3)
+                        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+                        over "Sensor_0"
+                        {
+                            double aeco:cctvSensor:focalLength = 3
+                            double3 aeco:cctvSensor:offset = (0, 0, -0.08)
+                            double aeco:cctvSensor:pan = -90
+                            double aeco:cctvSensor:range = 14
+                            double aeco:cctvSensor:roll = 0
+                            double aeco:cctvSensor:tilt = 40
+                        }
+                    }
+
+                    def Xform "Cam_3" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoCctvCameraAPI"]
+                        prepend inherits = </_TypeCatalog/Dome_P3277>
+                    )
+                    {
+                        uniform token aeco:cctv:mount = "ceiling"
+                        uniform token aeco:cctv:scenario = "door"
+                        string aeco:class:ifc:code = "IfcAudioVisualAppliance.CAMERA"
+                        string aeco:id = "bebc051c-f40b-582f-b8a5-f603d7376f5a"
+                        uniform token aeco:phase = "proposed"
+                        double3 xformOp:translate = (9.5, 4, 3.3)
+                        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+                        over "Sensor_0"
+                        {
+                            double aeco:cctvSensor:focalLength = 3
+                            double3 aeco:cctvSensor:offset = (0, 0, -0.08)
+                            double aeco:cctvSensor:pan = 0
+                            double aeco:cctvSensor:range = 14
+                            double aeco:cctvSensor:roll = 0
+                            double aeco:cctvSensor:tilt = 40
+                        }
+                    }
+
+                    def Xform "Cam_4" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoCctvCameraAPI"]
+                        prepend inherits = </_TypeCatalog/Ptz_Q6088>
+                    )
+                    {
+                        uniform token aeco:cctv:mount = "corner"
+                        uniform token aeco:cctv:scenario = "lobby"
+                        string aeco:class:ifc:code = "IfcAudioVisualAppliance.CAMERA"
+                        string aeco:id = "7159d2f3-92ae-5116-911d-c954167cd6f3"
+                        uniform token aeco:phase = "proposed"
+                        double3 xformOp:translate = (0.3, 7.7, 3)
+                        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+                        over "Sensor_0" (
+                            prepend apiSchemas = ["AecoCctvPresetAPI:Home", "AecoCctvPresetAPI:Door_1", "AecoCctvPresetAPI:Door_3"]
+                        )
+                        {
+                            double aeco:cctvPreset:Door_1:dwell = 6
+                            double aeco:cctvPreset:Door_1:focalLength = 12
+                            bool aeco:cctvPreset:Door_1:home = 0
+                            double aeco:cctvPreset:Door_1:pan = 3.013
+                            double aeco:cctvPreset:Door_1:tilt = 17.503
+                            double aeco:cctvPreset:Door_3:dwell = 6
+                            double aeco:cctvPreset:Door_3:focalLength = 16
+                            bool aeco:cctvPreset:Door_3:home = 0
+                            double aeco:cctvPreset:Door_3:pan = -17.549
+                            double aeco:cctvPreset:Door_3:tilt = 8.345
+                            double aeco:cctvPreset:Home:dwell = 4
+                            double aeco:cctvPreset:Home:focalLength = 7
+                            bool aeco:cctvPreset:Home:home = 1
+                            double aeco:cctvPreset:Home:pan = -45
+                            double aeco:cctvPreset:Home:tilt = 20
+                            double aeco:cctvSensor:focalLength = 7
+                            double3 aeco:cctvSensor:offset = (0, 0, -0.15)
+                            double aeco:cctvSensor:pan = -45
+                            double aeco:cctvSensor:range = 20
+                            double aeco:cctvSensor:roll = 0
+                            double aeco:cctvSensor:tilt = 20
+                            uniform token[] aeco:cctvSensor:tour = ["Home", "Door_1", "Door_3"]
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    def AecoSystem "Cctv" (
+        prepend apiSchemas = ["AecoClassificationAPI:ifc", "AecoCctvSystemAPI"]
+    )
+    {
+        int aeco:cctvSystem:recorderCapacity = 45
+        int aeco:cctvSystem:retentionDays = 90
+        string aeco:class:ifc:code = "IfcDistributionSystem.SECURITY"
+        string aeco:id = "7a9a5d3d-d5e7-548b-9526-30a947d06722"
+        rel aeco:serves = </CctvLobby/Site/Building/L0/Lobby>
+        rel collection:members:includes = [
+            </CctvLobby/Site/Building/L0/Lobby/Cam_1>,
+            </CctvLobby/Site/Building/L0/Lobby/Cam_2>,
+            </CctvLobby/Site/Building/L0/Lobby/Cam_3>,
+            </CctvLobby/Site/Building/L0/Lobby/Cam_4>,
+        ]
+    }
+
+    def Scope "Analyses"
+    {
+        def Scope "DoorCoverage" (
+            prepend apiSchemas = ["AecoCctvStudyAPI"]
+        )
+        {
+            uniform token aeco:cctvStudy:densityModel = "plane"
+            bool aeco:cctvStudy:includeUnphased = 1
+            uniform token aeco:cctvStudy:levelSystem = "dori2015"
+            double aeco:cctvStudy:maxTargetDistance = 3
+            uniform token[] aeco:cctvStudy:phases = ["proposed", "existing"]
+            uniform token aeco:cctvStudy:ptzPolicy = "presetsNotSole"
+            double aeco:cctvStudy:requiredDensity = 125
+            rel collection:exclusions:includes = None
+            rel collection:targets:includes = [
+                </CctvLobby/Site/Building/L0/Lobby/Door_1>,
+                </CctvLobby/Site/Building/L0/Lobby/Door_2>,
+                </CctvLobby/Site/Building/L0/Lobby/Door_3>,
+            ]
+        }
+    }
+}
+
+class "_TypeCatalog"
+{
+    class "Dome_P3277" (
+        prepend apiSchemas = ["AecoTypeAPI", "AecoCctvCameraTypeAPI", "AecoClassificationAPI:ifc"]
+    )
+    {
+        double aeco:cctvType:irRange = 30
+        string aeco:class:ifc:code = "IfcAudioVisualApplianceType.CAMERA"
+        string aeco:type:model = "P3277-class fixed dome, 5 MP varifocal"
+
+        def Camera "Sensor_0" (
+            prepend apiSchemas = ["AecoCctvSensorAPI"]
+        )
+        {
+            double2 aeco:cctvSensor:focalRange = (3, 8.5)
+            double2 aeco:cctvSensor:hfovRange = (104, 34)
+            int2 aeco:cctvSensor:pixels = (2592, 1944)
+            double2 aeco:cctvSensor:vfovRange = (76, 26)
+        }
+    }
+
+    class "Ptz_Q6088" (
+        prepend apiSchemas = ["AecoTypeAPI", "AecoCctvCameraTypeAPI", "AecoClassificationAPI:ifc"]
+    )
+    {
+        bool aeco:cctvType:outdoor = 1
+        string aeco:class:ifc:code = "IfcAudioVisualApplianceType.CAMERA"
+        string aeco:type:model = "Q6088-class PTZ dome, 4K, 34x zoom"
+
+        def Camera "Sensor_0" (
+            prepend apiSchemas = ["AecoCctvSensorAPI"]
+        )
+        {
+            double2 aeco:cctvSensor:focalRange = (6.64, 225.5)
+            double2 aeco:cctvSensor:hfovRange = (60.8, 2)
+            bool aeco:cctvSensor:motorised = 1
+            double2 aeco:cctvSensor:panRange = (-180, 180)
+            int2 aeco:cctvSensor:pixels = (3840, 2160)
+            double2 aeco:cctvSensor:tiltRange = (0, 90)
+            double2 aeco:cctvSensor:vfovRange = (36.5, 1.1)
+        }
+    }
+}
+

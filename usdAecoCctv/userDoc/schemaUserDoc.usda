@@ -1,0 +1,11 @@
+#usda 1.0
+( subLayers = [@../schema.usda@] )
+over "AecoCctvCameraAPI" ( customData = { string userDocBrief = "Camera semantics for camera coverage." } ) {}
+over "AecoCctvCameraTypeAPI" ( customData = { string userDocBrief = "CameraType semantics for camera coverage." } ) {}
+over "AecoCctvSensorAPI" ( customData = { string userDocBrief = "Sensor semantics for camera coverage." } ) {}
+over "AecoCctvPresetAPI" ( customData = { string userDocBrief = "Preset semantics for camera coverage." } ) {}
+over "AecoCctvStudyAPI" ( customData = { string userDocBrief = "Study semantics for camera coverage." } ) {}
+over "AecoCctvCoverageAPI" ( customData = { string userDocBrief = "Coverage semantics for camera coverage." } ) {}
+over "AecoCctvTargetAPI" ( customData = { string userDocBrief = "Target semantics for camera coverage." } ) {}
+over "AecoCctvSightlineAPI" ( customData = { string userDocBrief = "Sightline semantics for camera coverage." } ) {}
+over "AecoCctvSystemAPI" ( customData = { string userDocBrief = "System semantics for camera coverage." } ) {}

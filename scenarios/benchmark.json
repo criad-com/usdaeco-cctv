@@ -1,0 +1,37 @@
+{
+  "scene": {
+    "boxes": 20000,
+    "sensors": 457,
+    "raysPerSensor": 5184,
+    "triangles": 240000,
+    "rays": 2369088
+  },
+  "embree": {
+    "kernel": "embree",
+    "build": 0.23314483277499676,
+    "cast": 0.6750442921184003,
+    "rays": 2369088,
+    "triangles": 240000,
+    "hits": 2350935,
+    "mraysPerSecond": 3.509529711843664
+  },
+  "numpy": {
+    "kernel": "numpy",
+    "build": 0.0006622499786317348,
+    "cast": 20.649141458794475,
+    "rays": 20736,
+    "triangles": 24000,
+    "hits": 8994,
+    "mraysPerSecond": 0.0010042063996403363,
+    "mtestsPerSecond": 24.10095359136807,
+    "projectedFullSceneSeconds": 23591.644116672687
+  },
+  "paritySubset": {
+    "rays": 20736,
+    "ownerMismatches": 0,
+    "hitsA": 8994,
+    "hitsB": 8994,
+    "distanceWithin1e-3": 8994,
+    "identicalOwners": true
+  }
+}

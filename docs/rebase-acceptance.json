@@ -1,0 +1,93 @@
+{
+  "version": "0.5.0",
+  "checks": {
+    "passed": 151,
+    "total": 153,
+    "failed": 2,
+    "functionalPassed": 127,
+    "functionalFailed": 0
+  },
+  "schema": {
+    "apis": 9,
+    "properties": 71,
+    "comparison": "Sdf property names, types and defaults equal v0.4.8"
+  },
+  "validators": 23,
+  "structure": {
+    "passed": 24,
+    "total": 26,
+    "failed": 2,
+    "rules": [
+      "S09",
+      "S10"
+    ],
+    "reason": "Published per-API namespaces and unrestricted catalogue applicability; no local lint wrapper",
+    "followup": "toolchain IMP4 (v0.2.2) relaxes S09/S10; re-run after merge"
+  },
+  "example": {
+    "datacentre": "v0.4.1",
+    "variant": "base",
+    "source": "pinned",
+    "cameras": 45,
+    "sensors": 45,
+    "types": 3,
+    "presets": 7,
+    "sectors": 45,
+    "tours": 3,
+    "doors": 11,
+    "doorsFixedCovered": 11,
+    "samples": 640,
+    "samplesCovered": 640,
+    "minimumDensity": 342.7882274350903,
+    "requiredDensity": 250,
+    "densityModel": "plane",
+    "levelSystem": "dori2015",
+    "privacyExclusionHits": 0,
+    "renders": 2,
+    "vanillaComposition": "PASS: fresh process, no family plugins, all typed prims resolve through stock fallbacks"
+  },
+  "nix": {
+    "attempts": 1,
+    "status": "NOT PROVEN",
+    "exit_code": 1,
+    "timed_out": false,
+    "seconds": 2.903,
+    "mode": "offline; local registry/source overrides; no substituters or remote builders; max-jobs 0"
+  },
+  "realDataGate": "NOT RUN: opt-in source absent",
+  "termSweep": {
+    "violations": 0
+  },
+  "pins": {
+    "toolchain": {
+      "repo": "usdaeco-toolchain",
+      "library": null,
+      "ref": "v0.2.1"
+    },
+    "core": {
+      "repo": "usdaeco-core",
+      "library": "usdAeco",
+      "ref": "v0.9.1"
+    },
+    "datacentre": {
+      "repo": "usdaeco-datacentre",
+      "library": null,
+      "ref": "v0.4.1"
+    },
+    "ifc": {
+      "repo": "usdaeco-ifc",
+      "library": null,
+      "ref": "v0.1.0"
+    }
+  },
+  "pytest": {
+    "passed": 322,
+    "skipped": 5,
+    "seconds": 53.53,
+    "notRun": [
+      "optional sync binding test",
+      "three opt-in facility performance cases",
+      "optional native-export fixture"
+    ]
+  }
+}

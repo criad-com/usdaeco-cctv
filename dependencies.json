@@ -1,0 +1,62 @@
+{
+  "repos": {
+    "toolchain": {
+      "repo": "usdaeco-toolchain",
+      "library": null,
+      "ref": "v0.3.8"
+    },
+    "core": {
+      "repo": "usdaeco-core",
+      "library": "usdAeco",
+      "ref": "v0.9.2"
+    },
+    "datacentre": {
+      "repo": "usdaeco-datacentre",
+      "library": null,
+      "ref": "v0.4.5"
+    },
+    "ifc": {
+      "repo": "usdaeco-ifc",
+      "library": null,
+      "ref": "v0.2.0"
+    }
+  },
+  "fixtures": {
+    "baselines/facility-study.json": {
+      "reason": "Historical facility-study performance baseline; retained without regeneration.",
+      "repos": {
+        "generator": {
+          "repo": "usdaeco-datacentre",
+          "library": null,
+          "ref": "v0.1.0",
+          "revision": "28ed6120722cd6fc88134eef2ee0f86b868a235c"
+        }
+      }
+    },
+    "docs/rebase-acceptance.json": {
+      "reason": "Historical v0.5.0 acceptance evidence; retained without regeneration.",
+      "repos": {
+        "toolchain": {
+          "repo": "usdaeco-toolchain",
+          "library": null,
+          "ref": "v0.2.1"
+        },
+        "core": {
+          "repo": "usdaeco-core",
+          "library": "usdAeco",
+          "ref": "v0.9.1"
+        },
+        "datacentre": {
+          "repo": "usdaeco-datacentre",
+          "library": null,
+          "ref": "v0.4.1"
+        },
+        "ifc": {
+          "repo": "usdaeco-ifc",
+          "library": null,
+          "ref": "v0.1.0"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,2543 @@
+{
+  "cachedDefinition": "same stage and prior validated layer, gathered inputs and all views reused; no output rewrite",
+  "coldDefinition": "loaded stage, all process input and BVH caches cleared; view reuse disabled",
+  "configurations": [
+    {
+      "acceptance": {
+        "cached": true,
+        "cold": true,
+        "eligible": true,
+        "hashOnly": true,
+        "identicalResultsAndBlockers": true,
+        "peakRss": true
+      },
+      "budgetsSeconds": {
+        "cached": 0.25,
+        "cold": 1.0,
+        "hashOnly": 0.1
+      },
+      "census": {
+        "doors": 41,
+        "generatedCameras": 29,
+        "selectedCameras": 32
+      },
+      "comparison": {
+        "blockers": 15,
+        "targets": 41,
+        "viewTargets": 115,
+        "views": 32
+      },
+      "configuration": "fixed32",
+      "kernel": "embree",
+      "measurements": {
+        "cached": {
+          "seconds": {
+            "p50": 0.019770625745877624,
+            "p95": 0.023201233078725635
+          },
+          "stages": {
+            "bvhBuild": {
+              "p50": 0.0,
+              "p95": 0.0
+            },
+            "depthCasting": {
+              "p50": 0.0,
+              "p95": 0.0
+            },
+            "geometryHashing": {
+              "p50": 0.0001083544921129942,
+              "p95": 0.00012187694665044545
+            },
+            "resultWriting": {
+              "p50": 0.01965160435065627,
+              "p95": 0.02306865407153964
+            },
+            "targetRays": {
+              "p50": 0.0,
+              "p95": 0.0
+            },
+            "triangulation": {
+              "p50": 0.0,
+              "p95": 0.0
+            },
+            "usdTraversalGather": {
+              "p50": 0.0,
+              "p95": 0.0
+            }
+          },
+          "trials": [
+            {
+              "seconds": 0.018284916877746582,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.00010283291339874268,
+                "resultWriting": 0.01817170949652791,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.019370459020137787,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.0001023346558213234,
+                "resultWriting": 0.01925929030403495,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.020425959024578333,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.00011720787733793259,
+                "resultWriting": 0.020300333853811026,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.030091624706983566,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.00010883389040827751,
+                "resultWriting": 0.029969832859933376,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.01994637493044138,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.00010087573900818825,
+                "resultWriting": 0.01983595686033368,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.020863791927695274,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.00010129204019904137,
+                "resultWriting": 0.020751708187162876,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.018720292020589113,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 9.408406913280487e-05,
+                "resultWriting": 0.018616790883243084,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.019840209279209375,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.00010249996557831764,
+                "resultWriting": 0.01972912484779954,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.018585917074233294,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.00010150019079446793,
+                "resultWriting": 0.018474833108484745,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.01922224974259734,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.00010729162022471428,
+                "resultWriting": 0.01910487562417984,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.020664582960307598,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.00010520732030272484,
+                "resultWriting": 0.020548001397401094,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.022589874919503927,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.00011762464419007301,
+                "resultWriting": 0.02245779102668166,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.02354045771062374,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.00010787509381771088,
+                "resultWriting": 0.02341429190710187,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.02278662519529462,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.00012433389201760292,
+                "resultWriting": 0.022646207828074694,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.019565749913454056,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.00010754074901342392,
+                "resultWriting": 0.019445418380200863,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.020134167280048132,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.00011695828288793564,
+                "resultWriting": 0.020005126018077135,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.01925658294931054,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.00011520786210894585,
+                "resultWriting": 0.019129334017634392,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.01876450004056096,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.00010583316907286644,
+                "resultWriting": 0.018647124525159597,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.020424500107765198,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.00011558318510651588,
+                "resultWriting": 0.02029604185372591,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.018967708107084036,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.00010404177010059357,
+                "resultWriting": 0.01885316614061594,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.019533416721969843,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.00011041667312383652,
+                "resultWriting": 0.019410208333283663,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.019461416639387608,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.00010320823639631271,
+                "resultWriting": 0.019346083514392376,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.018387374933809042,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.00010908348485827446,
+                "resultWriting": 0.018269332591444254,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.01947691710665822,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.00011133402585983276,
+                "resultWriting": 0.01935695670545101,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.022263874765485525,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.00012912414968013763,
+                "resultWriting": 0.022124167066067457,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.021660707890987396,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.00011233286932110786,
+                "resultWriting": 0.02153795910999179,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.02093370771035552,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.00011887401342391968,
+                "resultWriting": 0.020798584911972284,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.02022791700437665,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.00010966695845127106,
+                "resultWriting": 0.020106082782149315,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.019513540901243687,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.00010487483814358711,
+                "resultWriting": 0.019395916257053614,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.01970104221254587,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.00011829100549221039,
+                "resultWriting": 0.019574083853513002,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            }
+          ]
+        },
+        "cold": {
+          "seconds": {
+            "p50": 0.918917374452576,
+            "p95": 0.9846542215906083
+          },
+          "stages": {
+            "bvhBuild": {
+              "p50": 0.09881731122732162,
+              "p95": 0.10415715780109167
+            },
+            "depthCasting": {
+              "p50": 0.05643200105987489,
+              "p95": 0.06561059020459652
+            },
+            "geometryHashing": {
+              "p50": 0.16730904765427113,
+              "p95": 0.17675309220794588
+            },
+            "resultWriting": {
+              "p50": 0.1341571258381009,
+              "p95": 0.14910976146347818
+            },
+            "targetRays": {
+              "p50": 0.0681749393697828,
+              "p95": 0.07384584101382642
+            },
+            "triangulation": {
+              "p50": 0.040744636207818985,
+              "p95": 0.04317473154515028
+            },
+            "usdTraversalGather": {
+              "p50": 0.35413850424811244,
+              "p95": 0.3752680304227397
+            }
+          },
+          "trials": [
+            {
+              "seconds": 0.9623163328506052,
+              "timings": {
+                "bvhBuild": 0.10979154333472252,
+                "depthCasting": 0.05300241522490978,
+                "geometryHashing": 0.17488911375403404,
+                "resultWriting": 0.13240787014365196,
+                "targetRays": 0.0717629175633192,
+                "triangulation": 0.0422818036749959,
+                "usdTraversalGather": 0.3781543364748359
+              }
+            },
+            {
+              "seconds": 0.9089448750019073,
+              "timings": {
+                "bvhBuild": 0.09755316842347383,
+                "depthCasting": 0.0528464182280004,
+                "geometryHashing": 0.17224871646612883,
+                "resultWriting": 0.11585824890062213,
+                "targetRays": 0.0667482865974307,
+                "triangulation": 0.042954550590366125,
+                "usdTraversalGather": 0.3607190689072013
+              }
+            },
+            {
+              "seconds": 0.934940124861896,
+              "timings": {
+                "bvhBuild": 0.10099554853513837,
+                "depthCasting": 0.06313091749325395,
+                "geometryHashing": 0.17267533717676997,
+                "resultWriting": 0.12337495293468237,
+                "targetRays": 0.06889516208320856,
+                "triangulation": 0.04216187307611108,
+                "usdTraversalGather": 0.36369149945676327
+              }
+            },
+            {
+              "seconds": 0.9074466251768172,
+              "timings": {
+                "bvhBuild": 0.09688446531072259,
+                "depthCasting": 0.06074124900624156,
+                "geometryHashing": 0.16495395870879292,
+                "resultWriting": 0.12221162347123027,
+                "targetRays": 0.06712578795850277,
+                "triangulation": 0.040790543891489506,
+                "usdTraversalGather": 0.35472358064725995
+              }
+            },
+            {
+              "seconds": 0.9000737499445677,
+              "timings": {
+                "bvhBuild": 0.10286129219457507,
+                "depthCasting": 0.05269612604752183,
+                "geometryHashing": 0.16183893848210573,
+                "resultWriting": 0.12640488054603338,
+                "targetRays": 0.06756995804607868,
+                "triangulation": 0.040053766686469316,
+                "usdTraversalGather": 0.3486245800741017
+              }
+            },
+            {
+              "seconds": 0.9243307090364397,
+              "timings": {
+                "bvhBuild": 0.10338500794023275,
+                "depthCasting": 0.05390995927155018,
+                "geometryHashing": 0.17068796791136265,
+                "resultWriting": 0.1330050053074956,
+                "targetRays": 0.06911798426881433,
+                "triangulation": 0.04037017282098532,
+                "usdTraversalGather": 0.35383906960487366
+              }
+            },
+            {
+              "seconds": 0.912910083308816,
+              "timings": {
+                "bvhBuild": 0.096646623685956,
+                "depthCasting": 0.060930915642529726,
+                "geometryHashing": 0.16736579174175858,
+                "resultWriting": 0.12482499610632658,
+                "targetRays": 0.06817112723365426,
+                "triangulation": 0.040518064983189106,
+                "usdTraversalGather": 0.3544379388913512
+              }
+            },
+            {
+              "seconds": 0.9411038751713932,
+              "timings": {
+                "bvhBuild": 0.10006245505064726,
+                "depthCasting": 0.06092941667884588,
+                "geometryHashing": 0.16728977020829916,
+                "resultWriting": 0.14405071269720793,
+                "targetRays": 0.06838053977116942,
+                "triangulation": 0.041286184918135405,
+                "usdTraversalGather": 0.3590862127020955
+              }
+            },
+            {
+              "seconds": 0.940024749841541,
+              "timings": {
+                "bvhBuild": 0.10063241561874747,
+                "depthCasting": 0.05513321002945304,
+                "geometryHashing": 0.1692273193039,
+                "resultWriting": 0.14454904478043318,
+                "targetRays": 0.06843995675444603,
+                "triangulation": 0.04068719781935215,
+                "usdTraversalGather": 0.3613393558189273
+              }
+            },
+            {
+              "seconds": 0.9920407081954181,
+              "timings": {
+                "bvhBuild": 0.10078500164672732,
+                "depthCasting": 0.0667704176157713,
+                "geometryHashing": 0.1748893056064844,
+                "resultWriting": 0.16041971230879426,
+                "targetRays": 0.07539670495316386,
+                "triangulation": 0.042555113323032856,
+                "usdTraversalGather": 0.3712070365436375
+              }
+            },
+            {
+              "seconds": 0.9865375841036439,
+              "timings": {
+                "bvhBuild": 0.10426075058057904,
+                "depthCasting": 0.06655395915731788,
+                "geometryHashing": 0.17722310218960047,
+                "resultWriting": 0.14628537790849805,
+                "targetRays": 0.07332437532022595,
+                "triangulation": 0.04352691397070885,
+                "usdTraversalGather": 0.3753466880880296
+              }
+            },
+            {
+              "seconds": 0.982352334074676,
+              "timings": {
+                "bvhBuild": 0.10403054440394044,
+                "depthCasting": 0.05653258599340916,
+                "geometryHashing": 0.177553647197783,
+                "resultWriting": 0.1514206207357347,
+                "targetRays": 0.07427249476313591,
+                "triangulation": 0.04335487959906459,
+                "usdTraversalGather": 0.3751718932762742
+              }
+            },
+            {
+              "seconds": 0.8994544171728194,
+              "timings": {
+                "bvhBuild": 0.09766458394005895,
+                "depthCasting": 0.05333675071597099,
+                "geometryHashing": 0.1692143240943551,
+                "resultWriting": 0.1263806289061904,
+                "targetRays": 0.06692586792632937,
+                "triangulation": 0.04104279913008213,
+                "usdTraversalGather": 0.3448738786391914
+              }
+            },
+            {
+              "seconds": 0.9173089577816427,
+              "timings": {
+                "bvhBuild": 0.10002846037968993,
+                "depthCasting": 0.060156994964927435,
+                "geometryHashing": 0.1681428817100823,
+                "resultWriting": 0.12512679724022746,
+                "targetRays": 0.06621904112398624,
+                "triangulation": 0.04069904610514641,
+                "usdTraversalGather": 0.35692348750308156
+              }
+            },
+            {
+              "seconds": 0.9243649169802666,
+              "timings": {
+                "bvhBuild": 0.0970666715875268,
+                "depthCasting": 0.06273387605324388,
+                "geometryHashing": 0.16573637537658215,
+                "resultWriting": 0.13717971043661237,
+                "targetRays": 0.06899803318083286,
+                "triangulation": 0.04031033627688885,
+                "usdTraversalGather": 0.35232591396197677
+              }
+            },
+            {
+              "seconds": 0.9167501670308411,
+              "timings": {
+                "bvhBuild": 0.0994640332646668,
+                "depthCasting": 0.054215459153056145,
+                "geometryHashing": 0.1668387996032834,
+                "resultWriting": 0.13477800460532308,
+                "targetRays": 0.06715596420690417,
+                "triangulation": 0.04096159478649497,
+                "usdTraversalGather": 0.35332139441743493
+              }
+            },
+            {
+              "seconds": 0.9459254997782409,
+              "timings": {
+                "bvhBuild": 0.09643904026597738,
+                "depthCasting": 0.05491316504776478,
+                "geometryHashing": 0.16952340537682176,
+                "resultWriting": 0.14571070950478315,
+                "targetRays": 0.06882729288190603,
+                "triangulation": 0.040951316710561514,
+                "usdTraversalGather": 0.3695417372509837
+              }
+            },
+            {
+              "seconds": 0.9332057922147214,
+              "timings": {
+                "bvhBuild": 0.09805808775126934,
+                "depthCasting": 0.06259703962132335,
+                "geometryHashing": 0.1673283251002431,
+                "resultWriting": 0.13740345602855086,
+                "targetRays": 0.06901703868061304,
+                "triangulation": 0.04103418439626694,
+                "usdTraversalGather": 0.35775374341756105
+              }
+            },
+            {
+              "seconds": 0.9155051670968533,
+              "timings": {
+                "bvhBuild": 0.09856799803674221,
+                "depthCasting": 0.05633141612634063,
+                "geometryHashing": 0.1631735134869814,
+                "resultWriting": 0.13786449935287237,
+                "targetRays": 0.06979616824537516,
+                "triangulation": 0.04053932474926114,
+                "usdTraversalGather": 0.3492151629179716
+              }
+            },
+            {
+              "seconds": 0.948188042268157,
+              "timings": {
+                "bvhBuild": 0.10070712165907025,
+                "depthCasting": 0.054791420232504606,
+                "geometryHashing": 0.1761786355637014,
+                "resultWriting": 0.14174445532262325,
+                "targetRays": 0.06948437821120024,
+                "triangulation": 0.04124778043478727,
+                "usdTraversalGather": 0.3640209585428238
+              }
+            },
+            {
+              "seconds": 0.9262555004097521,
+              "timings": {
+                "bvhBuild": 0.09832253726199269,
+                "depthCasting": 0.062431457452476025,
+                "geometryHashing": 0.1659264932386577,
+                "resultWriting": 0.13353624707087874,
+                "targetRays": 0.06766117410734296,
+                "triangulation": 0.04119763197377324,
+                "usdTraversalGather": 0.35716666653752327
+              }
+            },
+            {
+              "seconds": 0.9263793341815472,
+              "timings": {
+                "bvhBuild": 0.09685178892686963,
+                "depthCasting": 0.06191750569269061,
+                "geometryHashing": 0.16513074794784188,
+                "resultWriting": 0.14214666560292244,
+                "targetRays": 0.06646853964775801,
+                "triangulation": 0.04053093073889613,
+                "usdTraversalGather": 0.353320196736604
+              }
+            },
+            {
+              "seconds": 0.9105865843594074,
+              "timings": {
+                "bvhBuild": 0.09678275138139725,
+                "depthCasting": 0.053993206936866045,
+                "geometryHashing": 0.1624628696590662,
+                "resultWriting": 0.1398592903278768,
+                "targetRays": 0.06725296005606651,
+                "triangulation": 0.040416060015559196,
+                "usdTraversalGather": 0.3498071115463972
+              }
+            },
+            {
+              "seconds": 0.9161550002172589,
+              "timings": {
+                "bvhBuild": 0.09906662441790104,
+                "depthCasting": 0.05517933238297701,
+                "geometryHashing": 0.17067984770983458,
+                "resultWriting": 0.1351034133695066,
+                "targetRays": 0.06817875150591135,
+                "triangulation": 0.03989795874804258,
+                "usdTraversalGather": 0.34803498815745115
+              }
+            },
+            {
+              "seconds": 0.9205257911235094,
+              "timings": {
+                "bvhBuild": 0.09837533254176378,
+                "depthCasting": 0.06445758370682597,
+                "geometryHashing": 0.16267130011692643,
+                "resultWriting": 0.1391604575328529,
+                "targetRays": 0.0679970015771687,
+                "triangulation": 0.040082938969135284,
+                "usdTraversalGather": 0.3477663854137063
+              }
+            },
+            {
+              "seconds": 0.8882639170624316,
+              "timings": {
+                "bvhBuild": 0.09626937238499522,
+                "depthCasting": 0.04941999865695834,
+                "geometryHashing": 0.16334305657073855,
+                "resultWriting": 0.12848787289112806,
+                "targetRays": 0.061442671809345484,
+                "triangulation": 0.040394066367298365,
+                "usdTraversalGather": 0.3488932941108942
+              }
+            },
+            {
+              "seconds": 0.8972974997013807,
+              "timings": {
+                "bvhBuild": 0.0973828793503344,
+                "depthCasting": 0.05436883168295026,
+                "geometryHashing": 0.1627452177926898,
+                "resultWriting": 0.12781462352722883,
+                "targetRays": 0.06811332795768976,
+                "triangulation": 0.03988584969192743,
+                "usdTraversalGather": 0.34697064477950335
+              }
+            },
+            {
+              "seconds": 0.8716176659800112,
+              "timings": {
+                "bvhBuild": 0.10165374632924795,
+                "depthCasting": 0.062277795281261206,
+                "geometryHashing": 0.15365344565361738,
+                "resultWriting": 0.12370738200843334,
+                "targetRays": 0.06769116688519716,
+                "triangulation": 0.03716980246827006,
+                "usdTraversalGather": 0.3254511612467468
+              }
+            },
+            {
+              "seconds": 0.9130895836278796,
+              "timings": {
+                "bvhBuild": 0.10033171577379107,
+                "depthCasting": 0.062256254721432924,
+                "geometryHashing": 0.1650897990912199,
+                "resultWriting": 0.1243670778349042,
+                "targetRays": 0.06844061147421598,
+                "triangulation": 0.04079022631049156,
+                "usdTraversalGather": 0.3517997725866735
+              }
+            },
+            {
+              "seconds": 0.9071738752536476,
+              "timings": {
+                "bvhBuild": 0.09836558438837528,
+                "depthCasting": 0.054244416765868664,
+                "geometryHashing": 0.1664805575273931,
+                "resultWriting": 0.12694104108959436,
+                "targetRays": 0.06783403968438506,
+                "triangulation": 0.04048642050474882,
+                "usdTraversalGather": 0.35280493972823024
+              }
+            }
+          ]
+        },
+        "hashOnly": {
+          "seconds": {
+            "p50": 0.004576604114845395,
+            "p95": 0.004718982940539717
+          },
+          "stages": {
+            "bvhBuild": {
+              "p50": 0.0,
+              "p95": 0.0
+            },
+            "depthCasting": {
+              "p50": 0.0,
+              "p95": 0.0
+            },
+            "geometryHashing": {
+              "p50": 4.883366636931896e-05,
+              "p95": 5.555003881454467e-05
+            },
+            "resultWriting": {
+              "p50": 0.0,
+              "p95": 0.0
+            },
+            "targetRays": {
+              "p50": 0.0,
+              "p95": 0.0
+            },
+            "triangulation": {
+              "p50": 0.0,
+              "p95": 0.0
+            },
+            "usdTraversalGather": {
+              "p50": 0.004524562507867813,
+              "p95": 0.004665816645137965
+            }
+          },
+          "trials": [
+            {
+              "seconds": 0.004671582952141762,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 5.008326843380928e-05,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0046122088097035885
+              }
+            },
+            {
+              "seconds": 0.004594041965901852,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 4.666578024625778e-05,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0045405421406030655
+              }
+            },
+            {
+              "seconds": 0.004515500273555517,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 5.041714757680893e-05,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0044592502526938915
+              }
+            },
+            {
+              "seconds": 0.00401716586202383,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 4.2208004742860794e-05,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.003969124983996153
+              }
+            },
+            {
+              "seconds": 0.004097166936844587,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 4.2208004742860794e-05,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.004047958180308342
+              }
+            },
+            {
+              "seconds": 0.004431332927197218,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 5.008373409509659e-05,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.004375624470412731
+              }
+            },
+            {
+              "seconds": 0.004657290875911713,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 5.133310332894325e-05,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.004600333981215954
+              }
+            },
+            {
+              "seconds": 0.004678207915276289,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 4.9165915697813034e-05,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.004623917397111654
+              }
+            },
+            {
+              "seconds": 0.004587958101183176,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 4.5000109821558e-05,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.004538041073828936
+              }
+            },
+            {
+              "seconds": 0.004649167414754629,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 4.929210990667343e-05,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0045948331244289875
+              }
+            },
+            {
+              "seconds": 0.00462533300742507,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 4.520826041698456e-05,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.004574874881654978
+              }
+            },
+            {
+              "seconds": 0.004566958174109459,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 4.5165885239839554e-05,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0045168339274823666
+              }
+            },
+            {
+              "seconds": 0.0046414160169661045,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 5.779089406132698e-05,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.004578833933919668
+              }
+            },
+            {
+              "seconds": 0.004483874887228012,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 4.8667192459106445e-05,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.004430416040122509
+              }
+            },
+            {
+              "seconds": 0.0047192079946398735,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 4.633422940969467e-05,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.004667541012167931
+              }
+            },
+            {
+              "seconds": 0.004767667036503553,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 5.395803600549698e-05,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.004707791842520237
+              }
+            },
+            {
+              "seconds": 0.004343875218182802,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 4.366692155599594e-05,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.004294875077903271
+              }
+            },
+            {
+              "seconds": 0.0042384592816233635,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 4.337495192885399e-05,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.00418904097750783
+              }
+            },
+            {
+              "seconds": 0.004541334230452776,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 4.504108801484108e-05,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0044907089322805405
+              }
+            },
+            {
+              "seconds": 0.004586250055581331,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 4.4667162001132965e-05,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.00453229108825326
+              }
+            },
+            {
+              "seconds": 0.00470783282071352,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 4.475004971027374e-05,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.004658124875277281
+              }
+            },
+            {
+              "seconds": 0.004601625259965658,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 5.204183980822563e-05,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0045447079464793205
+              }
+            },
+            {
+              "seconds": 0.004718707874417305,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 5.012517794966698e-05,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.004663709085434675
+              }
+            },
+            {
+              "seconds": 0.004632667172700167,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 4.929071292281151e-05,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0045782094821333885
+              }
+            },
+            {
+              "seconds": 0.004243165720254183,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 4.3250154703855515e-05,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.004194207955151796
+              }
+            },
+            {
+              "seconds": 0.00419716676697135,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 4.341593012213707e-05,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.004148418083786964
+              }
+            },
+            {
+              "seconds": 0.004537458065897226,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 5.6374818086624146e-05,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.004474166315048933
+              }
+            },
+            {
+              "seconds": 0.004440084099769592,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 5.4541975259780884e-05,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.004378749988973141
+              }
+            },
+            {
+              "seconds": 0.0044203330762684345,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 4.900014027953148e-05,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.004365290980786085
+              }
+            },
+            {
+              "seconds": 0.0043817502446472645,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 4.966696724295616e-05,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.004326582886278629
+              }
+            }
+          ]
+        }
+      },
+      "obstacles": 2938,
+      "peakRssBytes": 387153920,
+      "publication": {
+        "format": "usdc",
+        "unchangedCachedRuns": 30,
+        "writeShells": false
+      },
+      "rays": 165888,
+      "trials": 30,
+      "triangles": 87136,
+      "versions": {
+        "architecture": "arm64",
+        "cctv": "0.4.2",
+        "embreex": "4.4.0",
+        "numpy": "2.5.3",
+        "python": "3.13.12",
+        "usd": [
+          0,
+          26,
+          8
+        ]
+      },
+      "views": 32
+    },
+    {
+      "acceptance": {
+        "cached": true,
+        "cold": false,
+        "eligible": true,
+        "hashOnly": true,
+        "identicalResultsAndBlockers": true,
+        "peakRss": true
+      },
+      "budgetsSeconds": {
+        "cached": 0.25,
+        "cold": 1.0,
+        "hashOnly": 0.1
+      },
+      "census": {
+        "doors": 41,
+        "generatedCameras": 29,
+        "selectedCameras": 29
+      },
+      "comparison": {
+        "blockers": 18,
+        "targets": 41,
+        "viewTargets": 92,
+        "views": 33
+      },
+      "configuration": "generated",
+      "kernel": "embree",
+      "measurements": {
+        "cached": {
+          "seconds": {
+            "p50": 0.030393104534596205,
+            "p95": 0.046554793696850526
+          },
+          "stages": {
+            "bvhBuild": {
+              "p50": 0.0,
+              "p95": 0.0
+            },
+            "depthCasting": {
+              "p50": 0.0,
+              "p95": 0.0
+            },
+            "geometryHashing": {
+              "p50": 0.0001354999840259552,
+              "p95": 0.0002391805639490484
+            },
+            "resultWriting": {
+              "p50": 0.0302587088663131,
+              "p95": 0.04636222368571906
+            },
+            "targetRays": {
+              "p50": 0.0,
+              "p95": 0.0
+            },
+            "triangulation": {
+              "p50": 0.0,
+              "p95": 0.0
+            },
+            "usdTraversalGather": {
+              "p50": 0.0,
+              "p95": 0.0
+            }
+          },
+          "trials": [
+            {
+              "seconds": 0.03882662486284971,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.0002797488123178482,
+                "resultWriting": 0.038529917132109404,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.02553150011226535,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.00019858311861753464,
+                "resultWriting": 0.025317083578556776,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.04230112535879016,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.00015141861513257027,
+                "resultWriting": 0.04213566426187754,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.02593729132786393,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.00021195923909544945,
+                "resultWriting": 0.025714123621582985,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.027555707842111588,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.0001998748630285263,
+                "resultWriting": 0.02734179189428687,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.02304116589948535,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.00018825102597475052,
+                "resultWriting": 0.02283737389370799,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.03860408300533891,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.00025899894535541534,
+                "resultWriting": 0.038327251095324755,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.03649041708558798,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.00020279129967093468,
+                "resultWriting": 0.0362749588675797,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.02491970919072628,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.0001360001042485237,
+                "resultWriting": 0.024771708995103836,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.053427249658852816,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.0001349998638033867,
+                "resultWriting": 0.053280625492334366,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.017778624780476093,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.00011866586282849312,
+                "resultWriting": 0.017648292239755392,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.02523816702887416,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.00012900028377771378,
+                "resultWriting": 0.025095874443650246,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.019904584158211946,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.0001221667043864727,
+                "resultWriting": 0.019758541602641344,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.03591262502595782,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.0001244167797267437,
+                "resultWriting": 0.035777625162154436,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.039409625343978405,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.00012974999845027924,
+                "resultWriting": 0.039257667027413845,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.03893916588276625,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.000204416923224926,
+                "resultWriting": 0.038718041963875294,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.025307375006377697,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.0001282910816371441,
+                "resultWriting": 0.02516741817817092,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.03714904235675931,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.0001900000497698784,
+                "resultWriting": 0.03694754187017679,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.02737395791336894,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.00011974992230534554,
+                "resultWriting": 0.02724450035020709,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.03435695916414261,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.00019183382391929626,
+                "resultWriting": 0.034155623987317085,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.04883950017392635,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.0002149580977857113,
+                "resultWriting": 0.04861404187977314,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.04376237466931343,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.00012566568329930305,
+                "resultWriting": 0.04361000144854188,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.026718666777014732,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.00012337462976574898,
+                "resultWriting": 0.026584834326058626,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.03159087477251887,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.00012524984776973724,
+                "resultWriting": 0.031451084185391665,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.017259624786674976,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.00011616572737693787,
+                "resultWriting": 0.017133751418441534,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.023655042052268982,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.00012474972754716873,
+                "resultWriting": 0.023517750203609467,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.03335895901545882,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.00012062489986419678,
+                "resultWriting": 0.03322820831090212,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.03934095799922943,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.0001369989477097988,
+                "resultWriting": 0.03918004175648093,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.029195334296673536,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.00011874968186020851,
+                "resultWriting": 0.029066333547234535,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            },
+            {
+              "seconds": 0.025870416313409805,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.00019308319315314293,
+                "resultWriting": 0.0256610419601202,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0
+              }
+            }
+          ]
+        },
+        "cold": {
+          "seconds": {
+            "p50": 1.0745196668431163,
+            "p95": 1.2822330373572184
+          },
+          "stages": {
+            "bvhBuild": {
+              "p50": 0.22330106422305107,
+              "p95": 0.29917700663208957
+            },
+            "depthCasting": {
+              "p50": 0.08688201894983649,
+              "p95": 0.10047258858103304
+            },
+            "geometryHashing": {
+              "p50": 0.16953831329010427,
+              "p95": 0.18683856369461863
+            },
+            "resultWriting": {
+              "p50": 0.12894901866093278,
+              "p95": 0.22152607734315088
+            },
+            "targetRays": {
+              "p50": 0.05709472927264869,
+              "p95": 0.06806421366054564
+            },
+            "triangulation": {
+              "p50": 0.042960567167028785,
+              "p95": 0.04778257298748939
+            },
+            "usdTraversalGather": {
+              "p50": 0.3651644876226783,
+              "p95": 0.4003228707006201
+            }
+          },
+          "trials": [
+            {
+              "seconds": 1.0889125000685453,
+              "timings": {
+                "bvhBuild": 0.2315751309506595,
+                "depthCasting": 0.07436616253107786,
+                "geometryHashing": 0.17203800799325109,
+                "resultWriting": 0.13187203695997596,
+                "targetRays": 0.05714279459789395,
+                "triangulation": 0.044319241773337126,
+                "usdTraversalGather": 0.3775687925517559
+              }
+            },
+            {
+              "seconds": 1.0453298329375684,
+              "timings": {
+                "bvhBuild": 0.2199116568081081,
+                "depthCasting": 0.07555133663117886,
+                "geometryHashing": 0.1723254481330514,
+                "resultWriting": 0.11921083740890026,
+                "targetRays": 0.05404421268031001,
+                "triangulation": 0.041492228396236897,
+                "usdTraversalGather": 0.36277919728308916
+              }
+            },
+            {
+              "seconds": 1.0591134577989578,
+              "timings": {
+                "bvhBuild": 0.22233520774170756,
+                "depthCasting": 0.08734267065301538,
+                "geometryHashing": 0.16796494601294398,
+                "resultWriting": 0.11668633576482534,
+                "targetRays": 0.05704666394740343,
+                "triangulation": 0.04276453470811248,
+                "usdTraversalGather": 0.36495768185704947
+              }
+            },
+            {
+              "seconds": 1.053030792158097,
+              "timings": {
+                "bvhBuild": 0.22239141492173076,
+                "depthCasting": 0.08513770438730717,
+                "geometryHashing": 0.16606741910800338,
+                "resultWriting": 0.11840512789785862,
+                "targetRays": 0.054600630421191454,
+                "triangulation": 0.041647978127002716,
+                "usdTraversalGather": 0.3647653921507299
+              }
+            },
+            {
+              "seconds": 1.0728168333880603,
+              "timings": {
+                "bvhBuild": 0.22501853294670582,
+                "depthCasting": 0.08059320459142327,
+                "geometryHashing": 0.17004935536533594,
+                "resultWriting": 0.12618749914690852,
+                "targetRays": 0.05788317834958434,
+                "triangulation": 0.04219678044319153,
+                "usdTraversalGather": 0.37087399000301957
+              }
+            },
+            {
+              "seconds": 1.0595169998705387,
+              "timings": {
+                "bvhBuild": 0.22298212349414825,
+                "depthCasting": 0.07824591919779778,
+                "geometryHashing": 0.1702208169735968,
+                "resultWriting": 0.1235318728722632,
+                "targetRays": 0.057544708251953125,
+                "triangulation": 0.04355136537924409,
+                "usdTraversalGather": 0.36342327762395144
+              }
+            },
+            {
+              "seconds": 1.0574416248127818,
+              "timings": {
+                "bvhBuild": 0.22061020322144032,
+                "depthCasting": 0.0879251267760992,
+                "geometryHashing": 0.16340912273153663,
+                "resultWriting": 0.12465941393747926,
+                "targetRays": 0.0537323784083128,
+                "triangulation": 0.0444241538643837,
+                "usdTraversalGather": 0.3626596010290086
+              }
+            },
+            {
+              "seconds": 1.0387514168396592,
+              "timings": {
+                "bvhBuild": 0.21976770786568522,
+                "depthCasting": 0.08679337240755558,
+                "geometryHashing": 0.16130822151899338,
+                "resultWriting": 0.11714208358898759,
+                "targetRays": 0.055479837115854025,
+                "triangulation": 0.040897331200540066,
+                "usdTraversalGather": 0.35734490444883704
+              }
+            },
+            {
+              "seconds": 1.0512737077660859,
+              "timings": {
+                "bvhBuild": 0.22283620899543166,
+                "depthCasting": 0.08006612444296479,
+                "geometryHashing": 0.16369197564199567,
+                "resultWriting": 0.1274358700029552,
+                "targetRays": 0.05645641963928938,
+                "triangulation": 0.04241051012650132,
+                "usdTraversalGather": 0.3583603068254888
+              }
+            },
+            {
+              "seconds": 1.0649855830706656,
+              "timings": {
+                "bvhBuild": 0.2215119176544249,
+                "depthCasting": 0.07875383319333196,
+                "geometryHashing": 0.17299608886241913,
+                "resultWriting": 0.12903858069330454,
+                "targetRays": 0.05609545996412635,
+                "triangulation": 0.042062126100063324,
+                "usdTraversalGather": 0.3645130763761699
+              }
+            },
+            {
+              "seconds": 1.0896215001121163,
+              "timings": {
+                "bvhBuild": 0.22418825468048453,
+                "depthCasting": 0.09184600040316582,
+                "geometryHashing": 0.16798916785046458,
+                "resultWriting": 0.13885429641231894,
+                "targetRays": 0.059022119734436274,
+                "triangulation": 0.04233332583680749,
+                "usdTraversalGather": 0.3653712933883071
+              }
+            },
+            {
+              "seconds": 1.1658251252956688,
+              "timings": {
+                "bvhBuild": 0.23385904589667916,
+                "depthCasting": 0.09976396011188626,
+                "geometryHashing": 0.17815402569249272,
+                "resultWriting": 0.15732220653444529,
+                "targetRays": 0.06525499559938908,
+                "triangulation": 0.04598095314577222,
+                "usdTraversalGather": 0.3854698967188597
+              }
+            },
+            {
+              "seconds": 1.176729790866375,
+              "timings": {
+                "bvhBuild": 0.23400262789800763,
+                "depthCasting": 0.08752608112990856,
+                "geometryHashing": 0.181056447327137,
+                "resultWriting": 0.16356304101645947,
+                "targetRays": 0.06588779017329216,
+                "triangulation": 0.04925662558525801,
+                "usdTraversalGather": 0.3954123039729893
+              }
+            },
+            {
+              "seconds": 1.0829636249691248,
+              "timings": {
+                "bvhBuild": 0.2207159185782075,
+                "depthCasting": 0.07770137814804912,
+                "geometryHashing": 0.18167560920119286,
+                "resultWriting": 0.1261830828152597,
+                "targetRays": 0.05491262208670378,
+                "triangulation": 0.04365278920158744,
+                "usdTraversalGather": 0.3780986829660833
+              }
+            },
+            {
+              "seconds": 1.0762225002981722,
+              "timings": {
+                "bvhBuild": 0.22600967669859529,
+                "depthCasting": 0.0946617042645812,
+                "geometryHashing": 0.16278540063649416,
+                "resultWriting": 0.13784108636900783,
+                "targetRays": 0.058730827178806067,
+                "triangulation": 0.040925508830696344,
+                "usdTraversalGather": 0.35525287967175245
+              }
+            },
+            {
+              "seconds": 1.0498744999058545,
+              "timings": {
+                "bvhBuild": 0.22052232874557376,
+                "depthCasting": 0.0869706654921174,
+                "geometryHashing": 0.16180969635024667,
+                "resultWriting": 0.1277978694997728,
+                "targetRays": 0.054747674614191055,
+                "triangulation": 0.042510364670306444,
+                "usdTraversalGather": 0.3554982333444059
+              }
+            },
+            {
+              "seconds": 1.0651615839451551,
+              "timings": {
+                "bvhBuild": 0.2236200049519539,
+                "depthCasting": 0.08084028773009777,
+                "geometryHashing": 0.16716419532895088,
+                "resultWriting": 0.12814328726381063,
+                "targetRays": 0.05770270945504308,
+                "triangulation": 0.04295850591734052,
+                "usdTraversalGather": 0.36471680039539933
+              }
+            },
+            {
+              "seconds": 1.093485291581601,
+              "timings": {
+                "bvhBuild": 0.22270362125709653,
+                "depthCasting": 0.0792456679046154,
+                "geometryHashing": 0.16951958276331425,
+                "resultWriting": 0.1463256231509149,
+                "targetRays": 0.05543883750215173,
+                "triangulation": 0.04338491475209594,
+                "usdTraversalGather": 0.37684829486534
+              }
+            },
+            {
+              "seconds": 1.0862522502429783,
+              "timings": {
+                "bvhBuild": 0.22640336956828833,
+                "depthCasting": 0.08895991696044803,
+                "geometryHashing": 0.1695570438168943,
+                "resultWriting": 0.12978857848793268,
+                "targetRays": 0.059595673345029354,
+                "triangulation": 0.043016537092626095,
+                "usdTraversalGather": 0.3689132556319237
+              }
+            },
+            {
+              "seconds": 1.0493103750050068,
+              "timings": {
+                "bvhBuild": 0.21861837152391672,
+                "depthCasting": 0.07573075219988823,
+                "geometryHashing": 0.16765286587178707,
+                "resultWriting": 0.12658179458230734,
+                "targetRays": 0.05338879255577922,
+                "triangulation": 0.044197690673172474,
+                "usdTraversalGather": 0.36312431655824184
+              }
+            },
+            {
+              "seconds": 1.0588995832949877,
+              "timings": {
+                "bvhBuild": 0.2214052532799542,
+                "depthCasting": 0.07872695289552212,
+                "geometryHashing": 0.16727642808109522,
+                "resultWriting": 0.12885945662856102,
+                "targetRays": 0.05511125177145004,
+                "triangulation": 0.04296262841671705,
+                "usdTraversalGather": 0.364539987873286
+              }
+            },
+            {
+              "seconds": 1.0634561660699546,
+              "timings": {
+                "bvhBuild": 0.22174695506691933,
+                "depthCasting": 0.08588870847597718,
+                "geometryHashing": 0.16882550856098533,
+                "resultWriting": 0.12089233426377177,
+                "targetRays": 0.05512892082333565,
+                "triangulation": 0.04331428976729512,
+                "usdTraversalGather": 0.3676417409442365
+              }
+            },
+            {
+              "seconds": 1.061143749859184,
+              "timings": {
+                "bvhBuild": 0.2204354633577168,
+                "depthCasting": 0.08798707881942391,
+                "geometryHashing": 0.16509011574089527,
+                "resultWriting": 0.12743496149778366,
+                "targetRays": 0.05612033046782017,
+                "triangulation": 0.042027924209833145,
+                "usdTraversalGather": 0.3620292511768639
+              }
+            },
+            {
+              "seconds": 1.1886555827222764,
+              "timings": {
+                "bvhBuild": 0.28536299942061305,
+                "depthCasting": 0.09234499791637063,
+                "geometryHashing": 0.1721957689151168,
+                "resultWriting": 0.16912912484258413,
+                "targetRays": 0.06456887442618608,
+                "triangulation": 0.04317260021343827,
+                "usdTraversalGather": 0.36186538403853774
+              }
+            },
+            {
+              "seconds": 1.2426734999753535,
+              "timings": {
+                "bvhBuild": 0.2948965444229543,
+                "depthCasting": 0.09009425016120076,
+                "geometryHashing": 0.19106279918923974,
+                "resultWriting": 0.16250208765268326,
+                "targetRays": 0.06898866361007094,
+                "triangulation": 0.04158340394496918,
+                "usdTraversalGather": 0.3935324181802571
+              }
+            },
+            {
+              "seconds": 1.2469340828247368,
+              "timings": {
+                "bvhBuild": 0.30932166753336787,
+                "depthCasting": 0.09514728700742126,
+                "geometryHashing": 0.17683874117210507,
+                "resultWriting": 0.16087562358006835,
+                "targetRays": 0.056417462415993214,
+                "triangulation": 0.04397802799940109,
+                "usdTraversalGather": 0.4043406071141362
+              }
+            },
+            {
+              "seconds": 1.205737624783069,
+              "timings": {
+                "bvhBuild": 0.2850873349234462,
+                "depthCasting": 0.10105237551033497,
+                "geometryHashing": 0.1660550436936319,
+                "resultWriting": 0.15463145496323705,
+                "targetRays": 0.06693433038890362,
+                "triangulation": 0.04102749563753605,
+                "usdTraversalGather": 0.3909350070171058
+              }
+            },
+            {
+              "seconds": 1.2373834168538451,
+              "timings": {
+                "bvhBuild": 0.27348336577415466,
+                "depthCasting": 0.08337192051112652,
+                "geometryHashing": 0.17947482177987695,
+                "resultWriting": 0.20692840684205294,
+                "targetRays": 0.058861547615379095,
+                "triangulation": 0.040554395876824856,
+                "usdTraversalGather": 0.3946950836107135
+              }
+            },
+            {
+              "seconds": 1.3111140001565218,
+              "timings": {
+                "bvhBuild": 0.268844083417207,
+                "depthCasting": 0.08771458547562361,
+                "geometryHashing": 0.20072033954784274,
+                "resultWriting": 0.23346962593495846,
+                "targetRays": 0.061648955568671227,
+                "triangulation": 0.045148362405598164,
+                "usdTraversalGather": 0.413554506842047
+              }
+            },
+            {
+              "seconds": 1.6847723331302404,
+              "timings": {
+                "bvhBuild": 0.3026792029850185,
+                "depthCasting": 0.14023495418950915,
+                "geometryHashing": 0.1698444252833724,
+                "resultWriting": 0.5374244539998472,
+                "targetRays": 0.09792288579046726,
+                "triangulation": 0.05588607443496585,
+                "usdTraversalGather": 0.3807670450769365
+              }
+            }
+          ]
+        },
+        "hashOnly": {
+          "seconds": {
+            "p50": 0.004049957962706685,
+            "p95": 0.014331445447169243
+          },
+          "stages": {
+            "bvhBuild": {
+              "p50": 0.0,
+              "p95": 0.0
+            },
+            "depthCasting": {
+              "p50": 0.0,
+              "p95": 0.0
+            },
+            "geometryHashing": {
+              "p50": 5.462486296892166e-05,
+              "p95": 0.0001863061217591164
+            },
+            "resultWriting": {
+              "p50": 0.0,
+              "p95": 0.0
+            },
+            "targetRays": {
+              "p50": 0.0,
+              "p95": 0.0
+            },
+            "triangulation": {
+              "p50": 0.0,
+              "p95": 0.0
+            },
+            "usdTraversalGather": {
+              "p50": 0.003988791955634952,
+              "p95": 0.01404899349436164
+            }
+          },
+          "trials": [
+            {
+              "seconds": 0.007529791910201311,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 6.604194641113281e-05,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.007444540970027447
+              }
+            },
+            {
+              "seconds": 0.004089416936039925,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 5.554128438234329e-05,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.00402520876377821
+              }
+            },
+            {
+              "seconds": 0.003998999949544668,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 5.337502807378769e-05,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.003939792048186064
+              }
+            },
+            {
+              "seconds": 0.015437166672199965,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.0013407501392066479,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.014083249494433403
+              }
+            },
+            {
+              "seconds": 0.008279916364699602,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 6.0916878283023834e-05,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.008204750251024961
+              }
+            },
+            {
+              "seconds": 0.004047249909490347,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 5.39170578122139e-05,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.00398695794865489
+              }
+            },
+            {
+              "seconds": 0.00396974990144372,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 5.170796066522598e-05,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0039128330536186695
+              }
+            },
+            {
+              "seconds": 0.011019208002835512,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.00022562500089406967,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.010780459269881248
+              }
+            },
+            {
+              "seconds": 0.014537582639604807,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 6.316602230072021e-05,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.01445912616327405
+              }
+            },
+            {
+              "seconds": 0.004052666015923023,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 5.4915901273489e-05,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.003990625962615013
+              }
+            },
+            {
+              "seconds": 0.013864333275705576,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.0001382497139275074,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.013712750282138586
+              }
+            },
+            {
+              "seconds": 0.008499959018081427,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 6.666593253612518e-05,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.008419166784733534
+              }
+            },
+            {
+              "seconds": 0.004180749878287315,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 5.8208126574754715e-05,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.00411574961617589
+              }
+            },
+            {
+              "seconds": 0.003991125151515007,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 5.329074338078499e-05,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.003932126332074404
+              }
+            },
+            {
+              "seconds": 0.003994000144302845,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 5.229096859693527e-05,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.003936667926609516
+              }
+            },
+            {
+              "seconds": 0.003969124983996153,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 5.2667222917079926e-05,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.003911083098500967
+              }
+            },
+            {
+              "seconds": 0.003981166984885931,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 5.212472751736641e-05,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.003924417309463024
+              }
+            },
+            {
+              "seconds": 0.003928834106773138,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 5.1042065024375916e-05,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0038732909597456455
+              }
+            },
+            {
+              "seconds": 0.003962957765907049,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 5.0582922995090485e-05,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.003907834179699421
+              }
+            },
+            {
+              "seconds": 0.0078468332067132,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.00013087503612041473,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0077040838077664375
+              }
+            },
+            {
+              "seconds": 0.005905041936784983,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 6.087496876716614e-05,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.005829291883856058
+              }
+            },
+            {
+              "seconds": 0.0040384577587246895,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 5.38751482963562e-05,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.003977959044277668
+              }
+            },
+            {
+              "seconds": 0.004009374883025885,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 5.308305844664574e-05,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.003950833808630705
+              }
+            },
+            {
+              "seconds": 0.014079499989748001,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 6.629200652241707e-05,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.014007125049829483
+              }
+            },
+            {
+              "seconds": 0.004069332964718342,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 5.691591650247574e-05,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.004005833994597197
+              }
+            },
+            {
+              "seconds": 0.003974166698753834,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 5.4333824664354324e-05,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0039141238667070866
+              }
+            },
+            {
+              "seconds": 0.003992291633039713,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 5.333311855792999e-05,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0039337920024991035
+              }
+            },
+            {
+              "seconds": 0.003955874592065811,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 5.2667222917079926e-05,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.0038982080295681953
+              }
+            },
+            {
+              "seconds": 0.003974499646574259,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 5.245814099907875e-05,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.003917250782251358
+              }
+            },
+            {
+              "seconds": 0.013252750039100647,
+              "timings": {
+                "bvhBuild": 0.0,
+                "depthCasting": 0.0,
+                "geometryHashing": 0.00013629207387566566,
+                "resultWriting": 0.0,
+                "targetRays": 0.0,
+                "triangulation": 0.0,
+                "usdTraversalGather": 0.013103249948471785
+              }
+            }
+          ]
+        }
+      },
+      "obstacles": 2938,
+      "peakRssBytes": 516915200,
+      "publication": {
+        "format": "usdc",
+        "unchangedCachedRuns": 30,
+        "writeShells": false
+      },
+      "rays": 171072,
+      "trials": 30,
+      "triangles": 87136,
+      "versions": {
+        "architecture": "arm64",
+        "cctv": "0.4.2",
+        "embreex": "4.4.0",
+        "numpy": "2.5.3",
+        "python": "3.13.12",
+        "usd": [
+          0,
+          26,
+          8
+        ]
+      },
+      "views": 33
+    }
+  ],
+  "facility": "demo-datacentre-01",
+  "hashDefinition": "same stage, fingerprint only, no rays or output publication",
+  "preparation": {
+    "buildSeconds": 13.539692458231002,
+    "converter": {
+      "blankHeadingsOmitted": 0,
+      "elements": 2938,
+      "extents": 33,
+      "ifc4FacilityAdapted": 0,
+      "meshes": 2971,
+      "phases": 2938,
+      "portLinks": 3024,
+      "ports": 6212,
+      "seconds": 5.459,
+      "spatial": 37,
+      "systems": 9,
+      "types": 64,
+      "unclassified": 2,
+      "unparented": 0,
+      "zones": 0
+    },
+    "generator": {
+      "ref": "v0.1.0",
+      "revision": "28ed6120722cd6fc88134eef2ee0f86b868a235c"
+    },
+    "importSeconds": 2.14238699991256,
+    "imported": {
+      "cameras": 29,
+      "presets": 7,
+      "propsBlocked": 299,
+      "sensors": 29,
+      "subInstancesFolded": 0,
+      "types": 3,
+      "unmatched": 0
+    }
+  },
+  "previousReleaseComparison": {
+    "configuration": "fixed32",
+    "identicalResultsAndBlockers": true,
+    "previousVersion": "0.4.1",
+    "targets": 41,
+    "views": 32
+  }
+}

@@ -1,0 +1,1671 @@
+#usda 1.0
+
+over "demo_datacentre_01"
+{
+    over "demo_datacentre_01_Site"
+    {
+        over "demo_datacentre_01"
+        {
+            over "L00_Ground"
+            {
+                over "Entrance_Lobby"
+                {
+                    over "sec_cam_lobby"
+                    {
+                        over "Sensor_0"
+                        {
+                            over "Sector"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_identify"
+                            {
+                                token visibility
+                            }
+
+                            over "Envelope"
+                            {
+                                token visibility
+                            }
+
+                            over "Coverage_Privacy_Home"
+                            {
+                                token visibility
+                            }
+
+                            over "Coverage_Privacy_LobbyCorridor"
+                            {
+                                token visibility
+                            }
+
+                            over "Coverage_Privacy_MainDoor"
+                            {
+                                token visibility
+                            }
+                        }
+                    }
+
+                    over "sec_cam_lobby_fixed_1"
+                    {
+                        over "Sensor_0"
+                        {
+                            over "Sector"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_identify"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_recognise"
+                            {
+                                token visibility
+                            }
+
+                            over "Coverage_Privacy"
+                            {
+                                token visibility
+                            }
+                        }
+                    }
+
+                    over "sec_cam_lobby_fixed_2"
+                    {
+                        over "Sensor_0"
+                        {
+                            over "Sector"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_identify"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_recognise"
+                            {
+                                token visibility
+                            }
+
+                            over "Coverage_Privacy"
+                            {
+                                token visibility
+                            }
+                        }
+                    }
+
+                    over "Extent"
+                    {
+                        token visibility
+                    }
+                }
+
+                over "Data_Hall_A"
+                {
+                    over "Extent"
+                    {
+                        token visibility
+                    }
+                }
+
+                over "Office_Corridor_L00"
+                {
+                    over "Extent"
+                    {
+                        token visibility
+                    }
+
+                    over "sec_cam_corr_ocorr_0_1"
+                    {
+                        over "Sensor_0"
+                        {
+                            over "Sector"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_identify"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_recognise"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_observe"
+                            {
+                                token visibility
+                            }
+
+                            over "Coverage_Privacy"
+                            {
+                                token visibility
+                            }
+                        }
+                    }
+
+                    over "sec_cam_corr_ocorr_0_2"
+                    {
+                        over "Sensor_0"
+                        {
+                            over "Sector"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_identify"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_recognise"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_observe"
+                            {
+                                token visibility
+                            }
+
+                            over "Coverage_Privacy"
+                            {
+                                token visibility
+                            }
+                        }
+                    }
+                }
+
+                over "Data_Hall_B"
+                {
+                    over "Extent"
+                    {
+                        token visibility
+                    }
+                }
+
+                over "Battery_Room_A"
+                {
+                    over "Extent"
+                    {
+                        token visibility
+                    }
+                }
+
+                over "Corridor_Centre"
+                {
+                    over "sec_cam_door_hall_b_w"
+                    {
+                        over "Sensor_0"
+                        {
+                            over "Sector"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_identify"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_recognise"
+                            {
+                                token visibility
+                            }
+
+                            over "Coverage_CriticalDoors"
+                            {
+                                token visibility = "invisible"
+                            }
+
+                            over "Coverage_Privacy"
+                            {
+                                token visibility
+                            }
+                        }
+                    }
+
+                    over "sec_cam_corr_corr_c_2"
+                    {
+                        over "Sensor_0"
+                        {
+                            over "Sector"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_identify"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_recognise"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_observe"
+                            {
+                                token visibility
+                            }
+
+                            over "Coverage_Privacy"
+                            {
+                                token visibility
+                            }
+                        }
+                    }
+
+                    over "Extent"
+                    {
+                        token visibility
+                    }
+
+                    over "sec_cam_door_hall_a_e"
+                    {
+                        over "Sensor_0"
+                        {
+                            over "Sector"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_identify"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_recognise"
+                            {
+                                token visibility
+                            }
+
+                            over "Coverage_CriticalDoors"
+                            {
+                                token visibility = "invisible"
+                            }
+
+                            over "Coverage_Privacy"
+                            {
+                                token visibility
+                            }
+                        }
+                    }
+
+                    over "sec_cam_corr_corr_c_1"
+                    {
+                        over "Sensor_0"
+                        {
+                            over "Sector"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_identify"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_recognise"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_observe"
+                            {
+                                token visibility
+                            }
+
+                            over "Coverage_Privacy"
+                            {
+                                token visibility
+                            }
+                        }
+                    }
+                }
+
+                over "Meet_Me_Room_2"
+                {
+                    over "Extent"
+                    {
+                        token visibility
+                    }
+                }
+
+                over "Security_Office"
+                {
+                    over "Extent"
+                    {
+                        token visibility
+                    }
+                }
+
+                over "Corridor_East"
+                {
+                    over "Extent"
+                    {
+                        token visibility
+                    }
+
+                    over "sec_cam_corr_corr_e_2"
+                    {
+                        over "Sensor_0"
+                        {
+                            over "Sector"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_identify"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_recognise"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_observe"
+                            {
+                                token visibility
+                            }
+
+                            over "Coverage_Privacy"
+                            {
+                                token visibility
+                            }
+                        }
+                    }
+
+                    over "sec_cam_corr_corr_e_1"
+                    {
+                        over "Sensor_0"
+                        {
+                            over "Sector"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_identify"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_recognise"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_observe"
+                            {
+                                token visibility
+                            }
+
+                            over "Coverage_Privacy"
+                            {
+                                token visibility
+                            }
+                        }
+                    }
+
+                    over "sec_cam_door_hall_b_e"
+                    {
+                        over "Sensor_0"
+                        {
+                            over "Sector"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_identify"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_recognise"
+                            {
+                                token visibility
+                            }
+
+                            over "Coverage_CriticalDoors"
+                            {
+                                token visibility = "invisible"
+                            }
+
+                            over "Coverage_Privacy"
+                            {
+                                token visibility
+                            }
+                        }
+                    }
+                }
+
+                over "Electrical_Room_A"
+                {
+                    over "Extent"
+                    {
+                        token visibility
+                    }
+                }
+
+                over "Corridor_Spine"
+                {
+                    over "Extent"
+                    {
+                        token visibility
+                    }
+
+                    over "sec_cam_corr_corr_spine_6"
+                    {
+                        over "Sensor_0"
+                        {
+                            over "Sector"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_identify"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_recognise"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_observe"
+                            {
+                                token visibility
+                            }
+
+                            over "Coverage_Privacy"
+                            {
+                                token visibility
+                            }
+                        }
+                    }
+
+                    over "sec_cam_corr_corr_spine_4"
+                    {
+                        over "Sensor_0"
+                        {
+                            over "Sector"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_identify"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_recognise"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_observe"
+                            {
+                                token visibility
+                            }
+
+                            over "Coverage_Privacy"
+                            {
+                                token visibility
+                            }
+                        }
+                    }
+
+                    over "sec_cam_door_mmr_2"
+                    {
+                        over "Sensor_0"
+                        {
+                            over "Sector"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_identify"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_recognise"
+                            {
+                                token visibility
+                            }
+
+                            over "Coverage_CriticalDoors"
+                            {
+                                token visibility = "invisible"
+                            }
+
+                            over "Coverage_Privacy"
+                            {
+                                token visibility
+                            }
+                        }
+                    }
+
+                    over "sec_cam_door_elec_a"
+                    {
+                        over "Sensor_0"
+                        {
+                            over "Sector"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_identify"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_recognise"
+                            {
+                                token visibility
+                            }
+
+                            over "Coverage_CriticalDoors"
+                            {
+                                token visibility = "invisible"
+                            }
+
+                            over "Coverage_Privacy"
+                            {
+                                token visibility
+                            }
+                        }
+                    }
+
+                    over "sec_cam_door_elec_b"
+                    {
+                        over "Sensor_0"
+                        {
+                            over "Sector"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_identify"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_recognise"
+                            {
+                                token visibility
+                            }
+
+                            over "Coverage_CriticalDoors"
+                            {
+                                token visibility = "invisible"
+                            }
+
+                            over "Coverage_Privacy"
+                            {
+                                token visibility
+                            }
+                        }
+                    }
+
+                    over "sec_cam_corr_corr_spine_2"
+                    {
+                        over "Sensor_0"
+                        {
+                            over "Sector"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_identify"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_recognise"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_observe"
+                            {
+                                token visibility
+                            }
+
+                            over "Coverage_Privacy"
+                            {
+                                token visibility
+                            }
+                        }
+                    }
+
+                    over "sec_cam_corr_corr_spine_3"
+                    {
+                        over "Sensor_0"
+                        {
+                            over "Sector"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_identify"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_recognise"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_observe"
+                            {
+                                token visibility
+                            }
+
+                            over "Coverage_Privacy"
+                            {
+                                token visibility
+                            }
+                        }
+                    }
+
+                    over "sec_cam_corr_corr_spine_5"
+                    {
+                        over "Sensor_0"
+                        {
+                            over "Sector"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_identify"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_recognise"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_observe"
+                            {
+                                token visibility
+                            }
+
+                            over "Coverage_Privacy"
+                            {
+                                token visibility
+                            }
+                        }
+                    }
+
+                    over "sec_cam_door_hall_a_s"
+                    {
+                        over "Sensor_0"
+                        {
+                            over "Sector"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_identify"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_recognise"
+                            {
+                                token visibility
+                            }
+
+                            over "Coverage_CriticalDoors"
+                            {
+                                token visibility = "invisible"
+                            }
+
+                            over "Coverage_Privacy"
+                            {
+                                token visibility
+                            }
+                        }
+
+                        over "Geom"
+                        {
+                            token visibility = "invisible"
+                        }
+                    }
+
+                    over "sec_cam_door_hall_b_s"
+                    {
+                        over "Sensor_0"
+                        {
+                            over "Sector"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_identify"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_recognise"
+                            {
+                                token visibility
+                            }
+
+                            over "Coverage_CriticalDoors"
+                            {
+                                token visibility = "invisible"
+                            }
+
+                            over "Coverage_Privacy"
+                            {
+                                token visibility
+                            }
+                        }
+                    }
+
+                    over "sec_cam_corr_corr_spine_1"
+                    {
+                        over "Sensor_0"
+                        {
+                            over "Sector"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_identify"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_recognise"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_observe"
+                            {
+                                token visibility
+                            }
+
+                            over "Coverage_Privacy"
+                            {
+                                token visibility
+                            }
+                        }
+                    }
+                }
+
+                over "Corridor_South"
+                {
+                    over "sec_cam_corr_corr_s_1"
+                    {
+                        over "Sensor_0"
+                        {
+                            over "Sector"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_identify"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_recognise"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_observe"
+                            {
+                                token visibility
+                            }
+
+                            over "Coverage_Privacy"
+                            {
+                                token visibility
+                            }
+                        }
+                    }
+
+                    over "Extent"
+                    {
+                        token visibility
+                    }
+
+                    over "sec_cam_door_office_link"
+                    {
+                        over "Sensor_0"
+                        {
+                            over "Sector"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_identify"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_recognise"
+                            {
+                                token visibility
+                            }
+
+                            over "Coverage_CriticalDoors"
+                            {
+                                token visibility = "invisible"
+                            }
+
+                            over "Coverage_Privacy"
+                            {
+                                token visibility
+                            }
+                        }
+                    }
+
+                    over "sec_cam_corr_corr_s_2"
+                    {
+                        over "Sensor_0"
+                        {
+                            over "Sector"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_identify"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_recognise"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_observe"
+                            {
+                                token visibility
+                            }
+
+                            over "Coverage_Privacy"
+                            {
+                                token visibility
+                            }
+                        }
+                    }
+
+                    over "sec_cam_door_mmr_1"
+                    {
+                        over "Sensor_0"
+                        {
+                            over "Sector"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_identify"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_recognise"
+                            {
+                                token visibility
+                            }
+
+                            over "Coverage_CriticalDoors"
+                            {
+                                token visibility = "invisible"
+                            }
+
+                            over "Coverage_Privacy"
+                            {
+                                token visibility
+                            }
+                        }
+                    }
+                }
+
+                over "Meet_Me_Room_1"
+                {
+                    over "Extent"
+                    {
+                        token visibility
+                    }
+                }
+
+                over "Loading_Storage"
+                {
+                    over "Extent"
+                    {
+                        token visibility
+                    }
+                }
+
+                over "Electrical_Room_B"
+                {
+                    over "Extent"
+                    {
+                        token visibility
+                    }
+                }
+
+                over "Battery_Room_B"
+                {
+                    over "Extent"
+                    {
+                        token visibility
+                    }
+                }
+
+                over "Office_Comms_Room"
+                {
+                    over "Extent"
+                    {
+                        token visibility
+                    }
+                }
+
+                over "Cooling_Plant_Room"
+                {
+                    over "Extent"
+                    {
+                        token visibility
+                    }
+                }
+
+                over "Corridor_West"
+                {
+                    over "sec_cam_door_hall_a_w"
+                    {
+                        over "Sensor_0"
+                        {
+                            over "Sector"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_identify"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_recognise"
+                            {
+                                token visibility
+                            }
+
+                            over "Coverage_CriticalDoors"
+                            {
+                                token visibility = "invisible"
+                            }
+
+                            over "Coverage_Privacy"
+                            {
+                                token visibility
+                            }
+                        }
+                    }
+
+                    over "Extent"
+                    {
+                        token visibility
+                    }
+
+                    over "sec_cam_corr_corr_w_1"
+                    {
+                        over "Sensor_0"
+                        {
+                            over "Sector"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_identify"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_recognise"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_observe"
+                            {
+                                token visibility
+                            }
+
+                            over "Coverage_Privacy"
+                            {
+                                token visibility
+                            }
+                        }
+                    }
+
+                    over "sec_cam_corr_corr_w_2"
+                    {
+                        over "Sensor_0"
+                        {
+                            over "Sector"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_identify"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_recognise"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_observe"
+                            {
+                                token visibility
+                            }
+
+                            over "Coverage_Privacy"
+                            {
+                                token visibility
+                            }
+                        }
+                    }
+                }
+
+                over "Water_Treatment"
+                {
+                    over "Extent"
+                    {
+                        token visibility
+                    }
+                }
+
+                over "Meeting_Room"
+                {
+                    over "Extent"
+                    {
+                        token visibility
+                    }
+                }
+
+                over "Fire_Suppression"
+                {
+                    over "Extent"
+                    {
+                        token visibility
+                    }
+                }
+
+                over "Stair_L00"
+                {
+                    over "Extent"
+                    {
+                        token visibility
+                    }
+                }
+
+                over "Network_Operations_Centre"
+                {
+                    over "Extent"
+                    {
+                        token visibility
+                    }
+                }
+            }
+
+            over "L01_Office"
+            {
+                over "Kitchen_Break"
+                {
+                    over "Extent"
+                    {
+                        token visibility
+                    }
+                }
+
+                over "Open_Office"
+                {
+                    over "Extent"
+                    {
+                        token visibility
+                    }
+                }
+
+                over "Office_Corridor_L01"
+                {
+                    over "sec_cam_corr_ocorr_1_2"
+                    {
+                        over "Sensor_0"
+                        {
+                            over "Sector"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_identify"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_recognise"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_observe"
+                            {
+                                token visibility
+                            }
+
+                            over "Coverage_Privacy"
+                            {
+                                token visibility
+                            }
+                        }
+                    }
+
+                    over "sec_cam_corr_ocorr_1_1"
+                    {
+                        over "Sensor_0"
+                        {
+                            over "Sector"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_identify"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_recognise"
+                            {
+                                token visibility
+                            }
+
+                            over "Shell_observe"
+                            {
+                                token visibility
+                            }
+
+                            over "Coverage_Privacy"
+                            {
+                                token visibility
+                            }
+                        }
+                    }
+
+                    over "Extent"
+                    {
+                        token visibility
+                    }
+                }
+
+                over "WC"
+                {
+                    over "Extent"
+                    {
+                        token visibility
+                    }
+                }
+
+                over "Stair_L01"
+                {
+                    over "Extent"
+                    {
+                        token visibility
+                    }
+                }
+
+                over "Meeting_Room_L01"
+                {
+                    over "Extent"
+                    {
+                        token visibility
+                    }
+                }
+            }
+        }
+
+        over "Heat_Rejection_Yard"
+        {
+            over "sec_cam_yard_hr_fixed_2"
+            {
+                over "Sensor_0"
+                {
+                    over "Sector"
+                    {
+                        token visibility
+                    }
+
+                    over "Shell_identify"
+                    {
+                        token visibility
+                    }
+
+                    over "Shell_recognise"
+                    {
+                        token visibility
+                    }
+
+                    over "Shell_observe"
+                    {
+                        token visibility
+                    }
+
+                    over "Coverage_Privacy"
+                    {
+                        token visibility
+                    }
+                }
+            }
+
+            over "sec_cam_ext_plant_ext"
+            {
+                over "Sensor_0"
+                {
+                    over "Sector"
+                    {
+                        token visibility
+                    }
+
+                    over "Shell_identify"
+                    {
+                        token visibility
+                    }
+
+                    over "Shell_recognise"
+                    {
+                        token visibility
+                    }
+
+                    over "Shell_observe"
+                    {
+                        token visibility
+                    }
+
+                    over "Coverage_Privacy"
+                    {
+                        token visibility
+                    }
+                }
+            }
+
+            over "sec_cam_ext_dock"
+            {
+                over "Sensor_0"
+                {
+                    over "Sector"
+                    {
+                        token visibility
+                    }
+
+                    over "Shell_identify"
+                    {
+                        token visibility
+                    }
+
+                    over "Shell_recognise"
+                    {
+                        token visibility
+                    }
+
+                    over "Coverage_Privacy"
+                    {
+                        token visibility
+                    }
+                }
+            }
+
+            over "sec_cam_ext_main"
+            {
+                over "Sensor_0"
+                {
+                    over "Sector"
+                    {
+                        token visibility
+                    }
+
+                    over "Shell_identify"
+                    {
+                        token visibility
+                    }
+
+                    over "Shell_recognise"
+                    {
+                        token visibility
+                    }
+
+                    over "Shell_observe"
+                    {
+                        token visibility
+                    }
+
+                    over "Coverage_Privacy"
+                    {
+                        token visibility
+                    }
+                }
+            }
+
+            over "sec_cam_yard_hr_fixed_1"
+            {
+                over "Sensor_0"
+                {
+                    over "Sector"
+                    {
+                        token visibility
+                    }
+
+                    over "Shell_identify"
+                    {
+                        token visibility
+                    }
+
+                    over "Shell_recognise"
+                    {
+                        token visibility
+                    }
+
+                    over "Shell_observe"
+                    {
+                        token visibility
+                    }
+
+                    over "Coverage_Privacy"
+                    {
+                        token visibility
+                    }
+                }
+            }
+
+            over "Extent"
+            {
+                token visibility
+            }
+        }
+
+        over "Generator_Yard_A"
+        {
+            over "sec_cam_ext_gen_a"
+            {
+                over "Sensor_0"
+                {
+                    over "Sector"
+                    {
+                        token visibility
+                    }
+
+                    over "Shell_identify"
+                    {
+                        token visibility
+                    }
+
+                    over "Shell_recognise"
+                    {
+                        token visibility
+                    }
+
+                    over "Shell_observe"
+                    {
+                        token visibility
+                    }
+
+                    over "Coverage_Privacy"
+                    {
+                        token visibility
+                    }
+                }
+            }
+
+            over "Extent"
+            {
+                token visibility
+            }
+
+            over "sec_cam_yard_a"
+            {
+                over "Sensor_0"
+                {
+                    over "Sector"
+                    {
+                        token visibility
+                    }
+
+                    over "Shell_identify"
+                    {
+                        token visibility
+                    }
+
+                    over "Envelope"
+                    {
+                        token visibility
+                    }
+
+                    over "Coverage_Privacy_Home"
+                    {
+                        token visibility
+                    }
+
+                    over "Coverage_Privacy_Pad_gen_a"
+                    {
+                        token visibility
+                    }
+                }
+            }
+
+            over "sec_cam_yard_gen_a_fixed_1"
+            {
+                over "Sensor_0"
+                {
+                    over "Sector"
+                    {
+                        token visibility
+                    }
+
+                    over "Shell_identify"
+                    {
+                        token visibility
+                    }
+
+                    over "Shell_recognise"
+                    {
+                        token visibility
+                    }
+
+                    over "Shell_observe"
+                    {
+                        token visibility
+                    }
+
+                    over "Coverage_Privacy"
+                    {
+                        token visibility
+                    }
+                }
+            }
+
+            over "sec_cam_yard_gen_a_fixed_2"
+            {
+                over "Sensor_0"
+                {
+                    over "Sector"
+                    {
+                        token visibility
+                    }
+
+                    over "Shell_identify"
+                    {
+                        token visibility
+                    }
+
+                    over "Shell_recognise"
+                    {
+                        token visibility
+                    }
+
+                    over "Shell_observe"
+                    {
+                        token visibility
+                    }
+
+                    over "Coverage_Privacy"
+                    {
+                        token visibility
+                    }
+                }
+            }
+        }
+
+        over "Generator_Yard_B"
+        {
+            over "sec_cam_yard_gen_b_fixed_1"
+            {
+                over "Sensor_0"
+                {
+                    over "Sector"
+                    {
+                        token visibility
+                    }
+
+                    over "Shell_identify"
+                    {
+                        token visibility
+                    }
+
+                    over "Shell_recognise"
+                    {
+                        token visibility
+                    }
+
+                    over "Shell_observe"
+                    {
+                        token visibility
+                    }
+
+                    over "Coverage_Privacy"
+                    {
+                        token visibility
+                    }
+                }
+            }
+
+            over "sec_cam_yard_b"
+            {
+                over "Sensor_0"
+                {
+                    over "Sector"
+                    {
+                        token visibility
+                    }
+
+                    over "Shell_identify"
+                    {
+                        token visibility
+                    }
+
+                    over "Envelope"
+                    {
+                        token visibility
+                    }
+
+                    over "Coverage_Privacy_Home"
+                    {
+                        token visibility
+                    }
+
+                    over "Coverage_Privacy_Pad_gen_b"
+                    {
+                        token visibility
+                    }
+                }
+            }
+
+            over "Extent"
+            {
+                token visibility
+            }
+
+            over "sec_cam_ext_gen_b"
+            {
+                over "Sensor_0"
+                {
+                    over "Sector"
+                    {
+                        token visibility
+                    }
+
+                    over "Shell_identify"
+                    {
+                        token visibility
+                    }
+
+                    over "Shell_recognise"
+                    {
+                        token visibility
+                    }
+
+                    over "Shell_observe"
+                    {
+                        token visibility
+                    }
+
+                    over "Coverage_Privacy"
+                    {
+                        token visibility
+                    }
+                }
+            }
+
+            over "sec_cam_yard_gen_b_fixed_2"
+            {
+                over "Sensor_0"
+                {
+                    over "Sector"
+                    {
+                        token visibility
+                    }
+
+                    over "Shell_identify"
+                    {
+                        token visibility
+                    }
+
+                    over "Shell_recognise"
+                    {
+                        token visibility
+                    }
+
+                    over "Shell_observe"
+                    {
+                        token visibility
+                    }
+
+                    over "Coverage_Privacy"
+                    {
+                        token visibility
+                    }
+                }
+            }
+        }
+    }
+}
+

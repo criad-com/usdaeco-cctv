@@ -1,0 +1,151 @@
+{
+  "Plugins": [
+    {
+      "Type": "python",
+      "Name": "usdAecoCctvValidators",
+      "Root": ".",
+      "Info": {
+        "Validators": {
+          "keywords": [
+            "UsdAecoCctvValidators"
+          ],
+          "CctvInvalidSamplingChecker": {
+            "doc": "Error: sample grid/fraction drivers are invalid.",
+            "schemaTypes": [
+              "UsdGeomImageable"
+            ]
+          },
+          "CctvMissingOpticsChecker": {
+            "doc": "Error: a sensor has no source optics evidence.",
+            "schemaTypes": [
+              "UsdAecoCctvSensorAPI"
+            ]
+          },
+          "CctvUnsupportedTopologyChecker": {
+            "doc": "Error: a mesh has unsupported or malformed topology.",
+            "schemaTypes": [
+              "UsdGeomMesh"
+            ]
+          },
+          "CctvKindMismatchChecker": {
+            "doc": "Warn: camera API classification must be IfcAudioVisualAppliance or a registered camera class.",
+            "schemaTypes": [
+              "UsdAecoCctvCameraAPI"
+            ]
+          },
+          "CctvSensorMissingChecker": {
+            "doc": "Error: a camera element needs a Camera child wearing AecoCctvSensorAPI.",
+            "schemaTypes": [
+              "UsdAecoCctvCameraAPI"
+            ]
+          },
+          "CctvSensorOrphanChecker": {
+            "doc": "Warn: sensor API on a Camera whose parent is not a camera element.",
+            "schemaTypes": [
+              "UsdAecoCctvSensorAPI"
+            ]
+          },
+          "CctvOutOfEnvelopeChecker": {
+            "doc": "Error: pan, tilt or focal length (presets included) outside the sensor's ranges.",
+            "schemaTypes": [
+              "UsdAecoCctvSensorAPI"
+            ]
+          },
+          "CctvNativeCameraAuthoredChecker": {
+            "doc": "Warn: stock camera attributes or xformOps authored on a sensor outside the derived layer.",
+            "schemaTypes": [
+              "UsdAecoCctvSensorAPI"
+            ]
+          },
+          "CctvDerivedMismatchChecker": {
+            "doc": "Warn: derived hfov/vfov/effectiveWidth disagree with a recomputation from the drivers.",
+            "schemaTypes": [
+              "UsdAecoCctvSensorAPI"
+            ]
+          },
+          "CctvMountFrameChecker": {
+            "doc": "Warn: downward mount tilted upward, or mount height outside a study's mountHeightRange."
+          },
+          "CctvSystemCapacityChecker": {
+            "doc": "Warn: camera members of a system exceed its recorderCapacity.",
+            "schemaTypes": [
+              "UsdAecoCctvSystemAPI"
+            ]
+          },
+          "CctvUnsupportedProjectionChecker": {
+            "doc": "Error: an included study sensor is not rectilinear.",
+            "schemaTypes": [
+              "UsdAecoCctvStudyAPI"
+            ]
+          },
+          "CctvStudyIncompleteChecker": {
+            "doc": "Warn: result set is missing, duplicated or invalid.",
+            "schemaTypes": [
+              "UsdAecoCctvStudyAPI"
+            ]
+          },
+          "CctvUnphasedProviderChecker": {
+            "doc": "Warn: an included camera or target has no authored phase.",
+            "schemaTypes": [
+              "UsdAecoCctvStudyAPI"
+            ]
+          },
+          "CctvStudyMissingResultsChecker": {
+            "doc": "Info: the study has never been run.",
+            "schemaTypes": [
+              "UsdAecoCctvStudyAPI"
+            ]
+          },
+          "CctvStudyStaleChecker": {
+            "doc": "Warn: the study's inputHash differs from the current inputs.",
+            "schemaTypes": [
+              "UsdAecoCctvStudyAPI"
+            ]
+          },
+          "CctvTargetUncoveredChecker": {
+            "doc": "Error: no view covers the target at its requirement; names the blockers.",
+            "schemaTypes": [
+              "UsdAecoCctvStudyAPI"
+            ]
+          },
+          "CctvTargetMostlyEnclosedChecker": {
+            "doc": "Warn: more than half the target samples are enclosed; redefine the region.",
+            "schemaTypes": [
+              "UsdAecoCctvStudyAPI"
+            ]
+          },
+          "CctvPtzSoleCoverageChecker": {
+            "doc": "Warn: under presetsNotSole the requirement is met only by motorised presets (duty fraction in the message).",
+            "schemaTypes": [
+              "UsdAecoCctvStudyAPI"
+            ]
+          },
+          "CctvTargetTooFarChecker": {
+            "doc": "Warn: no covering view within the study's maxTargetDistance.",
+            "schemaTypes": [
+              "UsdAecoCctvStudyAPI"
+            ]
+          },
+          "CctvExclusionCoveredChecker": {
+            "doc": "Error: a view sees a sample point of an exclusion.",
+            "schemaTypes": [
+              "UsdAecoCctvStudyAPI"
+            ]
+          },
+          "CctvUnphasedInViewChecker": {
+            "doc": "Warn: an element without an authored aeco:phase inside a view (counted as an obstacle).",
+            "schemaTypes": [
+              "UsdAecoCctvStudyAPI"
+            ]
+          },
+          "CctvUnclassifiedInViewChecker": {
+            "doc": "Warn: a non-element gprim inside a view (counted as an obstacle).",
+            "schemaTypes": [
+              "UsdAecoCctvStudyAPI"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "attempts": 1,
+  "status": "NOT PROVEN",
+  "exit_code": 1,
+  "timed_out": false,
+  "seconds": 2.903,
+  "mode": "offline; local registry/source overrides; no substituters or remote builders; max-jobs 0"
+}

@@ -1,0 +1,252 @@
+#usda 1.0
+(
+    customLayerData = {
+        string schemaVersion = "0.2.1"
+    }
+    subLayers = [@usd/schema.usda@, @usdGeom/schema.usda@, @usdAeco/schema.usda@]
+)
+
+over "GLOBAL" (
+    customData = {
+        string libraryName = "usdAecoCctv"
+        string libraryPath = "."
+        bool skipCodeGeneration = true
+        bool useLiteralIdentifier = true
+    }
+) {}
+
+class "AecoCctvCameraAPI" (
+    inherits = </APISchemaBase>
+    doc = """The device aspect of a video-surveillance camera element: how it is
+    mounted and what it is for. The element's transform is the DEVICE frame
+    (the host's placement: point, rotation about Z, mirror). Optics and pose
+    live on Camera-typed child prims wearing AecoCctvSensorAPI, one per head."""
+    customData = {
+        string className = "CameraAPI"
+        token apiSchemaType = "singleApply"
+        token[] apiSchemaCanOnlyApplyTo = ["Imageable"]
+    }
+) {
+    uniform token aeco:cctv:mount = "undefined" (
+        allowedTokens = ["ceiling", "pendant", "recessed", "wall", "corner", "pole", "parapet", "desk", "other", "undefined"]
+        doc = "DRIVER. Mount kind (Revit mounting type; Axis Placement ID). Decides envelope drawing and mount validators. Units: unitless. Host mirror: Revit Mounting Type / Placement ID."
+    )
+    uniform token aeco:cctv:scenario = "" (
+        doc = "DRIVER. The operational-requirement purpose of this camera (registries/scenarios.json: door, corridor, intersection, perimeter, gate, lane, dock, lobby, area, rackAisle, plant, roof). Warn-only vocabulary; empty = unstated. Units: unitless. Host mirror: Revit Scenario."
+    )
+    double aeco:cctv:mountHeight = 0 (
+        aecoDerived = true
+        doc = "DERIVED (m). Height of the first sensor's pivot above the nearest AecoLevel's elevation; hosts report it, validators check it. Units: m. Host mirror: Revit Offset from Host plus lens offset."
+    )
+}
+
+class "AecoCctvCameraTypeAPI" (
+    inherits = </APISchemaBase>
+    doc = """Apply on the catalog class prim beside AecoTypeAPI; occurrences inherit it.
+    The type's Sensor children carry the optics (AecoCctvSensorAPI); this API carries
+    what belongs to the housing. This API deliberately permits untyped catalogue class prims because catalogue facts do not require a concrete prim type."""
+    customData = {
+        string className = "CameraTypeAPI"
+        token apiSchemaType = "singleApply"
+        string aecoApplicability = "unrestricted"
+    }
+) {
+    bool aeco:cctvType:outdoor = false (doc = "DRIVER. Pset_AudioVisualApplianceTypeCamera.IsOutdoors. Units: unitless. Host mirror: IFC IsOutdoors.")
+    double aeco:cctvType:irRange = 0 (doc = "DRIVER (m). Built-in illumination reach; the night far limit of the sector when a study runs in night mode. Zero = none. Units: m. Host mirror: manufacturer illumination range.")
+    int aeco:cctvType:sensorCount = 0 (aecoDerived = true
+        doc = "DERIVED. Number of Sensor children. Units: count. Host mirror: host head count.")
+}
+
+class "AecoCctvSensorAPI" (
+    inherits = </APISchemaBase>
+    doc = """One sensing head: optics (type level, inherited), pose (occurrence level)
+    and the design range. Applied to a UsdGeomCamera child of the camera element.
+    The stock camera attributes (focalLength, horizontal/verticalAperture,
+    clippingRange) and the prim's xformOps are DERIVED from these drivers by the
+    library's derivation and must never be authored in an intent layer
+    (validator cctvNativeCameraAuthored). Frame: pan about the device Z, 0 = device +X;
+    tilt positive DOWN from the horizontal; roll about the optical axis."""
+    customData = {
+        string className = "SensorAPI"
+        token apiSchemaType = "singleApply"
+        token[] apiSchemaCanOnlyApplyTo = ["Camera"]
+    }
+) {
+    # --- optics: authored on the catalog type's Sensor child, inherited by occurrences ---
+    uniform token aeco:cctvSensor:projection = "rectilinear" (
+        allowedTokens = ["rectilinear", "fisheye", "cylindrical"]
+        doc = "DRIVER. Lens projection. Fisheye and cylindrical heads draw a dome/cylinder sector; dewarped density is deferred. Units: unitless. Host mirror: manufacturer lens projection."
+    )
+    uniform token aeco:cctvSensor:spectrum = "visible" (
+        allowedTokens = ["visible", "thermal", "radar"]
+        doc = "DRIVER. What the head senses. Radar heads have no pixels and a detection sector only. Units: unitless. Host mirror: manufacturer sensing modality."
+    )
+    double2 aeco:cctvSensor:focalRange = (2.8, 2.8) (doc = "DRIVER (mm). Minimum and maximum focal length; equal = fixed lens. Units: mm. Host mirror: Revit FOV Focal Length Minimum/Maximum.")
+    double2 aeco:cctvSensor:hfovRange = (0, 0) (doc = "DRIVER (deg). Horizontal FOV at minimum and at maximum focal length (datasheet). (0,0) = derive from sensorSize. Units: degrees. Host mirror: Revit FOV Horizontal Minimum/Maximum.")
+    double2 aeco:cctvSensor:vfovRange = (0, 0) (doc = "DRIVER (deg). Vertical FOV at minimum and at maximum focal length. (0,0) = from hfov and the pixel aspect. Units: degrees. Host mirror: Revit FOV Vertical Minimum/Maximum.")
+    double2 aeco:cctvSensor:sensorSize = (0, 0) (doc = "DRIVER (mm). Physical sensor width and height when the datasheet gives no FOV ranges. Units: mm. Host mirror: manufacturer sensor dimensions.")
+    int2 aeco:cctvSensor:pixels = (1920, 1080) (doc = "DRIVER. Horizontal and vertical pixel count of the stream used for design. (0,0) for radar. Units: pixels. Host mirror: Revit FOV Horizontal/Vertical Resolution; IFC VideoResolutionWidth/Height.")
+    double3 aeco:cctvSensor:offset = (0, 0, 0) (doc = "DRIVER (m). Lens pivot in the device frame (Axis Origin Horizontal / Vertical). Units: m. Host mirror: Revit Origin Horizontal/Vertical.")
+    double2 aeco:cctvSensor:panRange = (0, 0) (doc = "DRIVER (deg). Mechanical or motorised pan reach about device Z. (0,0) = fixed. Units: degrees. Host mirror: IFC PanHorizontal bounds.")
+    double2 aeco:cctvSensor:tiltRange = (0, 0) (doc = "DRIVER (deg). Tilt reach, positive down. (0,0) = fixed. Units: degrees. Host mirror: IFC TiltHorizontal bounds negated.")
+    bool aeco:cctvSensor:motorised = false (doc = "DRIVER. True for PTZ heads: presets and tours apply, the study's ptzPolicy governs. Units: unitless. Host mirror: ONVIF PTZ capability.")
+    # --- pose and design range: occurrence level ---
+    double aeco:cctvSensor:pan = 0 (doc = "DRIVER (deg). Revit FOV Pan / FOV Camera Rotation; ONVIF pan. Units: degrees. Host mirror: Revit FOV Pan / Camera Rotation; ONVIF pan.")
+    double aeco:cctvSensor:tilt = 0 (doc = "DRIVER (deg, positive down). Revit FOV Tilt / FOV Camera Tilt; IFC TiltHorizontal negated. Units: degrees, positive down. Host mirror: Revit FOV Tilt / Camera Tilt; IFC TiltHorizontal negated.")
+    double aeco:cctvSensor:roll = 0 (doc = "DRIVER (deg). 90 = corridor format. Units: degrees. Host mirror: Revit Corridor Format.")
+    double aeco:cctvSensor:focalLength = 0 (doc = "DRIVER (mm). Zoom state; clamped to focalRange by the derivation (validator cctvOutOfEnvelope). 0 = widest. Units: mm. Host mirror: Revit FOV Desired/Actual Focal Length; IFC Zoom.")
+    double aeco:cctvSensor:range = 0 (doc = "DRIVER (m). Design far limit (Revit FOV Distance to Object). 0 = the range at which targetDensity is met. Units: m. Host mirror: Revit FOV Distance to Object.")
+    double aeco:cctvSensor:targetDensity = 0 (doc = "DRIVER (px/m). This view's own requirement (Revit FOV Target Pixel Density). 0 = the study's. Units: px/m. Host mirror: Revit FOV Target Pixel Density.")
+    uniform token[] aeco:cctvSensor:tour = [] (doc = "DRIVER. Ordered AecoCctvPresetAPI instance names of the guard tour; empty = no tour. Units: unitless. Host mirror: ONVIF guard tour.")
+    # --- derived ---
+    double aeco:cctvSensor:hfov = 0 (aecoDerived = true
+        doc = "DERIVED (deg). At the current focal length. Units: degrees. Host mirror: Revit FOV Horizontal Angle times two.")
+    double aeco:cctvSensor:vfov = 0 (aecoDerived = true
+        doc = "DERIVED (deg). Units: degrees. Host mirror: Revit FOV Vertical Angle times two.")
+    double aeco:cctvSensor:effectiveWidth = 0 (aecoDerived = true
+        doc = "DERIVED (mm). The sensor width that reproduces hfovRange at the current focal length; authored into horizontalAperture. Units: mm. Host mirror: USD horizontalAperture.")
+    double aeco:cctvSensor:targetRange = 0 (aecoDerived = true
+        doc = "DERIVED (m). Distance at which targetDensity (or the study's requirement) is met under the derivation's density model. Units: m. Host mirror: Revit RG_Length under arc model.")
+}
+
+class "AecoCctvPresetAPI" (
+    inherits = </APISchemaBase>
+    doc = """A named PTZ position on a motorised sensor: apiSchemas = ["AecoCctvPresetAPI:Door_12"]
+    yields aeco:cctvPreset:Door_12:pan etc. The ONVIF preset list, bijectively."""
+    customData = {
+        string className = "PresetAPI"
+        token apiSchemaType = "multipleApply"
+        token propertyNamespacePrefix = "aeco:cctvPreset"
+        token[] apiSchemaCanOnlyApplyTo = ["Camera"]
+    }
+) {
+    double pan = 0 (doc = "DRIVER (deg). Units: degrees. Host mirror: Revit FOV Pan / Camera Rotation; ONVIF pan.")
+    double tilt = 0 (doc = "DRIVER (deg, positive down). Units: degrees, positive down. Host mirror: Revit FOV Tilt / Camera Tilt; IFC TiltHorizontal negated.")
+    double focalLength = 0 (doc = "DRIVER (mm). 0 = widest. Units: mm. Host mirror: Revit FOV Desired/Actual Focal Length; IFC Zoom.")
+    double dwell = 5 (doc = "DRIVER (s). Stay time in a tour (ONVIF StayTime). Units: s. Host mirror: ONVIF StayTime.")
+    bool home = false (doc = "DRIVER. The home position. Units: unitless. Host mirror: ONVIF home position.")
+}
+
+class "AecoCctvStudyAPI" (
+    inherits = </APISchemaBase>
+    doc = """A coverage analysis definition, applied to a Scope. Targets are what must be seen,
+    exclusions what must not; obstacles are every element whose aeco:phase is in phases,
+    plus (by default) every element with no authored phase and every gprim that is not
+    an element — those are counted AND reported (cctvUnphasedInView, cctvUnclassifiedInView).
+    Results are Scope children under Results/ wearing AecoCctvCoverageAPI, written by the
+    analysis into its own layer together with inputHash."""
+    prepend apiSchemas = ["CollectionAPI:targets", "CollectionAPI:exclusions", "CollectionAPI:cameras"]
+    customData = {
+        string className = "StudyAPI"
+        token apiSchemaType = "singleApply"
+        token[] apiSchemaCanOnlyApplyTo = ["Scope"]
+    }
+) {
+    uniform token[] aeco:cctvStudy:phases = ["proposed", "existing"] (
+        doc = "DRIVER. Which aeco:phase values count as obstacles and targets. The IFC norm for temporary works is deliberately not the default. Units: unitless. Host mirror: none; analysis configuration or result."
+    )
+    bool aeco:cctvStudy:includeUnphased = true (doc = "DRIVER. Count elements without an authored phase, and non-element gprims, as obstacles. Units: unitless. Host mirror: none; analysis configuration or result.")
+    double aeco:cctvStudy:requiredDensity = 125 (doc = "DRIVER (px/m). Default requirement for every target; a target's AecoCctvTargetAPI or a sensor's targetDensity refine it. Units: px/m. Host mirror: none; analysis configuration or result.")
+    uniform token aeco:cctvStudy:levelSystem = "dori2015" (doc = "DRIVER. Ladder used to NAME densities in results (registries/density_levels.json). Units: unitless. Host mirror: none; analysis configuration or result.")
+    uniform token aeco:cctvStudy:densityModel = "plane" (
+        allowedTokens = ["plane", "arc"]
+        doc = "DRIVER. plane: px per metre on a plane facing the camera (exact rectilinear); arc: px per metre of arc (Axis tooling). Units: unitless. Host mirror: none; analysis configuration or result."
+    )
+    uniform token aeco:cctvStudy:ptzPolicy = "presetsNotSole" (
+        allowedTokens = ["ignore", "presets", "presetsNotSole", "envelope"]
+        doc = "DRIVER. How motorised heads count: never; each preset as a fixed view; presets count but a target with no fixed coverage is reported; anything inside the reach envelope counts. Units: unitless. Host mirror: none; analysis configuration or result."
+    )
+    bool aeco:cctvStudy:night = false (doc = "DRIVER. Limit sectors to the type's irRange. Units: unitless. Host mirror: none; analysis configuration or result.")
+    bool aeco:cctvStudy:glazingTransparent = true (doc = "DRIVER. Treat classes in registries/sightline_transparent_classes.json as transparent unless an AecoCctvSightlineAPI says otherwise. Units: unitless. Host mirror: none; analysis configuration or result.")
+    bool aeco:cctvStudy:writeShells = true (doc = "DRIVER. Author coverage shell meshes; disable for numeric benchmarks. Units: none. Host mirror: none; analysis configuration.")
+    bool aeco:cctvStudy:excludeEnclosedSamples = true (doc = "DRIVER. Exclude target samples enclosed by opaque obstacle bodies from coverage evaluation; false retains the original samples. Enclosure counts are always reported. Units: unitless. Host mirror: none; analysis configuration.")
+    int2 aeco:cctvStudy:raySamples = (96, 54) (doc = "DRIVER. Depth-map resolution per view. Units: pixels. Host mirror: none; analysis configuration.")
+    double aeco:cctvStudy:maxTargetDistance = 0 (doc = "DRIVER (m). Rule: a target must have a covering view within this distance (example project threshold). 0 = off. Units: m. Host mirror: none; analysis configuration or result.")
+    double2 aeco:cctvStudy:mountHeightRange = (0, 0) (doc = "DRIVER (m). Rule: lens pivots must lie in this band (example project threshold). (0,0) = off. Units: m. Host mirror: none; analysis configuration.")
+    string aeco:cctvStudy:inputHash = "" (aecoDerived = true
+        doc = "DERIVED. Hash of every input the last run read. Units: unitless. Host mirror: none; analysis configuration or result.")
+    string aeco:cctvStudy:stamp = "" (aecoDerived = true
+        doc = "DERIVED. Tool and version of the last run. Units: unitless. Host mirror: none; analysis configuration or result.")
+    rel aeco:cctvStudy:unphasedInView (aecoDerived = true
+        doc = "DERIVED. Elements with no authored phase that a view reached. Units: prim paths. Host mirror: none; analysis configuration or result.")
+    rel aeco:cctvStudy:unclassifiedInView (aecoDerived = true
+        doc = "DERIVED. Non-element gprims that a view reached. Units: prim paths. Host mirror: none; analysis configuration or result.")
+    rel aeco:cctvStudy:exclusionsCovered (aecoDerived = true
+        doc = "DERIVED. Members of the exclusions collection with a sample point visible from a view (validator cctvExclusionCovered). Units: prim paths. Host mirror: none; analysis configuration or result.")
+}
+
+class "AecoCctvCoverageAPI" (
+    inherits = </APISchemaBase>
+    doc = "One target's result, on a Scope under the study's Results/. All derived."
+    customData = {
+        string className = "CoverageAPI"
+        token apiSchemaType = "singleApply"
+        token[] apiSchemaCanOnlyApplyTo = ["Scope"]
+    }
+) {
+    rel aeco:cctvCoverage:target (aecoDerived = true
+        doc = "DERIVED (prim path). Target of this result; no host mirror. Units: prim paths. Host mirror: none; analysis configuration or result.")
+    double aeco:cctvCoverage:requiredDensity = 0 (aecoDerived = true
+        doc = "DERIVED (px/m). Resolved requirement; no host mirror. Units: px/m. Host mirror: none; analysis configuration or result.")
+    double aeco:cctvCoverage:density = 0 (aecoDerived = true
+        doc = "DERIVED (px/m). Best achieved at the primary sample point over all covering views. Units: px/m. Host mirror: none; analysis configuration or result.")
+    uniform token aeco:cctvCoverage:level = "none" (aecoDerived = true
+        doc = "DERIVED. Name of density in the study's levelSystem. Units: unitless. Host mirror: none; analysis configuration or result.")
+    double aeco:cctvCoverage:fraction = 0 (aecoDerived = true
+        doc = "DERIVED. Share of evaluated sample points covered at requiredDensity, excluding enclosed samples when requested; zero when no samples remain. Units: unitless. Host mirror: none; analysis configuration or result.")
+    int aeco:cctvCoverage:enclosedSamples = 0 (aecoDerived = true
+        doc = "DERIVED. Number of original target samples enclosed by opaque obstacle bodies, whether excluded or retained by the study toggle. Units: count. Host mirror: none; analysis result.")
+    bool aeco:cctvCoverage:fixedCoverage = false (aecoDerived = true
+        doc = "DERIVED. Met by a non-motorised view. Units: unitless. Host mirror: none; analysis configuration or result.")
+    rel aeco:cctvCoverage:views (aecoDerived = true
+        doc = "DERIVED. Sensor prims whose view (or preset) covers the target. Units: prim paths. Host mirror: none; analysis configuration or result.")
+    string[] aeco:cctvCoverage:viewNotes = [] (aecoDerived = true
+        doc = "DERIVED. One line per covering view: sensor, preset, density, fraction. Units: unitless. Host mirror: none; analysis configuration or result.")
+    rel aeco:cctvCoverage:blockers (aecoDerived = true
+        doc = "DERIVED. Elements that occluded the primary point from a view that would otherwise cover it. Units: prim paths. Host mirror: none; analysis configuration or result.")
+    double aeco:cctvCoverage:dutyFraction = 0 (aecoDerived = true
+        doc = "DERIVED. Share of time the target is watched: 1 when a fixed (non-motorised) view covers it, else the tour dwell of the covering presets over the tour length (0 when no tour visits them or nothing covers). Units: unitless, 0-1. Host mirror: none; analysis configuration or result.")
+    double aeco:cctvCoverage:nearestViewDistance = 0 (aecoDerived = true
+        doc = "DERIVED (m). Distance from the primary sample point to the nearest covering view's lens pivot; checked against the study's maxTargetDistance (validator cctvTargetTooFar). 0 = no covering view. Units: m. Host mirror: none; analysis configuration or result.")
+}
+
+class "AecoCctvTargetAPI" (
+    inherits = </APISchemaBase>
+    doc = "Optional refinement of a target: its own requirement and explicit sample points."
+    customData = {
+        string className = "TargetAPI"
+        token apiSchemaType = "singleApply"
+        token[] apiSchemaCanOnlyApplyTo = ["Imageable"]
+    }
+) {
+    double aeco:cctvTarget:gridSpacing = 0 (doc = "DRIVER (m). Horizontal area grid spacing at 1.5 m above the extent base; zero retains five-point sampling. Explicit points take precedence. Units: m. Host mirror: none; analysis configuration.")
+    double aeco:cctvTarget:passFraction = 0 (doc = "DRIVER. Required fraction of sample points meeting density; zero uses the primary-point rule. Units: unitless, 0-1. Host mirror: none; analysis configuration.")
+    double aeco:cctvTarget:requiredDensity = 0 (doc = "DRIVER (px/m). 0 = the study's. Units: px/m. Host mirror: none; analysis configuration or result.")
+    double3[] aeco:cctvTarget:points = [] (doc = "DRIVER (m, local). Sample points; empty = the study's default sampling (centre at 1.5 m plus four inset corners, offset 0.1 m toward the containing space). Units: m, local. Host mirror: none; analysis configuration or result.")
+}
+
+class "AecoCctvSightlineAPI" (
+    inherits = </APISchemaBase>
+    doc = "How an element treats sightlines when it is an obstacle."
+    customData = {
+        string className = "SightlineAPI"
+        token apiSchemaType = "singleApply"
+        token[] apiSchemaCanOnlyApplyTo = ["Imageable"]
+    }
+) {
+    double aeco:cctvSightline:transmittance = 0 (doc = "DRIVER. 0 opaque … 1 fully transparent (glazing, mesh fence). Views through it are reported as 'through'. Units: unitless. Host mirror: none; analysis configuration or result.")
+    bool aeco:cctvSightline:ignore = false (doc = "DRIVER. Never an obstacle (e.g. the camera's own housing, a soft furnishing). Units: unitless. Host mirror: none; analysis configuration or result.")
+}
+
+class "AecoCctvSystemAPI" (
+    inherits = </APISchemaBase>
+    doc = "The recording side of a video-surveillance system; members are the cameras, aeco:serves the zones protected."
+    customData = {
+        string className = "SystemAPI"
+        token apiSchemaType = "singleApply"
+        token[] apiSchemaCanOnlyApplyTo = ["AecoSystem"]
+    }
+) {
+    int aeco:cctvSystem:retentionDays = 0 (doc = "DRIVER. Recording retention (example project threshold). Units: days. Host mirror: recorder retention configuration.")
+    int aeco:cctvSystem:recorderCapacity = 0 (doc = "DRIVER. Cameras per recorder (example project threshold). Units: count. Host mirror: recorder camera capacity.")
+}

@@ -1,0 +1,24 @@
+{
+  "dori2015": {
+    "detect": 25,
+    "observe": 62.5,
+    "recognise": 125,
+    "identify": 250
+  },
+  "oodpcvs2025": {
+    "overview": 20,
+    "outline": 40,
+    "discern": 80,
+    "perceive": 125,
+    "characterise": 250,
+    "validate": 500,
+    "scrutinise": 1500
+  },
+  "project": {
+    "detect": 25,
+    "observe": 62.5,
+    "recognise": 125,
+    "project": 180,
+    "identify": 250
+  }
+}

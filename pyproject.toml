@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "usdaeco-cctv"
+version = "0.5.5"
+license = {text = "MIT"}
+description = "Camera coverage as a derivation over the built thing"
+requires-python = ">=3.11"
+dependencies = ["usdaeco-toolchain>=0.3,<0.4", "numpy", "openpyxl"]
+
+[project.scripts]
+aeco-cctv = "usdaeco_cctv.cli:main"
+aeco-cctv-import = "usdaeco_cctv.importer:main"
+
+[tool.setuptools]
+packages = ["usdaeco_cctv", "usdAecoCctvValidators"]
+package-dir = {usdaeco_cctv = "tools/usdaeco_cctv", usdAecoCctvValidators = "usdAecoCctvValidators"}
+
+[tool.setuptools.package-data]
+usdAecoCctvValidators = ["plugInfo.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["testenv"]
+python_files = ["test*.py"]
