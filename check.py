@@ -611,7 +611,7 @@ def integrity_checks(directory):
     from usdaeco_cctv import __version__
     manifest = json.loads((ROOT / "library.json").read_text())
     source = Sdf.Layer.FindOrOpen(str(ROOT / "usdAecoCctv/schema.usda"))
-    check("release version and additive schema metadata agree", __version__ == manifest["version"] == "0.5.5"
+    check("release version and additive schema metadata agree", __version__ == manifest["version"] == "0.5.6"
           and source.customLayerData.get("schemaVersion") == "0.2.1")
     def assertion(function):
         function()

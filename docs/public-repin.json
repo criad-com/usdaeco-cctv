@@ -1,0 +1,136 @@
+{
+  "comparedWith": "0.5.5",
+  "coverage": {
+    "coveredDoors": 11,
+    "doorTargets": 11,
+    "privacyHits": 0
+  },
+  "lobby": {
+    "changedStampLines": 13,
+    "geometryChanged": false
+  },
+  "pins": {
+    "core": {
+      "library": "usdAeco",
+      "ref": "v0.9.5",
+      "repo": "usdaeco-core",
+      "revision": "683adc3280254bc71b396a9c64a359cc708788f4"
+    },
+    "datacentre": {
+      "library": null,
+      "ref": "v0.4.8",
+      "repo": "usdaeco-datacentre",
+      "revision": "9e22b14c4909e50806805e735f93b1b425ac48cb"
+    },
+    "ifc": {
+      "library": null,
+      "ref": "v0.2.2",
+      "repo": "usdaeco-ifc",
+      "revision": "8eb72e89af15e8642d914948384fe73038cc7817"
+    },
+    "toolchain": {
+      "library": null,
+      "ref": "v0.3.10",
+      "repo": "usdaeco-toolchain",
+      "revision": "59d3da5ff5114089b54efaaae38efdd7fe1b8e73"
+    }
+  },
+  "publication": {
+    "changedResultFiles": [
+      "result/README.md"
+    ],
+    "compositionErrors": 0,
+    "crateByteIdentical": true,
+    "findingsByteIdentical": true,
+    "pluginFreePrimCount": 12680,
+    "resultBytes": 7935090,
+    "resultChange": "Source tag only; manifest updates pin refs, revisions and notice hash.",
+    "resultFileCount": 18,
+    "sourceEvidenceByteIdentical": true,
+    "sourceLayerCount": 3,
+    "unchangedEditableLayers": 15,
+    "unchangedPngCount": 4,
+    "unchangedResultFiles": 17
+  },
+  "release": "0.5.6",
+  "rendering": {
+    "committedImagesRetained": true,
+    "freshStudyMetrics": {
+      "lookthrough": {
+        "bytes": 238982,
+        "channelRange": 0.9490196078431372,
+        "foregroundFraction": 0.985517989192264,
+        "height": 586,
+        "passed": true,
+        "saturatedWhiteFraction": 0.0,
+        "sha256": "377efd68c4e1c1709cfac5bcc0686e110077d003b9ae565fd601750d1ae0bca4",
+        "width": 960
+      },
+      "overview": {
+        "bytes": 165650,
+        "channelRange": 0.8,
+        "foregroundFraction": 0.23657638888888888,
+        "height": 600,
+        "passed": true,
+        "saturatedWhiteFraction": 0.0,
+        "sha256": "e9a57496638fb3b5d29804e8e46331c4051eef13252511794441465f92afacfd",
+        "width": 960
+      }
+    },
+    "freshVanilla": {
+      "bytes": 140178,
+      "height": 600,
+      "path": "result/vanilla.png",
+      "sha256": "3a0f98841577e8fdf56f28312e6b8c05ef01a7ba771a81a498a9c6136c8342d5",
+      "width": 960
+    }
+  },
+  "requirementRangesChanged": false,
+  "schema": {
+    "apis": 9,
+    "generatedSchemaByteIdentical": true,
+    "properties": 71
+  },
+  "verification": {
+    "check": {
+      "checks": 159,
+      "failed": 0,
+      "registeredNotRun": 0
+    },
+    "coreValidators": {
+      "inheritedClassificationWarnings": 2,
+      "loadedAndExecuted": 8,
+      "newErrors": 0,
+      "seededE15Rejected": true
+    },
+    "hygiene": {
+      "diffCheck": "PASS",
+      "familyCommitHashRefs": 0,
+      "familyTagRefs": 4,
+      "obsoletePublicOrgRefs": 0,
+      "termSweep": "PASS (standard licence attribution exemption)"
+    },
+    "nix": {
+      "attempts": 1,
+      "evaluatedDarwinPackageDerivations": 2,
+      "localInputOverrides": 8,
+      "publicOnlineResolution": "NOT PROVEN",
+      "reason": "Pinned nixpkgs refuses broken python3.14-ifcopenshell-0.8.0 while evaluating checks.aarch64-darwin.library.",
+      "returncode": 1,
+      "seconds": 3.349,
+      "status": "NOT PROVEN",
+      "timedOut": false
+    },
+    "pytest": {
+      "passed": 332,
+      "seconds": 56.76,
+      "skipped": 5
+    },
+    "realDataGate": "NOT RUN",
+    "structure": {
+      "checks": 29,
+      "failed": 0,
+      "toolchain": "0.3.10"
+    }
+  }
+}

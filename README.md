@@ -17,7 +17,7 @@ Nine applied APIs, 71 properties; property names, types and defaults equal v0.4.
 
 ## The example
 
-The published data-centre v0.4.5 base stage supplies 45 quarantined camera records. Import → derive → CriticalDoors (11 doors, 250 px/m, plane, dori2015) → Privacy → two renders. [Inputs, findings and reproduction](examples/datacentre/README.md).
+The published data-centre v0.4.8 base stage supplies 45 quarantined camera records. Import → derive → CriticalDoors (11 doors, 250 px/m, plane, dori2015) → Privacy → two renders. [Inputs, findings and reproduction](examples/datacentre/README.md).
 
 Cyan = nominal field of view from drivers; light teal = what the study saw after walls and obstacles. The overview shows eleven occlusion-clipped CriticalDoors shells, with their nominal sectors hidden. Privacy also writes its 49 shells, retained in the output layers for inspection. Sensors without a study shell retain their nominal sectors.
 
@@ -29,7 +29,7 @@ Open [result/example.usdc](examples/datacentre/result/example.usdc) with stock `
 
 ## Build and check
 
-Use sibling core v0.9.2, toolchain v0.3.8, IFC v0.2.0 and data-centre v0.4.5 checkouts. The IFC converter also loads its pinned axis v0.1.1 plugin; set `AECO_AXIS_ROOT` and `AXIS_PLUGIN_DIR` when that checkout is elsewhere. The data-centre checkout must be at the exact pinned release; use a separate checkout when an existing sibling has advanced. Set `AECO_PYTHON` to Python with USD 26.8, NumPy, pytest, Jinja2, packaging, IfcOpenShell and openpyxl. Embree is optional; the NumPy kernel is the reference. Tests import directly from `tools/` and need no installed package or setuptools. Set `USDRECORD` to a stock OpenUSD `usdrecord` executable with Embree support and its matching imaging runtime.
+Use sibling core v0.9.5, toolchain v0.3.10, IFC v0.2.2 and data-centre v0.4.8 checkouts. The IFC converter also loads its pinned axis v0.1.1 plugin; set `AECO_AXIS_ROOT` and `AXIS_PLUGIN_DIR` when that checkout is elsewhere. The data-centre checkout must be at the exact pinned release; use a separate checkout when an existing sibling has advanced. Set `AECO_PYTHON` to Python with USD 26.8, NumPy, pytest, Jinja2, packaging, IfcOpenShell and openpyxl. Embree is optional; the NumPy kernel is the reference. Tests import directly from `tools/` and need no installed package or setuptools. Set `USDRECORD` to a stock OpenUSD `usdrecord` executable with Embree support and its matching imaging runtime.
 
 ```sh
 export PYTHON="$AECO_PYTHON"
@@ -37,7 +37,7 @@ export TOOLCHAIN_DIR="$PWD/../usdaeco-toolchain"
 export AECO_CORE_ROOT="$PWD/../usdaeco-core"
 export AECO_IFC_ROOT="$PWD/../usdaeco-ifc"
 export AECO_DATACENTRE_ROOT="$PWD/../usdaeco-datacentre"
-export CORE_PLUGIN_DIR="$AECO_CORE_ROOT/out/plugins/usdAeco/resources"
+export CORE_PLUGIN_DIR="$AECO_CORE_ROOT/usdAeco"
 export PXR_PLUGINPATH_NAME="$CORE_PLUGIN_DIR:$PWD/usdAecoCctv:$PWD/usdAecoCctvValidators"
 export PATH="$(dirname "$USDRECORD"):$(dirname "$AECO_PYTHON"):$PATH"
 env -u PYTHONPATH bash build.sh --generate-only
@@ -46,23 +46,24 @@ env -u PYTHONPATH PYTHONPATH="$AECO_CORE_ROOT:$PWD" "$AECO_PYTHON" -m pytest -q
 env -u PYTHONPATH PYTHONPATH="$AECO_CORE_ROOT:$PWD" "$AECO_PYTHON" examples/datacentre/run.py
 ```
 
-The core repository root must be on `PYTHONPATH` so Plug can import `usdAecoValidators` by name; the resource plugin path alone is insufficient. Validation fails if the Python plugin or a selected rule cannot load. The gate runs all core rules on both derived examples and verifies that a seeded exact Mesh triggers both E15 findings.
+The recipe loads core's committed resource plugin so its metadata matches the selected release even if an earlier install remains under `out/`. The core repository root must be on `PYTHONPATH` so Plug can import `usdAecoValidators` by name; the resource plugin path alone is insufficient. Validation fails if the Python plugin or a selected rule cannot load. The gate runs all core rules on both derived examples and verifies that a seeded exact Mesh triggers both E15 findings.
 
-The check ends with `N checks, M failed`. `build.sh --install-root out` creates the separate install layout. `tools/check_structure.py` runs all S01–S29 checks. Toolchain v0.3.8 verifies MIT licensing and the standalone result, including freshness (S27) an independent stock USD render (S28), and portable source references (S29); the earlier raw lint results remain in the [migration record](docs/migration.md).
+The check ends with `N checks, M failed`. `build.sh --install-root out` creates the separate install layout. `tools/check_structure.py` runs all S01–S29 checks. Toolchain v0.3.10 verifies MIT licensing and the standalone result, including freshness (S27) an independent stock USD render (S28), and portable source references (S29); the earlier raw lint results remain in the [migration record](docs/migration.md).
 
 ```sh
 nix flake check
-nix flake check --override-input toolchain path:../usdaeco-toolchain \
+nix flake check --offline --no-write-lock-file \
+  --override-input toolchain path:../usdaeco-toolchain \
   --override-input core path:../usdaeco-core \
   --override-input ifc path:../usdaeco-ifc \
   --override-input datacentre path:../usdaeco-datacentre
 ```
 
-Public flake refs match [exact dependency pins](dependencies.json). Local registry/source overrides are described by the [toolchain conventions](https://github.com/criad-com/usdaeco-toolchain/blob/v0.3.8/docs/repo-conventions.md); deployment lockfiles remain uncommitted. `nix run .#example` and `nix run .#render` use the same example harness.
+Public flake refs match [exact dependency pins](dependencies.json). Local registry/source overrides are described by the [toolchain conventions](https://github.com/criad-com/usdaeco-toolchain/blob/v0.3.10/docs/repo-conventions.md); deployment lockfiles remain uncommitted. `nix run .#example` and `nix run .#render` use the same example harness.
 
 ## Family
 
-Requires `usdAeco >=0.9,<1.0`; CCTV has no axis schema dependency. The IFC dependency is test tooling, and the data centre supplies published example data. [Family map](https://github.com/criad-com/usdaeco-core/blob/v0.9.2/docs/10-family.md) · [board](https://github.com/criad-com/usdaeco-board).
+Requires `usdAeco >=0.9,<1.0`; CCTV has no axis schema dependency. The IFC dependency is test tooling, and the data centre supplies published example data. [Family map](https://github.com/criad-com/usdaeco-core/blob/v0.9.5/docs/10-family.md) · [board](https://github.com/criad-com/usdaeco-board).
 
 ## Layout
 
@@ -70,7 +71,9 @@ Requires `usdAeco >=0.9,<1.0`; CCTV has no axis schema dependency. The IFC depen
 
 ## Status
 
-Version **0.5.5**: **159 checks, 0 failed**; **332 tests passed, 5 skipped**. Updates public names to `github.com/criad-com` with toolchain v0.3.8; see [measured acceptance and deviations](docs/public-names.md). The standalone result and every image retain their original bytes under MIT. The preceding v0.5.4 release proved two checkout layouts; see [source portability acceptance](docs/source-portability.md) and the preceding [publication acceptance](docs/publication-acceptance.md). All eight core rules load and execute; derived outputs introduce no core findings. Two classification warnings inherited from the pinned data-centre source remain visible and must match that source exactly. Nix is not proven after one failed source-resolution attempt. See [render acceptance and deviations](docs/render-acceptance.md) and the [migration record](docs/migration.md). The opt-in real-data gate is **NOT RUN** unless its explicit input is supplied, and never contributes a skipped-as-pass claim. Geometry establishes sampled visibility and pixel density; it does not establish lighting quality, recognition performance or coverage between samples.
+Version **0.5.6**: **159 checks, 0 failed**; **332 tests passed, 5 skipped**. Re-pins all four family inputs to published tags and records their checked revisions; see [measured acceptance and deviations](docs/public-repin.md). The rebuilt crate and all fifteen editable layers match v0.5.5 byte for byte. Fresh renders pass; all four committed images retain their bytes. The result notice and manifest update dependency provenance only.
+
+All eight core rules load and execute; derived outputs introduce no core validation errors. Two inherited classification warnings match the pinned data-centre source exactly. The single offline Nix attempt resolved local inputs and evaluated two package derivations, then stopped because the pinned nixpkgs marks `python3.14-ifcopenshell-0.8.0` broken. Nix builds and online public resolution remain **NOT PROVEN**. The opt-in real-data gate is **NOT RUN** unless its explicit input is supplied. Geometry establishes sampled visibility and pixel density; it does not establish lighting quality, recognition performance or coverage between samples.
 
 ## Licence
 

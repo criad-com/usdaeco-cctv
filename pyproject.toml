@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "usdaeco-cctv"
-version = "0.5.5"
+version = "0.5.6"
 license = {text = "MIT"}
 description = "Camera coverage as a derivation over the built thing"
 requires-python = ">=3.11"

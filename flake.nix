@@ -1,14 +1,14 @@
 {
   description = "usdAecoCctv semantic library and example";
   inputs = {
-    toolchain.url = "github:criad-com/usdaeco-toolchain?ref=v0.3.8";
+    toolchain.url = "github:criad-com/usdaeco-toolchain?ref=v0.3.10";
     nixpkgs.follows = "toolchain/nixpkgs";
-    core.url = "github:criad-com/usdaeco-core?ref=v0.9.2";
+    core.url = "github:criad-com/usdaeco-core?ref=v0.9.5";
     core.inputs.toolchain.follows = "toolchain";
     core.inputs.nixpkgs.follows = "nixpkgs";
-    datacentre.url = "github:criad-com/usdaeco-datacentre?ref=v0.4.5";
+    datacentre.url = "github:criad-com/usdaeco-datacentre?ref=v0.4.8";
     datacentre.flake = false;
-    ifc.url = "github:criad-com/usdaeco-ifc?ref=v0.2.0";
+    ifc.url = "github:criad-com/usdaeco-ifc?ref=v0.2.2";
     ifc.flake = false;
   };
   outputs = { self, nixpkgs, toolchain, core, datacentre, ifc }:

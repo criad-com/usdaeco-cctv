@@ -1,7 +1,7 @@
 {
   "actual_findings_sha256": "fe7c2b315ba394091c7a40ad62fb4c9f1bb039ad714b409a37896ac8db815e8e",
   "datacentre": {
-    "ref": "v0.4.5",
+    "ref": "v0.4.8",
     "variant": "base"
   },
   "facility": "demo-datacentre-01",
@@ -9,23 +9,27 @@
   "pins": {
     "core": {
       "library": "usdAeco",
-      "ref": "v0.9.2",
-      "repo": "usdaeco-core"
+      "ref": "v0.9.5",
+      "repo": "usdaeco-core",
+      "revision": "683adc3280254bc71b396a9c64a359cc708788f4"
     },
     "datacentre": {
       "library": null,
-      "ref": "v0.4.5",
-      "repo": "usdaeco-datacentre"
+      "ref": "v0.4.8",
+      "repo": "usdaeco-datacentre",
+      "revision": "9e22b14c4909e50806805e735f93b1b425ac48cb"
     },
     "ifc": {
       "library": null,
-      "ref": "v0.2.0",
-      "repo": "usdaeco-ifc"
+      "ref": "v0.2.2",
+      "repo": "usdaeco-ifc",
+      "revision": "8eb72e89af15e8642d914948384fe73038cc7817"
     },
     "toolchain": {
       "library": null,
-      "ref": "v0.3.8",
-      "repo": "usdaeco-toolchain"
+      "ref": "v0.3.10",
+      "repo": "usdaeco-toolchain",
+      "revision": "59d3da5ff5114089b54efaaae38efdd7fe1b8e73"
     }
   },
   "renderMetrics": {
@@ -72,7 +76,7 @@
       {
         "bytes": 1014,
         "path": "result/README.md",
-        "sha256": "9b80627d3ecdf16c5459a6cc1a3e9274e316dc1ad901a5716cf1c0b37978fad8"
+        "sha256": "2e88f9e9751edf60f05229531ed1299d77ae5788f3720a65b3d1be01fe702f9c"
       },
       {
         "bytes": 1930462,

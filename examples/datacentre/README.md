@@ -1,6 +1,6 @@
 # Coverage on demo-datacentre-01
 
-Inputs: the published **data-centre v0.4.5 base** stage and [named cameras](inputs/cameras.usda). The hook imports quarantined `Pset_AecoCctv` facts, derives native camera/guide data, and evaluates CriticalDoors and Privacy. No generator or converter runs.
+Inputs: the published **data-centre v0.4.8 base** stage and [named cameras](inputs/cameras.usda). The hook imports quarantined `Pset_AecoCctv` facts, derives native camera/guide data, and evaluates CriticalDoors and Privacy. No generator or converter runs.
 
 Open the committed [result/example.usdc](result/example.usdc) with stock USD; no family plugins or sibling checkouts are needed:
 
@@ -37,9 +37,10 @@ The pinned runner refreshes the ignored `inputs/source` symlink from
 alias after relocating the checkout. S29 checks the reference without following
 the link. The standalone `result/example.usdc` needs no source checkout.
 
-Version 0.5.4 changes source references only. This fixture explicitly replays
+Version 0.5.6 updates public dependency pins and the source-tag notice. This fixture explicitly replays
 its 0.5.3 import, derivation and study provenance (including the fixed receipt time),
 so the existing opinions and hashes remain comparable across layouts. Ordinary
-CLI operations use the current version. The published crate and every image
-are retained byte for byte; the gate independently regenerates and compares
+CLI operations use the current version. The rebuilt crate and all fifteen editable
+layers match v0.5.5 byte for byte. Fresh renders pass; the committed images are
+retained because renderer sampling changes PNG bytes. The gate regenerates and compares
 canonical crate contents, all authored layer bytes, findings and valid renders.

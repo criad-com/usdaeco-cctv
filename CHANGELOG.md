@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.5.6
+
+- public re-pin: usdaeco-toolchain v0.3.10, usdaeco-core v0.9.5,
+  usdaeco-datacentre v0.4.8, usdaeco-ifc v0.2.2.
+- Record resolved tag revisions, preserve requirement ranges and historical
+  fixture pins, and regenerate the package and resource plugin metadata.
+- Republish the pinned example with the documented build step; retain its
+  fixed fixture receipts and refresh current dependency provenance.
+- Preserve the crate, all fifteen editable layers and committed images byte
+  for byte; fresh stock renders pass. Regenerate thirteen lobby version stamps
+  and update the gate's release-version assertion.
+- Verify 159 checks and 29 structure rules with no failures; 332 tests pass,
+  five optional cases skip. One offline Nix attempt evaluates two package
+  derivations, then stops on the pinned broken IfcOpenShell package; builds
+  and online public resolution remain unproven.
+
 ## 0.5.5
 
 - public names → github.com/criad-com; pin toolchain v0.3.8.
