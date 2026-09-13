@@ -1,5 +1,25 @@
 # Changelog
 
+## 0.5.7
+
+- Add `AECO_STUDY_ROOT`: `/` preserves the published standalone paths;
+  `/Studies/cctv` places Looks, Targets and Studies below plain Scopes.
+- Persist the configured root in layer metadata. Derivation reads it before
+  the environment; study CLIs and validators follow authored study paths,
+  collections, result relationships and receipts after reopening the stage.
+- Resolve suite presentation cameras under `/Renders/cctv`; retain the
+  standalone camera inputs and all committed USD, findings and image bytes.
+- Accept the full delivery's measured camera census: data-centre v0.5.2 has
+  47 cameras and eleven door providers. Suite runs stamp this release;
+  the standalone fixture retains its historical provenance.
+- Verify project-local catalog reuse and creation, nested materials and
+  relationships, CLI reopening, complete current study results and unchanged
+  source files on the pinned full delivery. No schema properties change.
+- Preserve root metadata through flattening. Verify 159 checks and 29
+  structure rules with no failures; 343 tests pass and five optional tests
+  skip. The single offline Nix check stops on the pinned broken IfcOpenShell
+  package; Nix builds remain unproven.
+
 ## 0.5.6
 
 - public re-pin: usdaeco-toolchain v0.3.10, usdaeco-core v0.9.5,

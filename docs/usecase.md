@@ -96,4 +96,10 @@ No recording, video analytics, live camera discovery, lighting simulation or ope
 
 ## 9 Status
 
-Version 0.5.6 pins published family tags under `github.com/criad-com` and records their resolved revisions. The republished crate and all fifteen editable layers retain their v0.5.5 bytes; fresh renders pass and the committed images are retained. The nine APIs and 71 properties retain the v0.5.0 contract. Toolchain v0.3.10 checks release-tag refs and package-version agreement through S05 alongside source portability, publication freshness, plugin-free rendering and MIT. See [public re-pin acceptance](public-repin.md) and the earlier [migration acceptance](migration.md). Native compute has a separate release and evidence boundary.
+Version 0.5.7 adds configurable study roots, including `/Studies/cctv` on
+the full data-centre v0.5.2 delivery. Camera catalogs remain with the project;
+layer receipts preserve root resolution after reopening or flattening. The
+standalone publication retains its v0.5.6 bytes, and the nine APIs and 71
+properties keep their existing contract. See [study-root acceptance](study-root.md)
+and the earlier [public re-pin acceptance](public-repin.md). Native compute
+has a separate release and evidence boundary.

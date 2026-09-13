@@ -282,6 +282,7 @@ def example_checks():
 
 def derivation_checks(directory):
     from usdaeco_cctv.derive import derive, derive_file, is_derived_layer
+    from usdaeco_cctv.derive import STAMP
     from usdaeco_cctv.frames import decompose
     from usdaeco_cctv.density import plane_range
     outputs = []
@@ -293,8 +294,10 @@ def derivation_checks(directory):
         stats = derive_file(run / "lobby.usda", out)
         outputs.append(out)
     same = digest(outputs[0]) == digest(outputs[1])
-    check("derivation is deterministic: two runs are byte-equal and equal the checked-in derived layer",
-          same and digest(outputs[0]) == digest(DERIVED) and stats["sensors"] == 4 and not stats["skipped"],
+    fixture_stamp = Sdf.Layer.FindOrOpen(str(DERIVED)).customLayerData["aeco:cctv:stamp"]
+    fixture_bytes = outputs[0].read_bytes().replace(STAMP.encode(), fixture_stamp.encode())
+    check("derivation is deterministic: two runs are byte-equal; published fixture differs only in tool-version receipts",
+          same and fixture_bytes == DERIVED.read_bytes() and stats["sensors"] == 4 and not stats["skipped"],
           json.dumps({k: v for k, v in stats.items() if k != "output"}, sort_keys=True))
     (directory / "cli").mkdir()
     shutil.copy(EXAMPLE, directory / "cli" / "lobby.usda")
@@ -302,7 +305,7 @@ def derivation_checks(directory):
     output = subprocess_python([ROOT / "tools/aeco-cctv", "derive", directory / "cli" / "lobby.usda", "-o", cli_out],
                                keep_plugins=True)
     check("aeco-cctv derive CLI reproduces the API output byte for byte and reports its counters",
-          digest(cli_out) == digest(DERIVED) and json.loads(output.stdout)["sensors"] == 4)
+          digest(cli_out) == digest(outputs[0]) and json.loads(output.stdout)["sensors"] == 4)
     s = Usd.Stage.Open(str(DERIVED))
     sensor = s.GetPrimAtPath(LOBBY + "Cam_1/Sensor_0")
     cam = UsdGeom.Camera(sensor)
@@ -611,7 +614,7 @@ def integrity_checks(directory):
     from usdaeco_cctv import __version__
     manifest = json.loads((ROOT / "library.json").read_text())
     source = Sdf.Layer.FindOrOpen(str(ROOT / "usdAecoCctv/schema.usda"))
-    check("release version and additive schema metadata agree", __version__ == manifest["version"] == "0.5.6"
+    check("release version and additive schema metadata agree", __version__ == manifest["version"] == "0.5.7"
           and source.customLayerData.get("schemaVersion") == "0.2.1")
     def assertion(function):
         function()

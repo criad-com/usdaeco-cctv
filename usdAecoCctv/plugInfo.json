@@ -135,7 +135,7 @@
                         "usdAeco": ">=0.9,<1.0"
                     }, 
                     "tier": "kind", 
-                    "version": "0.5.6"
+                    "version": "0.5.7"
                 }
             }, 
             "LibraryPath": "", 

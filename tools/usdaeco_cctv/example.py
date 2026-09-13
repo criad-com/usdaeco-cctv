@@ -10,8 +10,9 @@ from unittest.mock import patch
 
 import numpy as np
 from pxr import Gf, Sdf, Usd, UsdGeom, Vt
-from . import ROOT, iter_cameras, sensors_of
+from . import ROOT, __version__, iter_cameras, sensors_of
 from .derive import SHELL_COLOURS
+from .paths import author_study_root, render_camera, study_root, study_scope
 from .study import Settings, enumerate_views, run_study
 
 
@@ -66,6 +67,9 @@ def _split_derived(path):
 
 
 def hook(stage, out):
+    root = study_root(stage)
+    version = '0.5.3' if root == Sdf.Path.absoluteRootPath else __version__
+    targets_path, studies_path = (study_scope(root, name) for name in ('Targets', 'Studies'))
     source = Sdf.Layer.CreateNew(str(out / 'source.usda'))
     source.TransferContent(stage.GetRootLayer())
     # The harness supplies inputs/source and rebases it when archiving (S29).
@@ -78,22 +82,20 @@ def hook(stage, out):
     imported = json.loads(result.stdout)
     imported.pop('timingsSeconds')
     (out / 'import-warnings.log').write_text(result.stderr)
-    # Retain this fixture's published import receipt for the reference-only patch.
+    # The default layout retains its published receipt; suite runs use this release.
     kind = Sdf.Layer.FindOrOpen(str(out / 'kind.usda'))
-    kind.customLayerData = {**kind.customLayerData, 'aeco:version': '0.5.3'}
+    kind.customLayerData = {**kind.customLayerData, 'aeco:version': version}
     kind.Save()
     print('== stage: derive cameras and sectors', flush=True)
-    # This reference-only release replays the published fixture's provenance.
-    # Ordinary CLI derivations continue to stamp the current library version.
     derive_code = """import json, sys
 sys.path.insert(0, sys.argv.pop(1))
 from usdaeco_cctv import register_plugins
 register_plugins()
 from usdaeco_cctv.derive import derive_file
-print(json.dumps(derive_file(sys.argv[1], sys.argv[2], stamp='usdAecoCctv derive 0.5.3')))
+print(json.dumps(derive_file(sys.argv[1], sys.argv[2], stamp='usdAecoCctv derive ' + sys.argv[3])))
 """
     result = subprocess.run([sys.executable, '-c', derive_code, str(ROOT / 'tools'), str(out / 'kind.usda'),
-                             str(out / 'derived.usda')], capture_output=True, text=True, check=True)
+                             str(out / 'derived.usda'), version], capture_output=True, text=True, check=True)
     derived = json.loads(result.stdout)
     derived.pop('output', None)
     _split_derived(out / 'derived.usda')
@@ -104,11 +106,15 @@ print(json.dumps(derive_file(sys.argv[1], sys.argv[2], stamp='usdAecoCctv derive
     cameras = sorted(iter_cameras(stage), key=lambda p: str(p.GetPath()))
     by_id = {_id(p): p for p in stage.Traverse() if _id(p)}
     selected = [p for p in cameras if _id(p).startswith('sec.cam.door.')]
-    if len(cameras) != 45 or len(selected) != 11:
-        raise ValueError('published camera census differs: expected 45 cameras and 11 door providers')
+    if len(cameras) != imported['cameras'] or len(selected) != 11:
+        raise ValueError('published camera census differs from import or the 11 door providers')
     bbox = UsdGeom.BBoxCache(Usd.TimeCode.Default(), ['default', 'render', 'proxy', 'guide'])
     targets, exclusions = [], []
     with Usd.EditContext(stage, drivers):
+        author_study_root(stage, root)
+        if root != Sdf.Path.absoluteRootPath:
+            for path in (targets_path, studies_path):
+                UsdGeom.Scope.Define(stage, path)
         for camera in selected:
             door = by_id[_id(camera).removeprefix('sec.cam.')]
             n = {'+X': (1, 0, 0), '-X': (-1, 0, 0), '+Y': (0, 1, 0), '-Y': (0, -1, 0)}[
@@ -138,12 +144,12 @@ print(json.dumps(derive_file(sys.argv[1], sys.argv[2], stamp='usdAecoCctv derive
                 for y in np.arange(low[1] + .8, high[1] - .3, 1.):
                     tiles.setdefault((math.floor(x/4), math.floor(y/4)), []).append([x, y, low[2] + 1.5])
             for i, points in enumerate(tiles.values()):
-                target = stage.DefinePrim('/SecurityTargets/' + _id(space).replace('.', '_') + '_tile_' + str(i), 'Xform')
+                target = stage.DefinePrim(targets_path.AppendChild(_id(space).replace('.', '_') + '_tile_' + str(i)), 'Xform')
                 target.CreateAttribute('aeco:phase', Sdf.ValueTypeNames.Token).Set('proposed')
                 exclusions.append(_target(target, points, spacing=1.))
         for name, providers, required, excluded, density in (
                 ('CriticalDoors', selected, targets, [], 250.), ('Privacy', cameras, [], exclusions, 0.)):
-            prim = stage.DefinePrim('/SecurityStudies/' + name, 'Scope')
+            prim = stage.DefinePrim(studies_path.AppendChild(name), 'Scope')
             prim.ApplyAPI('AecoCctvStudyAPI')
             for key, value in {'densityModel': 'plane', 'levelSystem': 'dori2015', 'requiredDensity': density,
                                'ptzPolicy': 'presetsNotSole', 'phases': ['proposed', 'existing'],
@@ -158,12 +164,12 @@ print(json.dumps(derive_file(sys.argv[1], sys.argv[2], stamp='usdAecoCctv derive
         print('== stage: study ' + name, flush=True)
         # This fixture has a fixed receipt time so its authored layers compare
         # byte for byte. Ordinary CLI studies continue to record their run time.
-        with patch.multiple('usdaeco_cctv.study', __version__='0.5.3', TOOL='aeco-cctv study 0.5.3'):
-            report = run_study(stage, '/SecurityStudies/' + name, out / (name + '.usda'), kernel='auto',
+        with patch.multiple('usdaeco_cctv.study', __version__=version, TOOL='aeco-cctv study ' + version):
+            report = run_study(stage, studies_path.AppendChild(name), out / (name + '.usda'), kernel='auto',
                                time=datetime.datetime(2026, 9, 11, tzinfo=datetime.timezone.utc))
         (out / (name + '.json')).write_text(json.dumps(report, indent=2, sort_keys=True) + '\n')
         findings.append({'name': name, 'results': report['results'], 'exclusionsCovered': report['exclusionsCovered']})
-        views, skipped = enumerate_views(stage, Settings(stage.GetPrimAtPath('/SecurityStudies/' + name)))
+        views, skipped = enumerate_views(stage, Settings(stage.GetPrimAtPath(studies_path.AppendChild(name))))
         shells = [stage.GetPrimAtPath(v.sensor.GetPath().AppendChild(v.shell_name)) for v in views]
         if skipped or not views or not all(p and p.IsA(UsdGeom.Mesh) for p in shells):
             raise ValueError(name + ' must write a coverage shell for every selected view')
@@ -172,7 +178,7 @@ print(json.dumps(derive_file(sys.argv[1], sys.argv[2], stamp='usdAecoCctv derive
     stage.GetRootLayer().subLayerPaths = list(stage.GetSessionLayer().subLayerPaths) + list(stage.GetRootLayer().subLayerPaths)
     stage.GetSessionLayer().subLayerPaths = []
     look = sensors_of(by_id['sec.cam.door.hall.a.s'])[0]
-    views, _ = enumerate_views(stage, Settings(stage.GetPrimAtPath('/SecurityStudies/CriticalDoors')))
+    views, _ = enumerate_views(stage, Settings(stage.GetPrimAtPath(studies_path.AppendChild('CriticalDoors'))))
     view = next(v for v in views if v.sensor == look)
     presentation = Sdf.Layer.CreateNew(str(out / 'presentation.usda'))
     stage.GetRootLayer().subLayerPaths.insert(0, 'presentation.usda')
@@ -200,7 +206,7 @@ print(json.dumps(derive_file(sys.argv[1], sys.argv[2], stamp='usdAecoCctv derive
                     _door_colours(UsdGeom.Mesh(prim))
                 elif _id(prim.GetParent()) == 'sec.iris.hall.a.s':
                     colour.Set([Gf.Vec3f(.85, .25, .95)])
-        camera = UsdGeom.Camera(stage.GetPrimAtPath('/Renders/lookthrough'))
+        camera = render_camera(stage, 'lookthrough')
         camera.GetFocalLengthAttr().Set(view.focal)
         camera.GetHorizontalApertureAttr().Set(2 * view.focal * view.frustum.tan_x)
         camera.GetVerticalApertureAttr().Set(2 * view.focal * view.frustum.tan_y)
@@ -228,4 +234,7 @@ print(json.dumps(derive_file(sys.argv[1], sys.argv[2], stamp='usdAecoCctv derive
     unchanged = all(hashlib.sha256(Path(p).read_bytes()).hexdigest() == h for p, h in before.items())
     if not unchanged:
         raise ValueError('published source or committed inputs changed')
+    # Flattening retains the root layer's metadata, not sublayer receipts.
+    with Usd.EditContext(stage, stage.GetRootLayer()):
+        author_study_root(stage, root)
     return findings

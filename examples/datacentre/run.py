@@ -11,6 +11,7 @@ sys.path[:0] = [str(ROOT / 'tools'), str(KIT / 'tools')]
 from usdaeco_cctv import register_plugins
 register_plugins()
 from usdaeco_cctv.example import hook
+from usdaeco_cctv.paths import render_camera
 from usdaeco_check.example import run_example
 import usdaeco_render
 
@@ -18,11 +19,11 @@ import usdaeco_render
 # purposes, the per-view presentation layer and the study camera aspect ratio.
 _render = usdaeco_render.render
 def render(*args, **kwargs):
-    from pxr import Usd, UsdGeom
+    from pxr import Usd
     os.environ['HDEMBREE_USE_LIGHTING'] = '0'
     os.environ['HDEMBREE_CAMERA_LIGHT_INTENSITY'] = '100'
     stage = Usd.Stage.Open(str(args[0]))
-    camera = UsdGeom.Camera(stage.GetPrimAtPath('/Renders/lookthrough'))
+    camera = render_camera(stage, 'lookthrough')
     ratio = camera.GetHorizontalApertureAttr().Get() / camera.GetVerticalApertureAttr().Get()
     width = kwargs['size'][0]
     options = {**kwargs, 'purposes': 'guide,proxy,render'}

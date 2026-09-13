@@ -2,6 +2,12 @@
 
 Inputs: the published **data-centre v0.4.8 base** stage and [named cameras](inputs/cameras.usda). The hook imports quarantined `Pset_AecoCctv` facts, derives native camera/guide data, and evaluates CriticalDoors and Privacy. No generator or converter runs.
 
+Version 0.5.7 keeps this standalone publication unchanged. A suite can call
+the hook with `AECO_STUDY_ROOT=/Studies/cctv` and its own cameras beneath
+`/Renders/cctv`. The configured layout uses `Looks`, `Targets` and `Studies`
+as child names; `/` retains `AecoCctvLooks`, `SecurityTargets` and
+`SecurityStudies`. [Integration contract and tests](../../docs/study-root.md).
+
 Open the committed [result/example.usdc](result/example.usdc) with stock USD; no family plugins or sibling checkouts are needed:
 
 ```sh

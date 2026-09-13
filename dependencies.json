@@ -61,6 +61,17 @@
           "ref": "v0.1.0"
         }
       }
+    },
+    "testenv/test_study_root.py": {
+      "reason": "Pinned full delivery for configurable study-root and project-catalog integration tests; standalone publication pins remain unchanged.",
+      "repos": {
+        "datacentre": {
+          "repo": "usdaeco-datacentre",
+          "library": null,
+          "ref": "v0.5.2",
+          "revision": "16b80298097bc0d5ab7ee567f49e50566e3f6597"
+        }
+      }
     }
   }
 }

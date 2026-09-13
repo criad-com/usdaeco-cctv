@@ -24,6 +24,7 @@ from . import __version__, camera_type_of, iter_cameras, iter_studies, presets_o
 from .density import head_optics, ladder as load_ladder, range_at_density
 from .frames import sensor_matrix
 from .output import isolated_stage, publish, refuse_input, validate_layer
+from .paths import author_study_root, study_root, study_scope
 from .sectors import level_ranges, ptz_envelope, sector_mesh
 
 STAMP = "usdAecoCctv derive " + __version__
@@ -32,7 +33,6 @@ TIME_CODES_PER_SECOND = 24.0
 SLEW_SECONDS = 0.5      # a preset is held for its dwell, then the head slews for half a second
 NEAR_CLIP = 0.05        # metres
 OPACITY = 0.3
-LOOKS = Sdf.Path("/AecoCctvLooks")
 DEFAULT_LADDER, DEFAULT_MODEL, DEFAULT_DENSITY = "dori2015", "plane", 125.0
 SECTOR_COLOUR = Gf.Vec3f(0.0, 0.85, 0.95)                          # Axis legend: cyan sector
 SHELL_COLOURS = (Gf.Vec3f(0.55, 0.85, 0.8), Gf.Vec3f(0.0, 0.5, 0.45))  # teal, lighter to deeper by level
@@ -160,8 +160,8 @@ def _extent(array):
     return Vt.Vec3fArray([Gf.Vec3f(*map(float, a.min(axis=0))), Gf.Vec3f(*map(float, a.max(axis=0)))])
 
 
-def _material(stage, name, colour):
-    path = LOOKS.AppendChild(name)
+def _material(stage, looks, name, colour):
+    path = looks.AppendChild(name)
     material = UsdShade.Material.Define(stage, path)
     shader = UsdShade.Shader.Define(stage, path.AppendChild("PreviewSurface"))
     shader.CreateIdAttr("UsdPreviewSurface")
@@ -199,6 +199,7 @@ def _shell_colour(rank, count):
 class Derivation:
     def __init__(self, stage, settings, stamp=STAMP):
         self.stage, self.settings, self.stamp = stage, settings, stamp
+        self.looks = study_scope(study_root(stage), "Looks")
         self.materials = {}
         self.ladder = load_ladder(settings["ladder"])
         self.rank = {name: i for i, name in enumerate(sorted(self.ladder, key=self.ladder.get))}
@@ -208,7 +209,7 @@ class Derivation:
 
     def material(self, name, colour):
         if name not in self.materials:
-            self.materials[name] = _material(self.stage, name, colour)
+            self.materials[name] = _material(self.stage, self.looks, name, colour)
         return self.materials[name]
 
     def sensor(self, sensor, camera, reader):
@@ -331,6 +332,7 @@ def _derive(stage, layer, model=None, stamp=STAMP, study_path=None):
     stage's layer stack it is inserted at the top of the session layer so the
     stage composes the result; muting it restores the stage bit-identically.
     """
+    root = study_root(stage)
     sublayers = list(layer.subLayerPaths)
     layer.Clear()
     layer.subLayerPaths = sublayers
@@ -344,6 +346,9 @@ def _derive(stage, layer, model=None, stamp=STAMP, study_path=None):
     up = 2 if UsdGeom.GetStageUpAxis(stage) == UsdGeom.Tokens.z else 1
     cache = UsdGeom.XformCache(Usd.TimeCode.Default())
     with Usd.EditContext(stage, Usd.EditTarget(layer)):
+        author_study_root(stage, root)
+        if root != Sdf.Path.absoluteRootPath:
+            UsdGeom.Scope.Define(stage, study_scope(root, "Looks"))
         run = Derivation(stage, settings, stamp)
         types = {}
         for camera in list(iter_cameras(stage)):

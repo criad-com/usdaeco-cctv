@@ -4,7 +4,7 @@ import os
 from pathlib import Path
 import sys
 
-__version__ = "0.5.6"
+__version__ = "0.5.7"
 ROOT = Path(__file__).resolve().parents[2]
 APIS = tuple("AecoCctv" + name + "API" for name in (
     "Camera", "CameraType", "Sensor", "Preset", "Study", "Coverage", "Target", "Sightline", "System"))
